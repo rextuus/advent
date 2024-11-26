@@ -1,0 +1,24 @@
+<div{{ attributes }} class="grid-1">
+    <div class="title">
+        {{ component('QuizForm', {
+            answers: this.getAnswersForCurrentDoor,
+            chosenDoor: this.chosenDoor,
+            displayMode: this.displayMode,
+            choiceNr: this.choiceNr,
+        }) }}
+    </div>
+    {% set dayBorder = this.getDayBorder() %}
+    {% for question in this.questions %}
+        {% set day = question.doorNumber %}
+        <div class="day-{{ day }}">
+            <label>
+                <input type="checkbox" class="day-checkbox" data-day="{{ day }}" {{ live_action('openClickedDoor', {'door': day}) }}
+                        {% if this.isDoorUnlocked(day) == false %}disabled{% endif %} {% if question.opened is not null %}checked disabled{% endif %}>
+                <div class="door">
+                    <div class="front">{{ day }}</div>
+                    <div class="back"></div>
+                </div>
+            </label>
+        </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,61 @@
+<div {{ attributes }}>
+    {% if this.showForm %}
+        <div class="door-form">
+            <span class="question h5 mb-3">
+                {{ this.questionText }}
+            </span>
+            {{ form_start(form, {
+                attr: {
+                    'data-action': 'live#action:prevent',
+                    'data-live-action-param': 'save',
+                }
+            }) }}
+            <div class="mb-3">
+                {{ form_row(form.question, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div>
+                <img src="{{ this.imageUrl }}">
+            </div>
+            <div class="mb-3">
+                {{ form_row(form.answer, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <button type="submit" class="btn btn-primary">Abschicken</button>
+            {{ form_end(form) }}
+        </div>
+    {% elseif this.showWinner%}
+        <div class="win-frame">
+            <div class="winner-text">
+                <span>{{ this.winnerText }}</span>
+            </div>
+{#            <img src="https://media.tenor.com/XEW8qfvkdSgAAAAM/snoop-dogg-dancing.gif">#}
+            <iframe src="https://www.youtube.com/embed/HCYYD1bmldo" title="Funny animals 2023😆 - Funniest Cats and Dogs Video🐕🐈220 #shorts" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    {% elseif this.showLooser%}
+        <div class="loose-frame">
+            <div class="loose-text">
+                <span>{{ this.looserText }}</span>
+            </div>
+                        <img src="https://media.tenor.com/XEW8qfvkdSgAAAAM/snoop-dogg-dancing.gif">
+{#            <iframe src="https://www.youtube.com/embed/HCYYD1bmldo" title="Funny animals 2023😆 - Funniest Cats and Dogs Video🐕🐈220 #shorts" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>#}
+        </div>
+    {% else %}
+        <div class="win-chances">
+            <span class="h1">🎄🎅 <span class="jana">Janas</span> Adventskalender ❄️⛄</span>
+            <div class="current-points">
+                <span>Punkte: </span><span class="points-value">{{ this.currentPoints }}</span>
+            </div>
+            <div class="wins">
+                <ul>
+                    <li><span class="points">0-4 Points:</span> <span class="win">Eine Woche PS5 Leihe</span></li>
+                    <li class="{% if this.currentPoints < 5 %}non-reached{% endif %}"><span
+                                class="points">5-12 Points:</span> <span class="win">Ein eigener Tesa-Abroller</span>
+                    </li>
+                    <li class="{% if this.currentPoints < 13 %}non-reached{% endif %}"><span class="points">13-18 Points:</span>
+                        <span class="win">Sushi-Ninja Sushi</span></li>
+                    <li class="{% if this.currentPoints < 19 %}non-reached{% endif %}"><span class="points">19-24 Points:</span>
+                        <span class="win">Du darfst dir vom Entwickler wünnschen was immer du willst</span></li>
+                </ul>
+            </div>
+        </div>
+    {% endif %}
+</div>
