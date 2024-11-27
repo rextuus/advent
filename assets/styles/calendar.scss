@@ -428,16 +428,25 @@ modal {
   }
 }
 
+.loose-win-image-area img{
+  border: solid 3px black;
+}
+
 .door-form{
-  padding-left: 100px;
+  padding-left: 50px;
+  margin-bottom: 40px;
+  padding-right: 30px;
 
 }
 
 .door-form .question {
-  font-size: 4em;
+  font-size: 3em;
   font-weight: bold;
   color: #161616;
-  margin-bottom: 40px;
+}
+
+.door-form .image-area img{
+    border: black 3px solid;
 }
 
 .door-form .form {

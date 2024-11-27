@@ -10,12 +10,13 @@
                     'data-live-action-param': 'save',
                 }
             }) }}
-            <div class="mb-3">
-                {{ form_row(form.question, {'attr': {'class': 'form-control'}}) }}
-            </div>
-            <div>
+            <div class="mb-5 image-area">
                 <img src="{{ this.imageUrl }}">
             </div>
+            <div class="mb-5 question">
+                {{ form_row(form.question, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
             <div class="mb-3">
                 {{ form_row(form.answer, {'attr': {'class': 'form-control'}}) }}
             </div>
@@ -25,17 +26,24 @@
     {% elseif this.showWinner%}
         <div class="win-frame">
             <div class="winner-text">
-                <span>{{ this.winnerText }}</span>
+                <span>{{ this.responseText}}</span>
+            </div>
+            <div class="loose-win-image-area">
+                {{ this.responseImage|raw  }}
             </div>
 {#            <img src="https://media.tenor.com/XEW8qfvkdSgAAAAM/snoop-dogg-dancing.gif">#}
-            <iframe src="https://www.youtube.com/embed/HCYYD1bmldo" title="Funny animals 2023😆 - Funniest Cats and Dogs Video🐕🐈220 #shorts" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{#            <iframe src="https://www.youtube.com/embed/HCYYD1bmldo" title="Funny animals 2023😆 - Funniest Cats and Dogs Video🐕🐈220 #shorts" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>#}
         </div>
     {% elseif this.showLooser%}
         <div class="loose-frame">
             <div class="loose-text">
-                <span>{{ this.looserText }}</span>
+                <span>{{ this.responseText }}</span>
             </div>
-                        <img src="https://media.tenor.com/XEW8qfvkdSgAAAAM/snoop-dogg-dancing.gif">
+            <div class="loose-win-image-area">
+                {{ this.responseImage|raw  }}
+            </div>
+
+{#                        <img src="https://media.tenor.com/XEW8qfvkdSgAAAAM/snoop-dogg-dancing.gif">#}
 {#            <iframe src="https://www.youtube.com/embed/HCYYD1bmldo" title="Funny animals 2023😆 - Funniest Cats and Dogs Video🐕🐈220 #shorts" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>#}
         </div>
     {% else %}

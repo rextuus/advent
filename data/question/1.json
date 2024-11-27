@@ -1,0 +1,24 @@
+{
+  "content": "Zu aller erst die wichtigste Frage: Wie machst du deine Adventskalendertürchen für gewöhnlich auf? \uD83C\uDF89",
+  "imageUrl": "https://images.unsplash.com/photo-1606805421441-82687fd40af9?q=80&w=1923&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "choices": [
+    {
+      "content": "\uD83E\uDD13 Wie eine kleine Streberin natürlich: Täglich",
+      "correct": true,
+      "response": "Brav. Genau so soll es sein. Perform noch 23 Tage so weiter und du gewinnst nen richtig tolles Geschenk. Sicherlich. Ganz bestimmt. Vielleicht. Eventuell. Mit ganz viel Glück...",
+      "responseImageUrl": "https://i.giphy.com/l0K45Z9fJYdkDZbmU.webp"
+    },
+    {
+      "content": "\uD83D\uDC78\uD83C\uDFFC Wie eine verwöhnte Targaryen Prinzessin: Alle auf einmal und schon vor Weihnachten",
+      "correct": false,
+      "response": "Was anderes hätte ich auch nicht erwartet. Aber nen Punkt gibt das nicht",
+      "responseImageUrl": "https://media.tenor.com/HLG_5SKeOosAAAAM/game-of-thrones-eww.gif"
+    },
+    {
+      "content": "\uD83D\uDE1F Wie eine gestresste Studentin: Alle auf einmal und erst an Weihnachten",
+      "correct": false,
+      "response": "Das kann ich verstehen. Aber bei so einem tollen Adventskalender wie diesem hier, ist das trotzdem die falsche Antwort.",
+      "responseImageUrl": "https://media.tenor.com/_X1yMPLz4SYAAAAM/baby-facepalm.gif"
+    }
+  ]
+}

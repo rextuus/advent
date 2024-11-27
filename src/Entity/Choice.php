@@ -26,11 +26,8 @@ class Choice
     #[ORM\Column(nullable: false)]
     private bool $isCorrect = false;
 
-    #[ORM\Column(length: 1000)]
-    private ?string $textCorrect = null;
-
-    #[ORM\Column(length: 1000)]
-    private ?string $textIncorrect = null;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $responseImageUrl = null;
 
     public function getId(): ?int
     {
@@ -85,27 +82,14 @@ class Choice
         return $this;
     }
 
-    public function getTextCorrect(): ?string
+    public function getResponseImageUrl(): ?string
     {
-        return $this->textCorrect;
+        return $this->responseImageUrl;
     }
 
-    public function setTextCorrect(string $textCorrect): static
+    public function setResponseImageUrl(?string $responseImageUrl): Choice
     {
-        $this->textCorrect = $textCorrect;
-
-        return $this;
-    }
-
-    public function getTextIncorrect(): ?string
-    {
-        return $this->textIncorrect;
-    }
-
-    public function setTextIncorrect(string $textIncorrect): static
-    {
-        $this->textIncorrect = $textIncorrect;
-
+        $this->responseImageUrl = $responseImageUrl;
         return $this;
     }
 }

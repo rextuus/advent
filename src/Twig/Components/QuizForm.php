@@ -110,6 +110,16 @@ final class QuizForm extends AbstractController
         return $this->displayMode === 3;
     }
 
+    public function getResponseText(): string
+    {
+        $question = $this->questionRepository->findOneBy(['doorNumber' => $this->chosenDoor]);
+        if ($question->getChoices()->get($this->choiceNr) !== null){
+            return $question->getChoices()->get($this->choiceNr)->getResponse();
+        }
+
+        return 'This is an error! Ask the bad developer guy to fix this.';
+    }
+
     public function getLooserText(): string
     {
         $question = $this->questionRepository->findOneBy(['doorNumber' => $this->chosenDoor]);
@@ -151,5 +161,73 @@ final class QuizForm extends AbstractController
         $question = $this->questionRepository->findOneBy(['doorNumber' => $this->chosenDoor]);
 
         return $question->getImageUrl();
+    }
+
+
+    public function getResponseImage(): string
+    {
+        $question = $this->questionRepository->findOneBy(['doorNumber' => $this->chosenDoor]);
+
+        $url = $question->getChoices()->get($question->getTriggeredChoice())->getResponseImageUrl();
+
+        if (str_contains($url, 'iframe') && str_contains($url, 'youtube')) {
+            return $this->prepareUrl($url);
+        }
+
+        return sprintf('<img src="%s">', $url);
+    }
+
+    public function getWinnerImage(): string
+    {
+        $question = $this->questionRepository->findOneBy(['doorNumber' => $this->chosenDoor]);
+
+        $url = $question->getChoices()->get($question->getTriggeredChoice())->getResponseImageUrl();
+
+        if (str_contains($url, 'iframe') && str_contains($url, 'youtube')) {
+            return $this->prepareUrl($url);
+        }
+
+        return sprintf('<img src="%s">', $url);
+    }
+
+    public function getLooserImage(): string
+    {
+        $question = $this->questionRepository->findOneBy(['doorNumber' => $this->chosenDoor]);
+
+        $url = $question->getChoices()->get($question->getTriggeredChoice())->getUrlIncorrect();
+
+        if (str_contains($url, 'iframe') && str_contains($url, 'youtube')) {
+            return $this->prepareUrl($url);
+        }
+
+        return sprintf('<img src="%s">', $url);
+    }
+
+    private function prepareUrl(string $url): string
+    {
+        $maxWidth = 400; // Maximum width for the iframe
+        $aspectRatio = 16 / 9; // Aspect ratio for the iframe
+
+        // Extract the src attribute from the iframe
+        if (preg_match('~src="([^"]+)"~', $url, $matches)) {
+            $src = $matches[1];
+            // Append autoplay=1 to the URL
+            $autoplayUrl = $src . '?autoplay=1';
+            // Replace the src attribute in the iframe
+            $updatedIframe = str_replace($src, $autoplayUrl, $url);
+            // Add allow="autoplay" attribute to the iframe
+            if (strpos($updatedIframe, 'allow=') !== false) {
+                $updatedIframe = preg_replace('/allow="([^"]+)"/', 'allow="$1 autoplay"', $updatedIframe);
+            } else {
+                $updatedIframe = str_replace('<iframe', '<iframe allow="autoplay"', $updatedIframe);
+            }
+            // Adjust iframe width and height
+            $height = (int) ($maxWidth / $aspectRatio);
+            $updatedIframe = preg_replace('~width="\d+"~', 'width="' . $maxWidth . '"', $updatedIframe);
+            $updatedIframe = preg_replace('~height="\d+"~', 'height="' . $height . '"', $updatedIframe);
+            return $updatedIframe;
+        }
+
+        return '';
     }
 }
