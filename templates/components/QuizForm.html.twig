@@ -26,7 +26,7 @@
     {% elseif this.showWinner%}
         <div class="win-frame">
             <div class="winner-text">
-                <span>{{ this.responseText}}</span>
+                <span>{{ this.responseText}}</span> <span class="points-yes">1 Punkt</span>
             </div>
             <div class="loose-win-image-area">
                 {{ this.responseImage|raw  }}
@@ -37,7 +37,7 @@
     {% elseif this.showLooser%}
         <div class="loose-frame">
             <div class="loose-text">
-                <span>{{ this.responseText }}</span>
+                <span>{{ this.responseText }}</span> <span class="points-no">Kein Punkt</span>
             </div>
             <div class="loose-win-image-area">
                 {{ this.responseImage|raw  }}
