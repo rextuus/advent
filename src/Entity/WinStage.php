@@ -51,8 +51,20 @@ class WinStage
         return $this;
     }
 
-    public function getWinText(): ?string
+    public function getWinText(?int $currentPoints = null): ?string
     {
+        if ($currentPoints !== null && $this->pointBorder > $currentPoints) {
+            // Convert the winText to an array of characters using multibyte functions
+            $chars = preg_split('//u', $this->winText, -1, PREG_SPLIT_NO_EMPTY);
+
+            // Shuffle the characters
+            shuffle($chars);
+
+            // Convert the array back to a string
+            $shuffledWinText = implode('', $chars);
+
+            return $shuffledWinText;
+        }
         return $this->winText;
     }
 

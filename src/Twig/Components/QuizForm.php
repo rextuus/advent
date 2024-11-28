@@ -247,4 +247,9 @@ final class QuizForm extends AbstractController
     {
         return $this->winStageRepository->findBy([], ['pointBorder' => 'ASC']);
     }
+
+    public function isDemoMode(): bool
+    {
+        return $this->isDevTest === DoorArea::DEMO_MODE;
+    }
 }

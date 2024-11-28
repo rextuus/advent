@@ -49,8 +49,11 @@
     {% else %}
         <div class="win-chances">
             {% set currentPoints = this.currentPoints %}
-            <span class="h1">🎄🎅 <span class="jana">Janas ⛄</span> Adventskalender</span>
+            <span class="h1"><a class="link-symbol" href="{{ path('app_calendar') }}">🎄</a>🎅<span class="jana">Janas <a class="link-symbol" href="{{ path('app_calendar_demo') }}">⛄</a> </span> Adventskalender</span>
 {#            ❄️⛄#}
+            {% if this.isDemoMode %}
+                <span style="font-size: 1.2rem">(DEMO)</span>
+            {% endif %}
             <div class="current-points">
                 <span>Punkte: </span><span class="points-value">{{ currentPoints }}</span>
             </div>
@@ -59,7 +62,7 @@
                 <ul>
 {#                    {% set currentPoints = 24 %}#}
                     {% for stage in this.winStages %}
-                        <li class="{% if currentPoints < stage.pointBorder %}non-reached{% endif %}"><span class="points">{{ stage.pointText }}</span> <span class="win">{{ stage.winText }}</span></li>
+                        <li class="{% if currentPoints < stage.pointBorder %}non-reached{% endif %}"><span class="points">{{ stage.pointText }}</span> <span class="win">{{ stage.winText(currentPoints) }}</span></li>
                     {% endfor %}
 {#                    <li><span class="points">0-4 Points:</span> <span class="win">Eine Woche PS5 Leihe</span></li>#}
 {#                    <li class="{% if this.currentPoints < 5 %}non-reached{% endif %}"><span#}
