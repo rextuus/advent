@@ -47,3 +47,4 @@ Thumbs.db
 /build/man
 /build/_sources
 /build/_static
+/public/build/
