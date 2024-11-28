@@ -1,0 +1,18 @@
+{
+  "content": "Wo finden Experten die besten Weihnachtsdekoartikel?",
+  "imageUrl": "https://filmtvgeek.wordpress.com/wp-content/uploads/2017/12/1454627416-sex-and-the-city.jpg?w=640",
+  "choices": [
+    {
+      "content": "https://www.weihnachtsdekoration.de:",
+      "correct": false,
+      "response": "Also ganz ehrlich. Selbst ich als komplett ahnungsloser, durch die Läden irrender Anfänger weiß, dass sowas nicht online geht. Auf so nen Onlineshop fallen doch nur Renter rein",
+      "responseImageUrl": "https://media.tenor.com/yT9FeNzcd-YAAAAM/hello-old-people.gif"
+    },
+    {
+      "content": "Tedi. Oder wenns geht noch zwielichtiger direkt vom Laster in ner dunklen Gasse. Das gute Zeug versteckt sich nun mal da wo mans nicht erwartet",
+      "correct": true,
+      "response": "Ja ist einfach ein wohlig-mohliges Gefühl in diesem Laden. Und man bekommt so viel gratis. ",
+      "responseImageUrl": "https://i.makeagif.com/media/7-01-2020/-8Xqe-.gif"
+    }
+  ]
+}

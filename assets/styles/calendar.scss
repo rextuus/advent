@@ -370,6 +370,11 @@ modal {
     }
   }
 
+  .win-header{
+    font-size: 0.8em;
+
+  }
+
   .wins {
     border: #000000 2px solid;
     border-radius: 8px;
@@ -377,7 +382,7 @@ modal {
     font-size: 2.2rem;
     font-weight: bold;
     color: #333;
-    margin-top: 60px;
+    margin-top: 20px;
     padding: 5px;
 
     ul {
@@ -408,23 +413,37 @@ modal {
   }
 }
 
-.win-frame{
-  //@extend .win-chances;
+.frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: black solid 3px;
+
   width: 100%;
   height: 100%;
+  background-color: rgba(255, 255, 255, 0.14);
 
-  .winner-text{
-    font-size: 5rem;
+  .text {
+    padding: 10px;
+    font-size: 4rem;
+    margin-bottom: 10px;
   }
 }
 
-.loose-frame{
-  width: 100%;
-  height: 100%;
+.win-frame {
+  @extend .frame;
 
-  .loose-text{
-    font-size: 4rem;
+  .winner-text {
+    @extend .text;
+  }
+}
 
+.loose-frame {
+  @extend .frame;
+
+  .loose-text {
+    @extend .text;
   }
 }
 

@@ -2,9 +2,11 @@
 
 namespace App\Twig\Components;
 
+use App\Entity\WinStage;
 use App\Form\QuizData;
 use App\Form\QuizType;
 use App\Repository\QuestionRepository;
+use App\Repository\WinStageRepository;
 use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -36,8 +38,13 @@ final class QuizForm extends AbstractController
     #[LiveProp(updateFromParent: true) ]
     public int $choiceNr = -2;
 
-    public function __construct(private readonly QuestionRepository $questionRepository)
-    {
+    #[LiveProp(updateFromParent: true) ]
+    public int $isDevTest;
+
+    public function __construct(
+        private readonly QuestionRepository $questionRepository,
+        private readonly WinStageRepository $winStageRepository
+    ) {
     }
 
     protected function instantiateForm(): FormInterface
@@ -69,9 +76,11 @@ final class QuizForm extends AbstractController
 
         $question->setOpened(new DateTimeImmutable());
         $question->setTriggeredChoice($choice);
-        $this->questionRepository->getEntityManager()->persist($question);
-        $this->questionRepository->getEntityManager()->flush();
 
+        if ($this->isDevTest === DoorArea::USER_MODE){
+            $this->questionRepository->getEntityManager()->persist($question);
+            $this->questionRepository->getEntityManager()->flush();
+        }
 
         if ($question->getChoices()->get((int) $data->answer)->isCorrect()){
             $this->displayMode = 2;
@@ -229,5 +238,13 @@ final class QuizForm extends AbstractController
         }
 
         return '';
+    }
+
+    /**
+     * @return array<WinStage>
+     */
+    public function getWinStages(): array
+    {
+        return $this->winStageRepository->findBy([], ['pointBorder' => 'ASC']);
     }
 }

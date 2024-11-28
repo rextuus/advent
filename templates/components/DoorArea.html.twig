@@ -5,6 +5,7 @@
             chosenDoor: this.chosenDoor,
             displayMode: this.displayMode,
             choiceNr: this.choiceNr,
+            isDevTest: isDevTest,
         }) }}
     </div>
     {% set dayBorder = this.getDayBorder() %}
@@ -12,8 +13,15 @@
         {% set day = question.doorNumber %}
         <div class="day-{{ day }}">
             <label>
-                <input type="checkbox" class="day-checkbox" data-day="{{ day }}" {{ live_action('openClickedDoor', {'door': day}) }}
-                        {% if this.isDoorUnlocked(day) == false %}disabled{% endif %} {% if question.opened is not null %}checked disabled{% endif %}>
+                {% if this.isDevTestMode  %}
+                    <input type="checkbox" class="day-checkbox" data-day="{{ day }}" {{ live_action('openClickedDoor', {'door': day}) }}>
+                {% elseif this.isDemoMode  %}
+                    <input type="checkbox" class="day-checkbox" data-day="{{ day }}" {{ live_action('openClickedDoor', {'door': day}) }}
+                            {% if this.isDoorUnlocked(day) == false %}disabled{% endif %}>
+                {% else %}
+                    <input type="checkbox" class="day-checkbox" data-day="{{ day }}" {{ live_action('openClickedDoor', {'door': day}) }}
+                            {% if this.isDoorUnlocked(day) == false %}disabled{% endif %} {% if question.opened is not null %}checked disabled{% endif %}>
+                {% endif %}
                 <div class="door">
                     <div class="front">{{ day }}</div>
                     <div class="back"></div>

@@ -1,12 +1,49 @@
-
-###> symfony/framework-bundle ###
-/.env.local
-/.env.local.php
-/.env.*.local
-/config/secrets/prod/prod.decrypt.private.php
-/public/bundles/
+# Symfony specific
 /var/
 /vendor/
-/node_modules
-.env
-###< symfony/framework-bundle ###
+/.env
+.phpunit.result.cache
+/public/bundles/
+/public/uploads/
+
+# IDEs and editors
+/.idea/
+/.vscode/
+/*.swp
+/*.swo
+*~
+._*
+
+# System files
+Thumbs.db
+.DS_Store
+
+# Logs and temporary files
+/log/
+/tmp/
+
+# Composer dependencies
+/vendor/
+
+# Node modules (if applicable)
+/node_modules/
+
+# Build files
+/dist/
+/build/
+
+/.cache-loader/
+/.pnp
+.pnp.js
+
+# Misc
+*.log
+*.lock
+
+# Sphinx documentation
+/build/doctrees
+/build/html
+/build/latex
+/build/man
+/build/_sources
+/build/_static

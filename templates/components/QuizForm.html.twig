@@ -48,20 +48,27 @@
         </div>
     {% else %}
         <div class="win-chances">
-            <span class="h1">🎄🎅 <span class="jana">Janas</span> Adventskalender ❄️⛄</span>
+            {% set currentPoints = this.currentPoints %}
+            <span class="h1">🎄🎅 <span class="jana">Janas ⛄</span> Adventskalender</span>
+{#            ❄️⛄#}
             <div class="current-points">
-                <span>Punkte: </span><span class="points-value">{{ this.currentPoints }}</span>
+                <span>Punkte: </span><span class="points-value">{{ currentPoints }}</span>
             </div>
+            <div class="win-header">Du gewinnst für</div>
             <div class="wins">
                 <ul>
-                    <li><span class="points">0-4 Points:</span> <span class="win">Eine Woche PS5 Leihe</span></li>
-                    <li class="{% if this.currentPoints < 5 %}non-reached{% endif %}"><span
-                                class="points">5-12 Points:</span> <span class="win">Ein eigener Tesa-Abroller</span>
-                    </li>
-                    <li class="{% if this.currentPoints < 13 %}non-reached{% endif %}"><span class="points">13-18 Points:</span>
-                        <span class="win">Sushi-Ninja Sushi</span></li>
-                    <li class="{% if this.currentPoints < 19 %}non-reached{% endif %}"><span class="points">19-24 Points:</span>
-                        <span class="win">Du darfst dir vom Entwickler wünnschen was immer du willst</span></li>
+{#                    {% set currentPoints = 24 %}#}
+                    {% for stage in this.winStages %}
+                        <li class="{% if currentPoints < stage.pointBorder %}non-reached{% endif %}"><span class="points">{{ stage.pointText }}</span> <span class="win">{{ stage.winText }}</span></li>
+                    {% endfor %}
+{#                    <li><span class="points">0-4 Points:</span> <span class="win">Eine Woche PS5 Leihe</span></li>#}
+{#                    <li class="{% if this.currentPoints < 5 %}non-reached{% endif %}"><span#}
+{#                                class="points">5-12 Points:</span> <span class="win">Ein eigener Tesa-Abroller</span>#}
+{#                    </li>#}
+{#                    <li class="{% if this.currentPoints < 13 %}non-reached{% endif %}"><span class="points">13-18 Points:</span>#}
+{#                        <span class="win">Sushi-Ninja Sushi</span></li>#}
+{#                    <li class="{% if this.currentPoints < 19 %}non-reached{% endif %}"><span class="points">19-24 Points:</span>#}
+{#                        <span class="win">Du darfst dir vom Entwickler wünnschen was immer du willst</span></li>#}
                 </ul>
             </div>
         </div>

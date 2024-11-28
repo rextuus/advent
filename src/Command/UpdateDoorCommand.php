@@ -3,6 +3,7 @@
 namespace App\Command;
 
 use App\DataFixtures\AppFixtures;
+use App\Entity\Question;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -35,6 +36,13 @@ class UpdateDoorCommand extends Command
         
         if (!is_numeric($doorNumber) || $doorNumber < 1 || $doorNumber > 24) {
             $output->writeln('<error>Door number must be between 1 and 24</error>');
+            return Command::FAILURE;
+        }
+
+        /** @var Question $question */
+        $question = $this->entityManager->getRepository(Question::class)->findOneBy(['doorNumber' => $doorNumber]);
+        if ($question->getOpened() !== null) {
+            $output->writeln('<error>Door ' . $doorNumber . ' has already been opened</error>');
             return Command::FAILURE;
         }
 

@@ -4,12 +4,25 @@ namespace App\DataFixtures;
 
 use App\Entity\Choice;
 use App\Entity\Question;
+use App\Entity\User;
+use App\Entity\WinStage;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ObjectManager;
+use Symfony\Component\DependencyInjection\Attribute\Autowire;
+use Symfony\Component\Dotenv\Dotenv;
 
 class AppFixtures extends Fixture
 {
+
+
+    public function __construct(
+        #[Autowire('%env(USER_PASSWORD)%')]
+        private readonly string $userPassword,
+    )
+    {
+    }
+
     private function getRandomText(): string
     {
         $randomTexts = [
@@ -107,6 +120,44 @@ class AppFixtures extends Fixture
             $manager->persist($question);
         }
 
+        $winStage1 = new WinStage();
+        $winStage1->setWinText('Das Kleingeld von meiner Fensterbank🫰');
+        $winStage1->setPointBorder(0);
+        $winStage1->setPointText('0 Punkte');
+
+        $winStage2 = new WinStage();
+        $winStage2->setWinText('Du darfst dir eine Woche meine PS5 ausleihen🎮');
+        $winStage2->setPointBorder(1);
+        $winStage2->setPointText('1-4 Punkte');
+
+        $winStage3 = new WinStage();
+        $winStage3->setWinText('Ein eigener Tesa-Abroller🤩');
+        $winStage3->setPointBorder(5);
+        $winStage3->setPointText('5-12 Punkte');
+
+        $winStage4 = new WinStage();
+        $winStage4->setWinText('Sushi-Ninja Sushi🍣. Frittieres sogar');
+        $winStage4->setPointBorder(13);
+        $winStage4->setPointText('13-18 Punkte');
+
+        $winStage5 = new WinStage();
+        $winStage5->setWinText('Du darfst dir vom Entwickler wünnschen was immer du willst🌠');
+        $winStage5->setPointBorder(19);
+        $winStage5->setPointText('19-24 Punkte');
+
+        $manager->persist($winStage1);
+        $manager->persist($winStage2);
+        $manager->persist($winStage3);
+        $manager->persist($winStage4);
+        $manager->persist($winStage5);
+
+        $user = new User();
+        $user->setEmail('rextuus@gmail.com');
+
+        $user->setPassword($this->userPassword);
+        $user->setRoles(["ROLE_ADMIN"]);
+        $manager->persist($user);
+
         // Flush to save to database
         $manager->flush();
     }
@@ -163,12 +214,9 @@ class AppFixtures extends Fixture
             foreach ($raw[$door]['choices'] as $choiceRaw) {
                 $choice = new Choice();
                 $choice->setContent($choiceRaw['content'])
-                    ->setResponse('') // Assuming the first choice is correct
+                    ->setResponse($choiceRaw['response']) // Assuming the first choice is correct
                     ->setCorrect($choiceRaw['correct'])
-                    ->setTextCorrect($choiceRaw['textCorrect'])
-                    ->setTextIncorrect($choiceRaw['textIncorrect'])
-                    ->setResponseImageUrl($choiceRaw['urlCorrect'])
-                    ->setUrlIncorrect($choiceRaw['urlIncorrect'])
+                    ->setResponseImageUrl($choiceRaw['responseImageUrl'])
                     ->setQuestion($question);
                 $manager->persist($choice);
             }

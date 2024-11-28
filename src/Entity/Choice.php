@@ -92,4 +92,9 @@ class Choice
         $this->responseImageUrl = $responseImageUrl;
         return $this;
     }
+
+    public function __toString(): string
+    {
+        return (string) $this->content;
+    }
 }

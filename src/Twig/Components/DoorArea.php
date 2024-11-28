@@ -15,6 +15,10 @@ use Symfony\UX\LiveComponent\DefaultActionTrait;
 #[AsLiveComponent]
 final class DoorArea
 {
+    public const USER_MODE = 1;
+    public const DEMO_MODE = 2;
+    public const DEV_MODE = 3;
+
     use DefaultActionTrait;
 
     #[LiveProp(writable: true)]
@@ -28,8 +32,21 @@ final class DoorArea
     #[LiveProp(updateFromParent: true) ]
     public int $choiceNr = -2;
 
+    #[LiveProp]
+    public int $isDevTest;
+
     public function __construct(private QuestionRepository $questionRepository)
     {
+    }
+
+    public function isDevTestMode(): bool
+    {
+        return $this->isDevTest === self::DEV_MODE;
+    }
+
+    public function isDemoMode(): bool
+    {
+        return $this->isDevTest === self::DEMO_MODE;
     }
 
     /**
@@ -38,14 +55,6 @@ final class DoorArea
     public function getQuestions(): array
     {
         return $this->questionRepository->findBy([], ['doorNumber' => 'ASC']);
-    }
-
-    public function getImageUrl(): string
-    {
-
-        return $this->doorClicked
-            ? 'https://path-to-new-image.jpg'
-            : 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/merry-xmas.svg';
     }
 
     #[LiveAction]
@@ -75,16 +84,26 @@ final class DoorArea
         return (int) (new DateTime())->format('j');
     }
 
-    public function isDoorUnlocked(int $day): bool
+    public function isDoorUnlocked(int $day, ?DateTime $overrideDate = null): bool
     {
-        $startDate = new DateTime('01.11.2024');
-        $endDate = new DateTime('30.11.2024');
-        $currentDate = new DateTime();
-
-
-        // Check if the current date allows the door to be opened
-        if ($currentDate >= $startDate && $currentDate <= $endDate) {
+        if ($this->isDevTest === self::DEV_MODE) {
             return true;
+        }
+
+        // Define the start date of the advent calendar
+        $startDate = new DateTime('01.12.2024');
+        // Use the override date if provided; otherwise, use the current date
+        $currentDate = $overrideDate ?? new DateTime();
+
+        // Extract the current day and month
+        $currentDayOfMonth = (int)$currentDate->format('d');
+        $currentMonth = (int)$currentDate->format('m');
+
+        // Check if the door is within the advent calendar's range
+        if ($day >= 1 && $day <= 24) {
+            // Allow door opening after December 1st for doors up to the current day
+            // Allow opening any door after December
+            return ($currentDayOfMonth >= $day && $currentMonth == 12) || ($currentMonth > 12);
         }
 
         return false;
