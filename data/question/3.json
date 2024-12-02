@@ -1,30 +1,18 @@
 {
-  "content": "Carry, Miranda, Charlotte oder Samantha?",
-  "imageUrl": "https://filmtvgeek.wordpress.com/wp-content/uploads/2017/12/1454627416-sex-and-the-city.jpg?w=640",
+  "content": "Für den Weihnachtsmann sind Milch \uD83E\uDD5B und Kekse \uD83C\uDF6A einfach das",
+  "imageUrl": "https://images.unsplash.com/photo-1607690424395-6660d838d818?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "choices": [
     {
-      "content": "Carry",
+      "content": "\uD83D\uDFE1 Gelbe vom Ei",
       "correct": true,
-      "response": "Du hättest wohl auch gerne nen Bus auf dem du drauf bist was. Eines Tages miete ich die Hauswand bei uns gegenüber und lasse dich da verewigen. Wenn der Kalenderverkauf mal richtig läuft.. Du konntest nicht verlieren. Das war eine reine Interessensfrage. Aber ich persönlich hätte dich ja für den Charlotte-Typ gehalten!",
-      "responseImageUrl": "https://64.media.tumblr.com/dd318aca52052be71c6bebfbe689821e/tumblr_n5y5dysqSi1t517axo3_500.gif"
+      "response": "Korrekt. So wie für jeden vernünftigen Menschen auf dieser Welt. Schön, dass du sogar extra richtig antwortest. Kleiner Punktegierschlund. Ich hoffe doch neben mir zu wohnen ist für dich das Weiße vom Ei \uD83D\uDE0F",
+      "responseImageUrl": "https://gifdb.com/images/high/uma-thurman-satisfied-delicious-reaction-seferdfm2d6g8o58.gif"
     },
     {
-      "content": "Miranda",
+      "content": "\uD83E\uDD0D Weiße vom Ei",
       "correct": true,
-      "response": "Oh ha. Interessant. Miranda zieht ja irgendwann in die Bronx. Das wäre bei uns ja Köln-Chorweiler. War schön dich kennengelernt zu haben... \nDu konntest nicht verlieren. Das war eine reine Interessensfrage. Aber ich persönlich hätte dich ja für den Charlotte-Typ gehalten!",
-      "responseImageUrl": "https://i.makeagif.com/media/7-01-2020/-8Xqe-.gif"
-    },
-    {
-      "content": "Charlotte",
-      "correct": true,
-      "response": "Wow. Genauso hätte ich dich auch eingeschätzt. Wäre mir das nicht zu kompliziert zu programmieren gewesen, hättest du jetzt 2 Punkte bekommen",
-      "responseImageUrl": "https://i.pinimg.com/originals/30/1f/3b/301f3b440fdc395a915670d680c88a5d.gif"
-    },
-    {
-      "content": "Samantha",
-      "correct": true,
-      "response": "Du konntest nicht verlieren. Das war eine reine Interessensfrage. Aber ich persönlich hätte dich ja für den Charlotte-Typ gehalten!",
-      "responseImageUrl": "<iframe width=\"558\" height=\"992\" src=\"https://www.youtube.com/embed/pB-G3_k-ypg\" title=\"Harry Potter Techno\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+      "response": "Also ich weiß ja nicht. In gewisser Weise ist nen alter Mann der sich von Kindern Milch und Kekse hinstellen lässt schon eindeutig pervers. Da hast du Recht. Aber Eiweiß? Na gut. Weil du das garstige Zeugs übernehmen würdest, will ich mal nicht so sein... Perverseline!!! (oder wie auch immer die weibliche Form lautet)",
+      "responseImageUrl": "https://media.tenor.com/m3KPEHsXkkoAAAAM/michael-scott-michael.gif"
     }
   ]
 }

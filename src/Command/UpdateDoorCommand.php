@@ -50,8 +50,9 @@ class UpdateDoorCommand extends Command
 
         if ($res){
             $output->writeln('<info>Door ' . $doorNumber . ' has been updated.</info>');
+        }else{
+            $output->writeln('<info>Door ' . $doorNumber . ' could not been updated. Check json file exists</info>');
         }
-        $output->writeln('<info>Door ' . $doorNumber . ' could not been updated. Check json file exists</info>');
 
 
         return Command::SUCCESS;
