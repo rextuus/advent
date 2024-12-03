@@ -1,18 +1,30 @@
 {
-  "content": "Wo finden Experten die besten Weihnachtsdekoartikel?",
-  "imageUrl": "https://filmtvgeek.wordpress.com/wp-content/uploads/2017/12/1454627416-sex-and-the-city.jpg?w=640",
+  "content": "Du hast jetzt schon eine Menge tolle Weihnachtskatzen gesammelt. \uD83E\uDD79 Aber welche sind dir überhaupt die liebsten?",
+  "imageUrl": "https://plus.unsplash.com/premium_photo-1707353402061-c31b6ba8562e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Q2F0JTIwZ3JvdXB8ZW58MHx8MHx8fDA%3D",
   "choices": [
     {
-      "content": "https://www.weihnachtsdekoration.de:",
-      "correct": false,
-      "response": "Also ganz ehrlich. Selbst ich als komplett ahnungsloser, durch die Läden irrender Anfänger weiß, dass sowas nicht online geht. Auf so nen Onlineshop fallen doch nur Renter rein",
-      "responseImageUrl": "https://media.tenor.com/yT9FeNzcd-YAAAAM/hello-old-people.gif"
+      "content": "\uD83D\uDC08\uD83D\uDC08\u200D⬛\uD83D\uDC08 Bunte. Ich kann mich einfach für keine Farbe entscheiden",
+      "correct": true,
+      "response": "Eigentlich hätte ich ja gedacht du stehst eher auf Kater. Dreifarbig können allerdings nur Katzen sein, da die Fellfarbe übers X-Chromosom vererbt wird und Kater davon nur eines haben. Für weniger Klugschiss-Infos aus dem Bereich Biologie merke: Niemals neben studierte Biologen ziehen ☝\uFE0F",
+      "responseImageUrl": "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWQxdWVwb2g3dXNuMXg2ZnoweTlicHJ0Zm55N3o1OXd6N2hoaDYycyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fR4qvR4edi3CkgqyOM/giphy.webp"
     },
     {
-      "content": "Tedi. Oder wenns geht noch zwielichtiger direkt vom Laster in ner dunklen Gasse. Das gute Zeug versteckt sich nun mal da wo mans nicht erwartet",
+      "content": "\uD83D\uDC08\u200D⬛ Schwarze. Du weißt doch. Dunkle Künste und so",
       "correct": true,
-      "response": "Ja ist einfach ein wohlig-mohliges Gefühl in diesem Laden. Und man bekommt so viel gratis. ",
-      "responseImageUrl": "https://i.makeagif.com/media/7-01-2020/-8Xqe-.gif"
+      "response": "Ergibt völlig Sinn. Ergibt ja auch einen tollen Kontrast zu deinem targaryanischem Erscheinungsbild. Und sind für gewöhnlich auch die dicksten und gemütlichsten Miezen. Weiße Katzen hingegen werden ja ganz leicht schmutzig, wenn man die Wohnung nicht ordentlich saugt... \uD83D\uDE1D",
+      "responseImageUrl": "https://media.tenor.com/nHnyaEGd6C0AAAAM/wizard-cat-cat-wizard.gif"
+    },
+    {
+      "content": "\uD83D\uDC08 \uD83E\uDD0D Weiße. Alles andere ist mit zu unedel. Hallo. Prinzessin und so. Ich brauche einen standesgemäßen Stubentiger",
+      "correct": true,
+      "response": "Ja ja. Da hat jemand als Kind eindeutig zu oft die Alpina-Weiß Werbung gesehen und träumt jetzt davon, dass die Katze dir dann auch die Wände streicht. Aber ich teile deinen Traum. Lass ne weiße holen \uD83D\uDE06",
+      "responseImageUrl": "<iframe width=\"1039\" height=\"779\" src=\"https://www.youtube.com/embed/OC-LKpI2k3A?mute=1\" title=\"Alpinaweiß Werbung Katze 1995\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+    },
+    {
+      "content": "\uD83D\uDC05 Getigerte. Die sind einfach süß und können mich beschützen. Sind ja logischerweise viel stärker auch als nicht Tiger",
+      "correct": true,
+      "response": "Immer eine gute Wahl. Da musst vll noch eine Reise nach Afrika unternehmen zur Besorgung. Vermutlich der einzige Kontinent auf dem du Globetrotterin noch nicht warst oder?",
+      "responseImageUrl": "https://i.pinimg.com/originals/59/c4/5f/59c45fc179237453df26621221d15096.gif"
     }
   ]
 }

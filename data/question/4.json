@@ -1,36 +1,24 @@
 {
-  "content": "Wo hätte dich der Sorting-Hat damals hingesteckt?",
-  "imageUrl": "https://filmtvgeek.wordpress.com/wp-content/uploads/2017/12/1454627416-sex-and-the-city.jpg?w=640",
+  "content": "Wo finden Expertinnen für gewöhnlich die besten Weihnachtsdekoartikel?",
+  "imageUrl": "https://images.unsplash.com/photo-1512728657599-58bfaaa75696?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "choices": [
     {
-      "content": "Griffindor",
-      "correct": true,
-      "response": "",
-      "responseImageUrl": "https://64.media.tumblr.com/dd318aca52052be71c6bebfbe689821e/tumblr_n5y5dysqSi1t517axo3_500.gif"
+      "content": "https://www.weihnachtsdekoration.de:",
+      "correct": false,
+      "response": "Also ganz ehrlich. Selbst ich als komplett ahnungsloser, durch die Läden irrender Anfänger weiß, dass sowas nicht online geht. Auf so nen Onlineshop fallen doch nur Renter rein, die ihn wiederum gar nicht bedienen können",
+      "responseImageUrl": "https://media.tenor.com/yT9FeNzcd-YAAAAM/hello-old-people.gif"
     },
     {
-      "content": "Miranda",
+      "content": "Tedi. Oder wenns geht noch zwielichtiger direkt vom Laster in ner dunklen Gasse. Das gute Zeug versteckt sich nun mal da wo mans nicht erwartet",
       "correct": true,
-      "response": "Oh ha. Interessant. Miranda zieht ja irgendwann in die Bronx. Das wäre bei uns ja Köln-Chorweiler. War schön dich kennengelernt zu haben... \nDu konntest nicht verlieren. Das war eine reine Interessensfrage. Aber ich persönlich hätte dich ja für den Charlotte-Typ gehalten!",
-      "responseImageUrl": "https://i.makeagif.com/media/7-01-2020/-8Xqe-.gif"
+      "response": "Ja ist einfach ein wohlig-mohliges Gefühl in diesem Laden. Und man bekommt so viel gratis. Tripper, Mikro-Plastik, Platzangst. Aber eben auch Schnäppchen. \uD83D\uDE1D",
+      "responseImageUrl": "https://media.tenor.com/S2kChR376qkAAAAM/99cents-macklemore.gif"
     },
     {
-      "content": "Charlotte",
+      "content": "Auf dem Weihnachtsmarkt. Dort wird noch mit Liebe und Sorgfalt gearbeitet",
       "correct": true,
-      "response": "Wow. Genauso hätte ich dich auch eingeschätzt. Wäre mir das nicht zu kompliziert zu programmieren gewesen, hättest du jetzt 2 Punkte bekommen",
-      "responseImageUrl": "https://i.pinimg.com/originals/30/1f/3b/301f3b440fdc395a915670d680c88a5d.gif"
-    },
-    {
-      "content": "Samantha",
-      "correct": true,
-      "response": "Du konntest nicht verlieren. Das war eine reine Interessensfrage. Aber ich persönlich hätte dich ja für den Charlotte-Typ gehalten!",
-      "responseImageUrl": "<iframe width=\"558\" height=\"992\" src=\"https://www.youtube.com/embed/pB-G3_k-ypg\" title=\"Harry Potter Techno\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
-    },
-    {
-      "content": "Bitte was? So ein Quatsch interessiert mich ja gar nicht. ",
-      "correct": true,
-      "response": "Du konntest nicht verlieren. Das war eine reine Interessensfrage. Aber ich persönlich hätte dich ja für den Charlotte-Typ gehalten!",
-      "responseImageUrl": "<iframe width=\"558\" height=\"992\" src=\"https://www.youtube.com/embed/pB-G3_k-ypg\" title=\"Harry Potter Techno\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+      "response": "Prinzipiell hört sich das nicht verkehrt an. Aber teuer. Und so viel ich bis jetzt weiß, wählst du in 99% der Fälle ja die teuerste Variante. Laptop, Uni, Abschleppdienst, Grundstromversorger... Da scheint mir dir Antwort nicht verkehrt",
+      "responseImageUrl": "https://debeste.de/upload/9ce077dd4454cd5b2a9ea8b9374b2f451738.gif"
     }
   ]
 }

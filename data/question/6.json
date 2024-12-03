@@ -1,0 +1,30 @@
+{
+  "content": "Carry, Miranda, Charlotte oder Samantha?",
+  "imageUrl": "https://filmtvgeek.wordpress.com/wp-content/uploads/2017/12/1454627416-sex-and-the-city.jpg?w=640",
+  "choices": [
+    {
+      "content": "Carry",
+      "correct": true,
+      "response": "Du hättest wohl auch gerne nen Bus auf dem du drauf bist was. Eines Tages miete ich die Hauswand bei uns gegenüber und lasse dich da verewigen. Wenn der Kalenderverkauf mal richtig läuft.. Du konntest nicht verlieren. Das war eine reine Interessensfrage. Aber ich persönlich hätte dich ja für den Charlotte-Typ gehalten!",
+      "responseImageUrl": "https://64.media.tumblr.com/dd318aca52052be71c6bebfbe689821e/tumblr_n5y5dysqSi1t517axo3_500.gif"
+    },
+    {
+      "content": "Miranda",
+      "correct": true,
+      "response": "Oh ha. Interessant. Miranda zieht ja irgendwann in die Bronx. Das wäre bei uns ja Köln-Chorweiler. War schön dich kennengelernt zu haben... \nDu konntest nicht verlieren. Das war eine reine Interessensfrage. Aber ich persönlich hätte dich ja für den Charlotte-Typ gehalten!",
+      "responseImageUrl": "https://i.makeagif.com/media/7-01-2020/-8Xqe-.gif"
+    },
+    {
+      "content": "Charlotte",
+      "correct": true,
+      "response": "Wow. Genauso hätte ich dich auch eingeschätzt. Wäre mir das nicht zu kompliziert zu programmieren gewesen, hättest du jetzt 2 Punkte bekommen",
+      "responseImageUrl": "https://i.pinimg.com/originals/30/1f/3b/301f3b440fdc395a915670d680c88a5d.gif"
+    },
+    {
+      "content": "Samantha",
+      "correct": true,
+      "response": "Du konntest nicht verlieren. Das war eine reine Interessensfrage. Aber ich persönlich hätte dich ja für den Charlotte-Typ gehalten!",
+      "responseImageUrl": "<iframe width=\"558\" height=\"992\" src=\"https://www.youtube.com/embed/pB-G3_k-ypg\" title=\"Harry Potter Techno\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+    }
+  ]
+}

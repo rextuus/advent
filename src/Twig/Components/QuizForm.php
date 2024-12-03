@@ -222,6 +222,10 @@ final class QuizForm extends AbstractController
             $src = $matches[1];
             // Append autoplay=1 to the URL
             $autoplayUrl = $src . '?autoplay=1';
+            if (str_contains($src, '?mute=1')) {
+                $autoplayUrl = $src . '&autoplay=1';
+            }
+
             // Replace the src attribute in the iframe
             $updatedIframe = str_replace($src, $autoplayUrl, $url);
             // Add allow="autoplay" attribute to the iframe
