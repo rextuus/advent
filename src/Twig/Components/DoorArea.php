@@ -99,13 +99,27 @@ final class DoorArea
         $currentDayOfMonth = (int)$currentDate->format('d');
         $currentMonth = (int)$currentDate->format('m');
 
+        $isUnlocked = false;
         // Check if the door is within the advent calendar's range
         if ($day >= 1 && $day <= 24) {
             // Allow door opening after December 1st for doors up to the current day
             // Allow opening any door after December
-            return ($currentDayOfMonth >= $day && $currentMonth == 12) || ($currentMonth > 12);
+            $isUnlocked = ($currentDayOfMonth >= $day && $currentMonth == 12) || ($currentMonth > 12);
         }
 
-        return false;
+        // demo mode is only available for already opened doors. Otherwise Jana can check out the correct answers => Hacking
+        if ($this->isDemoMode() && $isUnlocked) {
+            $questions = $this->questionRepository->findBy(['doorNumber' => $day]);
+
+            if (array_key_exists(0, $questions)) {
+                $question = $questions[0];
+
+                if ($question->getOpened() === null) {
+                    $isUnlocked = false;
+                }
+            }
+        }
+
+        return $isUnlocked;
     }
 }
