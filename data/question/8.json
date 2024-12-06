@@ -1,0 +1,18 @@
+{
+  "content": "Was ist hier zu sehen?",
+  "imageUrl": "https://media.foodspring.com/magazine/public/uploads/2020/11/GettyImages-1155443994.jpg",
+  "choices": [
+    {
+      "content": "Ganz klar! Ein Schwarm Meerrettichs. Erkennt man doch an der typischen Flossenform und der Farbgebung. War allerdings ein fieser Naturfotograf. Die armen kleinen Dinger einfach so trocken zu legen nur für ein Foto. Grausame Welt",
+      "correct": true,
+      "response": "Es ist immer wieder schön von dir neue Dinge über die Welt zu lernen. Wir verbringen viel zu wenig Zeit zusammen. Ich könnte so viel gebildeter sein und weniger Wissenslücken haben. Wenn du dann öfters vorbei schaust besorg ich mir auch nen Aquarium mit lauter Meerrettichen. Versprochen. Du darfst ihnen auch Namen geben. \uD83D\uDE04 ",
+      "responseImageUrl": "https://i.gifer.com/UezA.gif"
+    },
+    {
+      "content": "Meerrettich bzw. Kren. Eine Pflanzenart aus der Gattung Armoracia innerhalb der Familie der Kreuzblütengewächse. Die Wurzel der Meerrettichpflanze wird als Gemüse, Gewürz oder in der Pflanzenheilkunde verwendet. Was ist denn das für ne blöde Frage. Das weiß doch wirklich jeder...",
+      "correct": true,
+      "response": "Igitt. Was für ein ekliges Strebermädchen du doch bist. Wohl an der FOM gegnüber Bio studiert oder woher weiß man sowas. \uD83D\uDE1D Aber richtig ist wohl richtig",
+      "responseImageUrl": "https://i.giphy.com/26xBFg4zXVwzdI9lS.webp"
+    }
+  ]
+}

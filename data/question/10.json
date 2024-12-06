@@ -1,0 +1,24 @@
+{
+  "content": "Einmal ohne zu googeln!",
+  "imageUrl": "https://static.wikia.nocookie.net/villains/images/3/3d/Rhaenyra_Teen.webp/revision/latest?cb=20221010011152",
+  "choices": [
+    {
+      "content": "Rheneira",
+      "correct": false,
+      "response": "Ja ist nämlich gar nicht so einfach was. Da kann man sich ganz leicht mal verspielen",
+      "responseImageUrl": "https://i.giphy.com/3ohzdUi5U8LBb4GD4s.webp"
+    },
+    {
+      "content": "Rhaenyra",
+      "correct": true,
+      "response": "War ja klar, dass du auch noch die Schreibweise kennst. Irgendwie ziemlich blöd von mir, die da gleich zweimal zu unterschätzen. Aber das weißt du sicher auch nur, weil du so artig deine Powerpoint-Zusammenfassung vorbereitest und den Namen da oft schreiben musstet...",
+      "responseImageUrl": "https://i.makeagif.com/media/4-05-2021/gloY3U.gif"
+    },
+    {
+      "content": "Rhemyra",
+      "correct": false,
+      "response": "Ja ist nämlich gar nicht so einfach was.",
+      "responseImageUrl": "https://i.giphy.com/3ohzdUi5U8LBb4GD4s.webp"
+    }
+  ]
+}

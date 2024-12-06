@@ -167,6 +167,9 @@ class AppFixtures extends Fixture
         $questions = [];
         $files = glob(__DIR__ . '/../../data/question/*.json');
 
+        // Sort files in natural order
+        natsort($files);
+
         foreach ($files as $file) {
             $content = file_get_contents($file);
             $question = json_decode($content, true);
