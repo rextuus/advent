@@ -1,11 +1,11 @@
 {
-  "content": "Einmal ohne zu googeln!",
-  "imageUrl": "https://static.wikia.nocookie.net/villains/images/3/3d/Rhaenyra_Teen.webp/revision/latest?cb=20221010011152",
+  "content": "Einmal ohne zu googeln! Wie heißt diese zweit hübscheste aller Targaryen-Prinzessinen?",
+  "imageUrl": "https://static.wikia.nocookie.net/hieloyfuego/images/a/ab/Rhaenyra_joven_HBO.jpg/revision/latest?cb=20220914070056",
   "choices": [
     {
       "content": "Rheneira",
       "correct": false,
-      "response": "Ja ist nämlich gar nicht so einfach was. Da kann man ganz leicht mal alles verspielen was man hat. \uD83D\uDE1D",
+      "response": "Ja ist nämlich gar nicht so einfach was. Da kann man ganz leicht mal alles verspielen was man hat. \uD83D\uDE1D Aber als Trost. Du bist meine mit Abstand liebste Targaryen-Prinzessin von allen",
       "responseImageUrl": "https://i.giphy.com/3ohzdUi5U8LBb4GD4s.webp"
     },
     {
@@ -17,7 +17,7 @@
     {
       "content": "Rhemyra",
       "correct": false,
-      "response": "Ja ist nämlich gar nicht so einfach was. Da kann man ganz leicht mal alles verspielen was man hat. \uD83D\uDE1D",
+      "response": "Ja ist nämlich gar nicht so einfach was. Da kann man ganz leicht mal alles verspielen was man hat. \uD83D\uDE1D Aber als Trost. Du bist meine mit Abstand liebste Targaryen-Prinzessin von allen",
       "responseImageUrl": "https://i.giphy.com/3ohzdUi5U8LBb4GD4s.webp"
     }
   ]
