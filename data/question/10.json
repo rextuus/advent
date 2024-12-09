@@ -1,0 +1,24 @@
+{
+  "content": "Es wird gemunkelt du seist ne echte Pro-Gamerin. Wie viele Spieler treten in einem Fortnite Battle Royale Spiel gegeneinander an?",
+  "imageUrl": "https://images.unsplash.com/photo-1544652478-6653e09f18a2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "choices": [
+    {
+      "content": "50. Es heißt ja Royal. \uD83D\uDC51 Quasi exklusiv. Da sind 50 ja eigentlich schon zu viel. Ich zum Beispiel verkehre ja auch nur in ganz exklusiven Serien-Clubs mit maximal zwei Mitgliedern",
+      "correct": true,
+      "response": "Als ob du das nicht wusstest. Oh je. Du arme. Du warst doch nur zu stolz um zuzugeben, dass du das selbstverständlich weißt. Ne. Aber toll, dass ich mit dir in dem royalen Serien-Club sein darf. Dafür drücke ich beide Augen zu \uD83D\uDE09\uD83D\uDE09",
+      "responseImageUrl": "https://i0.wp.com/media0.giphy.com/media/l2QZXpPQJnW3IvbyM/giphy.gif"
+    },
+    {
+      "content": "100. Das ist die einfachste Frage des ganzen Kalender bis jetzt. Hättest du mal gefragt welcher Skin ist für seine Tanz-Emote 'Floss' bekannt ist oder welche Waffe in Fortnite als 'OP' gebannt wurde. Aber das. Pfff \uD83D\uDE0E",
+      "correct": true,
+      "response": "Ja ja. Das war viel zu einfach. Ich hoffe für so einen geschenkten Punkt bekomme ich bei der nächstbesten Gelegenheit deine Floss-Künste persönlich vorgeführt. \uD83D\uDE09",
+      "responseImageUrl": "https://media.tenor.com/7l8KHQQpY2MAAAAM/asian-dance.gif"
+    },
+    {
+      "content": "1000?! Woher soll ich das wissen. Pro-Gamerin. Tss. Von sowas hab ich doch keine Ahnung. Aber ja. Ich bin Pro. Das stimmt. \uD83D\uDE01",
+      "correct": false,
+      "response": "Ah ja. Dann hast du ja genauso viel Ahnung wie ich. Und bist eine kleine Flunkerin. Wenn diese Geheimnis deiner Fortnite-Vergangenheit gar nicht wahr ist, musst du mir jetzt ein neues über dich verraten. Ansonsten wird der Kalender offline geschaltet \uD83D\uDE1D ",
+      "responseImageUrl": "https://i.giphy.com/q1cbmBkEFJRyuwIEMR.webp"
+    }
+  ]
+}
