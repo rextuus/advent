@@ -1,0 +1,24 @@
+{
+  "content": "Ich weiß dir steht ein reichhaltiges Repertoire an dunklen Künsten aller Art zur Verfügung. Aber auf welches bist du eigentlich am meisten stolz?",
+  "imageUrl": "https://images.unsplash.com/photo-1508931133503-b1944a4ecdd5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "choices": [
+    {
+      "content": "Deine Kunst jede Fernbedienung in einem Haushalt in den tiefsten und dunklen Ecken der Couch verschwinden zu lassen. Gut das hast du mir noch nicht gezeigt. Aber das ist vermutlich auch aus dem Fortgeschritten-Kurs aus den USA \uD83C\uDF93. Und so wie ich dich kenne, führst du diese Kunst sicherlich schon bald vor!",
+      "correct": false,
+      "response": "Dafür machst du deine weiten Fortbildungsreisen auf einen anderen Kontinent? Ich fürchte da bist du auf nen richtig billigen Wodoo-Shop reingefallen. Meine Fernbedienung bekommst du nicht mehr in die Hand. Außer ich hab auch eine dran \uD83D\uDE20",
+      "responseImageUrl": "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXl2ajN5bWhweGh1bm9kdzkzZW95bXhoeTIzdXA1c294eXh2bWVmZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o6UB6gjXvxYuuNpDi/giphy.webp"
+    },
+    {
+      "content": "Dein glückliches Händchen bei der Taubenzucht. ✌\uFE0F Niemand außer dir kommt schließlich ungeschoren vor dem Gesundheitsamt damit davon, drei komplette Taubenfamilien unter nur einer einzigen Balkonliege unterzubringen. Da sind selbst Heckmanns neidisch, was die Quadratmeter pro Mieter Effizienz dabei angeht...",
+      "correct": true,
+      "response": "Ok. Ich weiß. Jede Targaryen-Prinzessin hat so ihre Eigenheiten. Die einen heiraten ihre 4-jährigen Cousins. Die anderen sind jähzornig und vernichten spontan ganze Städte. Aber Tauben als Ersatz für Drachen zu nutzen? Vll gehen wir da doch besser mal zu nem Arzt mit \uD83D\uDE37",
+      "responseImageUrl": "https://cdn3.whatculture.com/images/2015/10/GJdztP3I.gif"
+    },
+    {
+      "content": "Die Macht es Regnen zu lassen, sobald Regel Nr. 1 nicht weiter befolgt wird.⛈\uFE0F Also ohne dich ins Phantasialand zu fahren...",
+      "correct": true,
+      "response": "In der Tat. Das hat mich auch massiv beeindruckt. Wie du einfach so dafür sorgst, dass es unentwegt durchregnet. Sag mal kannst du das eigentlich auch mit Schnee? Oder muss man dafür dann das Gegenteil machen und MIT dir ins Phantasialand fahren. Das wärs mir sogar wert \uD83D\uDE42",
+      "responseImageUrl": "https://media.tenor.com/OV0Nzmi20lIAAAAM/ren%C3%A9e-slater.gif"
+    }
+  ]
+}
