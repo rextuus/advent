@@ -1,0 +1,24 @@
+{
+  "content": "Wie repariert man fachgerecht einen defekten Lichtschalter?",
+  "imageUrl": "https://images.unsplash.com/photo-1493402702251-a6e5320337f7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "choices": [
+    {
+      "content": "Man repariert ihn nicht. Man dreht die Birne einfach jedes mal raus bzw. rein wenn man den Raum betritt oder verlässt. Hab ich im Survival-Kurs gelernt",
+      "correct": false,
+      "response": "Ich hab ja keine Ahnung wie du das solange aushalten konntest, aber ich vermute eigentlich hast du das Ganze selber manipuliert, um ne Mietminderung bei den Heckmanns rauszuholen. Und ich hab die dir dann versaut. Sorry dafür \uD83D\uDE1D Aber starker Survival-Skill",
+      "responseImageUrl": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGxvNnVpdHVxYmZlNDlqbzBsODNmdG5jMjNyenprbHFlaHE3cHIxOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gtb3ZkXrLtdfxQFQmY/giphy.webp"
+    },
+    {
+      "content": "Man ersetzt das ganze durch einen fancy funktionierenden Lichtschalter \uD83D\uDD33. Und stellst fest, dass man in einer Bruchbude wohnt, die keinen Nachtlicht-Schalter-Support bietet",
+      "correct": true,
+      "response": "Ach komm. Du hattest dich doch eigentlich schon lange dran gewöhnt. Ich wette du drehst die Glühbirne auch heute noch manchmal einfach so raus. Um der guten alten Zeiten Willen. Nimmst du jetzt eigentlich immer extra die richtigen Antworten, weil du die Punkte willst?",
+      "responseImageUrl": "https://media.tenor.com/--2HzNuTPZIAAAAM/lamp-light.gif"
+    },
+    {
+      "content": "Man zündet einfach jedes Mal Kerzen an beim reingehen. \uD83D\uDD6F\uFE0F Wenn man die dann beim rausgehen vergisst ist auch egal. Schließlich sind die Rauchmelder in dem Haus hier äußerst zuverlässig gewartet. Es kann also nichts passieren",
+      "correct": true,
+      "response": "Achsoooo. Ne ganz romantische bist du. Schön Kerzenschein beim Kaac... äh Baden in der Dusche. \uD83D\uDE04 Verstehe. Einfach die Pure Entspannung. Kann ich nachvollziehen",
+      "responseImageUrl": "https://i.giphy.com/2mtdqnG4bAgE.webp"
+    }
+  ]
+}
