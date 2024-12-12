@@ -1,0 +1,18 @@
+{
+  "content": "So. Partytime. Deine Prüfungphase ist geschafft. Yeah \uD83E\uDD73. Aaaaber auch die Hälfte der Adventszeit ist schon rum. \uD83D\uDE25 Du hast nur noch 12 weitere Türchen. Dieses inklusive. Das macht dich vermutlich schwerst traurig. \uD83D\uDE1B Was ist bis Weihnachten noch zu tun?",
+  "imageUrl": "https://res.cloudinary.com/dl4y4cfvs/image/upload/v1734043979/Advent/premium_photo-1681830125136-e9a330b93d9d-transformed_qhygqs.avif",
+  "choices": [
+    {
+      "content": "Gar nichts. Ich habe alle Geschenke schon vorbildlich besorgt, verpackt und ins Auto geladen. Meine eigene, natürlich ganz bescheiden kurze Wunschliste ist auch schon lange raus ans Christkind. \uD83E\uDD29",
+      "correct": false,
+      "response": "Sagte das Mädchen, das man wegen seiner Prüfungsphase schon Monate nicht mehr sah. Ich glaube das kann nicht stimmen. Und bestimmt sind noch gar nicht alle Weihnachtsgeschenke besorgt. Oder ist meins auch schon fertig und verbirgt sich nur wenige Meter von mir entfernt? \uD83E\uDD14",
+      "responseImageUrl": "https://media.tenor.com/Jl5Ohcu5OncAAAAM/christmas-funny.gif"
+    },
+    {
+      "content": "Alles. Es ist noch kein Geschenk fertig. Wie denn auch?! Hallo. Ich habe natürlich vorbildlich für meine Prüfungen gelernt. 24/7. Nichts anderes. Alles nur damit ich meinen grandiosen 1er Schnitt halte, bald fertig mit dem Studium bin, viel Geld verdiene und uns neue prächtige Klingelschilder besorgen kann \uD83D\uDE0E",
+      "correct": true,
+      "response": "Oh nein. Das ist ja schrecklich. Vor allem, weil dann ja auch MEIN Geschenk noch gar nicht vorbereitet ist. Ich gehe davon aus, dass hat oberste Priorität ab heute. Aber natürlich wusste ich, dass noch nichts eingepackt ist. Hier war schließlich niemand, der Geschenkband haben wollte... \uD83D\uDE04",
+      "responseImageUrl": "https://i.giphy.com/5q3NyUvgt1w9unrLJ9.webp"
+    }
+  ]
+}
