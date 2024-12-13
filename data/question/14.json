@@ -1,0 +1,24 @@
+{
+  "content": "Als Jana noch ein kleines Mädchen war und an den Weihnachtsmann geglaubt hat, was waren da ihre liebsten Geschenke unterm Weihnachtsbaum?",
+  "imageUrl": "https://images.unsplash.com/photo-1514062551560-e9a0219dc7c1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "choices": [
+    {
+      "content": "Puppen \uD83E\uDE86, Puppenhäuser und all der Krams mit dem Mädels so spielen. Ist doch klar. Wie hätte ich sonst jemals eine Prinzessin werden sollen sonst. Außerdem wurde schon damals der Grundstein für meine legendäre Handtaschensammlung gelegt",
+      "correct": true,
+      "response": "Ja süß. Genauso hab ichs mir vorgestellt. Weißt du noch, wann du deine erste Tasche bekommen hast? Apropos ich hab noch immer keine in Aktion gesehen. Glaube du hast die eigentlich nur als Wertanlage und führst die armen Dinger niemals wirklich aus \uD83D\uDE13",
+      "responseImageUrl": "https://media.tenor.com/DBDWT37gbuwAAAAM/give-me-that-the-pet-collective.gif"
+    },
+    {
+      "content": "Bücher. \uD83D\uDCD6 Was denkst du weshalb ich heute so schlau und unglaublich gebildet bin. Und mir ein Studium bis fast fertig nicht gereicht hat",
+      "correct": true,
+      "response": "Wie schlau du doch eigentlich bist vergesse ich immer wieder. Und diese Auffassungsgabe. Du musstest dich nur EIN einziges mal selbst Ausperren, um zu verinnerlichen immer deinen Schlüssel abzuziehen. Einfach beeindruckend \uD83D\uDE1D",
+      "responseImageUrl": "https://64.media.tumblr.com/f33d632fd7d6f9d8543eee97a1c686de/tumblr_mm9k5nlFO01qbyxr0o1_400.gif"
+    },
+    {
+      "content": "Irgendetwas, das man zusammen bauen kann. \uD83E\uDDF1 Lego oder Bastelsets. Ich liebe daher ja auch heute noch Frimmelsarbeiten wie Lichtschalter wieder zusammenzusetzen",
+      "correct": true,
+      "response": "Ah ja. Daher auch der selbst zusammengebaute PC was. Vielleicht solltest du Heckmanns fragen ob du als Nebenjob die neue Hausmeisterin sein kannst...",
+      "responseImageUrl": "https://media.tenor.com/2BSfFHueP9UAAAAM/blocks-wrecked.gif"
+    }
+  ]
+}
