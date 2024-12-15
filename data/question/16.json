@@ -1,24 +1,18 @@
 {
-  "content": "Wie viele Tage noch bis Weihnachtne?",
-  "imageUrl": "https://images.unsplash.com/photo-1672165635139-1b9dad67701e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8SG9nd2FydHN8ZW58MHx8MHx8fDA%3D",
+  "content": "Und? Wie viele Tage sind es noch bis Weihnachten?",
+  "imageUrl": "https://images.unsplash.com/photo-1518133835878-5a93cc3f89e5?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "choices": [
     {
-      "content": "Griffindor natürlich. Hauptcharaktare, schöne Menschen mit prinzessinnenhafter Aura und generell alle Leute die cool sind, kommen dort hin. Außerdem steh ich auf Jungs mit Brille. Die solls dort geben...",
-      "correct": true,
-      "response": "Ey cool. Gryffindor wäre ich auch gewesen. Hat zumindest die Pottermore-Seite behauptet. Aber leider habe ich im Gegensatz zu dir ja keinerlei magische Fähigkeiten. Vielleicht kannst du mir mal privat Unterricht geben",
-      "responseImageUrl": "https://media.tenor.com/Md4vTDifyRgAAAAM/sexy-teacher.gif"
+      "content": "7. Es gibt ja auch nur noch 8 Türchen zum öffnen. Außerdem ist Zählen eine meiner Stärken aus dem BWL-Studium...",
+      "correct": false,
+      "response": "Eigentlich bin ich mir selber gar nicht so sicher. Aber als vorbildliche Christin müsstest du das ja eigentlich wissen. Oder bist du etwa Heidin. Oder Amish oder Satanistin? \uD83D\uDE28",
+      "responseImageUrl": "https://i.giphy.com/s15VdDCJxpOg1BKwSG.webp"
     },
     {
-      "content": "Ravenclaw logischerweise. Wie oft muss ich dir eigentlich noch erklären, dass ich sowohl schlau als auch eine kleine Streberin bin. Ich hatte natürlich nur Bestnoten. Weshalb kann ich es wohl Regnen lassen, wenn ich will. Meinst du das könnte jemand, der in diesen anderen komischen Häusern über Jahre dahingestümpert hat",
+      "content": "8. Wird die richtige Antwort sein. Weil du einer von diesen Klugscheißern bist, die Heilig Abend nicht als Weihnachten zählen. Jaja verstehe. Ganz toll. Aber hab ich durchschaut. Damit trickst du mich nicht aus \uD83D\uDE0E",
       "correct": true,
-      "response": "Okay okay. War ja nur ne Frage. Bitte lasse es jetzt nicht drei Tage lang regnen. Ich dachte vielleicht warst du ja nicht schon immer ne Streberin. Hast sicherlich auch nen 1er Abitur dann",
-      "responseImageUrl": "https://64.media.tumblr.com/f33d632fd7d6f9d8543eee97a1c686de/tumblr_mm9k5nlFO01qbyxr0o1_400.gif"
-    },
-    {
-      "content": "Hufflepuff was sonst. Da wird am wenigstens von einem erwartet und man kann ganz leicht Klassenbeste werden. Außerdem gibt es dort nur Looser und Nebencharaktere und man gehört als Targaryen-Prinzessin automatisch zu den aller coolsten dort",
-      "correct": true,
-      "response": "Du hast aber auch wirklich ein Herz für alles und jeden. Selbst mit den Looser-Kindern aus Hufflepuff gibst du dich ab. Deswegen hast du auch die Tauben bei dir aufgenommen ne. Aber ich fürchte ich kann mich mit Hufflepuffs echt nicht sehen lassen. Da müsstest du dich demnächst bitte verkleiden, wenn wir zusammen unterwegs sind",
-      "responseImageUrl": "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDd5ZmtyN3RweWVodTV6anpmZHAxa3l5bWljaXl4MmF2Z2Q2d3czbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eORd68QP7HiDjYn4cI/giphy.webp"
+      "response": "Ich weiß doch auch nicht, weshalb ich immer wieder versuche eine Universal-Meisterin wie dich zu überlisten oder in irgendwas zu schlagen. Scheinbar verliere ich einfach gerne. Zumindest gegen dich \uD83E\uDD14",
+      "responseImageUrl": "https://i.giphy.com/UTm86phGUMMQE.webp"
     }
   ]
 }
