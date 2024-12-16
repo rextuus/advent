@@ -1,0 +1,36 @@
+{
+  "content": "Ohne dich wüsste ich wohl niemals, was ein Bipfel ist! 😊 Als wahre Bipfelkönigin solltest du dich aber mit Hybridgemüse im Allgemeinen auskennen. Was hiervon existiert wirklich?",
+  "imageUrl": "https://images.unsplash.com/photo-1488459716781-31db52582fe9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "choices": [
+    {
+      "content": "Pluot: Eine Mischung aus Pflaume (Plum) und Aprikose (Apricot). Diese Kreuzung ist besonders saftig und süß. - Klar, weil normale Pflaumen und Aprikosen ja nicht schon süß genug sind. Da musste jemand unbedingt eine 'Frucht für Fortgeschrittene' (also dich) basteln.",
+      "correct": true,
+      "response": "In der Tat. Klar kennst du diese Fortgeschrittenen-Frucht. In deiner Heimat bist du vermutlich nicht nur Bipfelkönigin, sondern auch noch Pluot-Kaiserin.",
+      "responseImageUrl": "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzNqM2E4ZnhoanlwZDYwZTBwNWJ4Y2xkd2N0cXgwczV1Yjl3bG1nNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8QLPf1tvp9tqdDVLTY/giphy.webp"
+    },
+    {
+      "content": "Tangelo: Eine Kreuzung aus Mandarine und Grapefruit oder Pomelo, die eine süß-säuerliche Note hat. - Wo kommt da das 'Tang' im Namen her? Der Mensch, der das gekreuzt hat, hätte sich erst mal selbst mit etwas, das mehr Verstand hat, kreuzen sollen...",
+      "correct": true,
+      "response": "Ja, das gibt's. Ich finde, das klingt auch interessant. Jetzt zu Weihnachten?! Bist du eigentlich eine von diesen Mandarinen-Esserinnen, die die im Hörsaal schälen, sodass alles danach duftet?",
+      "responseImageUrl": "https://media.tenor.com/ocePnQMKjdkAAAAM/smells-bad-philip-blake.gif"
+    },
+    {
+      "content": "Broccolini: Eine Kreuzung aus Brokkoli und chinesischem Kohl (Kai-Lan), die zarter ist als klassischer Brokkoli. - Das ist so 'ne richtige Öko-Erfindung. Ziel war hier wohl die maximale Geschmackserlebnis-Minimierung. Ich glaub, die Welt wäre 'ne bessere, wenn das nicht erfunden worden wäre...",
+      "correct": true,
+      "response": "Ja, das hätte ich auch genommen. Das hört sich schon so an, als müsste es das geben. Ist ja nicht mal 'n kreativer Name. Du weißt aber schon, dass wir das zusammen probieren, was du hier gewählt hast 😝.",
+      "responseImageUrl": "https://i.giphy.com/yWTrzwWVS9x1zHPIwT.webp"
+    },
+    {
+      "content": "Lemato: Eine Kreuzung aus Zitrone und Tomate, entwickelt für besondere Geschmacksnoten. - Ja, wer kennt's nicht. Ketchup ist immer viel zu süß. Rühre ich auch immer noch extra Zitronensaft rein. Du etwa nicht?",
+      "correct": true,
+      "response": "Da verstehe ich echt nicht, woher die Nachfrage nach diesem Produkt kommt. Vermutlich hast du die Entwicklung selbst beauftragt, nur um bei der nächsten Lemato-Königinnen-Wahl noch einen Titel mehr gewinnen zu können...",
+      "responseImageUrl": "https://media.tenor.com/AXC0MPgn7sQAAAAM/king-xavier-woods-crown.gif"
+    },
+    {
+      "content": "Pomato: Eine Kreuzung aus Tomate (oberirdisch) und Kartoffel (unterirdisch), indem beide Pflanzen aufeinander veredelt werden. - Also edel ist für mich meine Nachbarin targaryenischer Abstammung. Aber doch nicht 'ne olle Kartoffel, die vermutlich auch noch matschig ist. Und weshalb kreuzt hier eigentlich jeder alles immer nur mit Tomaten?",
+      "correct": true,
+      "response": "Pomatos gibt's, aber die sind ja viel unspektakulärer als Bipfel. Die probieren wir nicht. Du hättest eine der tollen fancy Früchte wählen sollen – die hätte ich uns besorgt.",
+      "responseImageUrl": "https://media.tenor.com/LqLCZZWX6mcAAAAM/bird-bad-decisions.gif"
+    }
+  ]
+}
