@@ -1,0 +1,30 @@
+{
+  "content": "Ich vermute mal, dass du dich als Prinzessin in gewissen Kreisen verkehrst. Beispielsweise in dem der Disney-Prinzessinnen. Aber wer dort ist deine BFF?",
+  "imageUrl": "https://images.unsplash.com/photo-1524008279394-3aed4643b30b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "choices": [
+    {
+      "content": "Jasmin. Ich meine, sie hat einen fliegenden Teppich?! – Uber kann einpacken. \uD83D\uDE04 Außerdem ist ihr Haustiger Raja der beste Bodyguard, den man sich wünschen kann. Und ich liebe Katzen!",
+      "correct": true,
+      "response": "Ja ja. Du weißt genau worauf man bei der Wahl der besten Prinzessinnen-Freundin und deren tierischem Begleiter achten muss. Genau sowie bei der Wahl des liebsten Nachbars. Sowas von richtig ",
+      "responseImageUrl": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3BmeWw1ZnducnVwM2pua2w3NjgxMmVqMmZoYnN2eDU5cGJnMXczNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ct5iIcON4LziDHCfof/giphy.webp/8QLPf1tvp9tqdDVLTY/giphy.webp"
+    },
+    {
+      "content": "Ariel. Die besorgt mir immer frische Meerettiche. Außerdem kann man sie einfach im Wasser sitzen lassen, wenn sie einem auf den Nerv geht, weil sie dir an Land nicht folgen kann \uD83D\uDE01",
+      "correct": true,
+      "response": "Hm interessant. Bei Arielle fallen mir ja so viele weitere Fragen ein. Weshalb ist sie die einzige mit rotem Haar aus der Familie? Wie wurde sie geboren? Wie wurde sie überhaupt gezeugt? Kannst du mal für mich fragen bitte?! \uD83D\uDE1D",
+      "responseImageUrl": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2czYXY2YXQybG5yMDB3aG5ld3duaGZmdXhjYTh6andyNnZ0bDR2bCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l2YWrLigTAxzfY2Fq/giphy.webp"
+    },
+    {
+      "content": "Elsa. Sie friert für mich Leute ein, die mir auf die Nerven gehen. Also pass auf \uD83E\uDEF5. Außerdem hat sie immer genug Eis dabei. Neverending Mädels-Cocktail-Abende \uD83E\uDD29",
+      "correct": true,
+      "response": "War ja klar. Blond. Targaryanisches wunderschönes Aussehen. Ständig ist ihr kalt und sie wird vermutlich unter mehreren Decken schlafen. Klar, dass ihr perfekt zusammen passt \uD83D\uDE04 Wehe ihr läster über mich...",
+      "responseImageUrl": "https://media.tenor.com/8fEMO2YzQQkAAAAM/best-friend-love-you.gif"
+    },
+    {
+      "content": "Disney-Prinzessinnen sind Bitches! Ich war nur im Disneyland um Mickey zu sehen, mir Freizeitpark-Essen einzuverleiben und um sagen zu können, dort gewesen zu sein. Mit denen gebe ich mich doch nicht ab",
+      "correct": false,
+      "response": "Also das erschüttert mich zu tiefst. Ich weiß gar nicht was ich sagen soll, so schockiert bin ich. Meine liebste Disney-Prinzessin ist übrigens Sally (aus Cars). \uD83D\uDE04 Die werd ich vor dir warnen!!!",
+      "responseImageUrl": "https://media.tenor.com/7p-Jnh69pqsAAAAM/alarm-german.gif"
+    }
+  ]
+}
