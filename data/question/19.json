@@ -1,0 +1,30 @@
+{
+  "content": "Als großer Weihnachtsfan bist du ja sicher auch Fan von Weihnachtsfilmen. Welcher wäre wohl deine Empfehlung?",
+  "imageUrl": "https://images.unsplash.com/photo-1620177088258-c84147ee601f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fENpbmVtYSUyMHBvcGNvcm58ZW58MHx8MHx8fDA%3D",
+  "choices": [
+    {
+      "content": "Drei Haselnüsse für Aschenbrödel - Da laufen diese tollen Prinzen-Dudes im Schnee in Leggings rum und es ist ein Märchen",
+      "correct": true,
+      "response": "Ich find die Musik irgendwie echt toll davon. Ansonsten kann ich dir als super Fakt noch liefern, dass es genau zwei Pferde sind, die für den Dreh benutzt wurden. Ich habe noch nie einen Unterschied zwischen ihnen gesehen. Aber meine Mum erzählt einem das jedes Mal",
+      "responseImageUrl": "https://www.icegif.com/wp-content/uploads/2021/10/icegif-838.gif/ct5iIcON4LziDHCfof/giphy.webp/8QLPf1tvp9tqdDVLTY/giphy.webp"
+    },
+    {
+      "content": "Tatsächlich Liebe - Toll wie viele Geschichten man da auf einmal bekommt, wenn man sich wie ich so schwer entscheiden kann",
+      "correct": true,
+      "response": "Ich mag ja am liebsten die Geschichte mit dem Prime Minister. Alle anderen habe ich aber auch: Tatsächlich vergessen. Haha. Ganz schlechtes Wortspiel unter deinem Niveau",
+      "responseImageUrl": "https://i.giphy.com/xUySTwzunzpNMFHteM.webp/l2YWrLigTAxzfY2Fq/giphy.webp"
+    },
+    {
+      "content": "Sissy - Alle drei Teile am Stück. Als Prinzessin muss man immer das große Ziel Kaiserin vor Augen haben",
+      "correct": true,
+      "response": "Ja. Du suchst wohl auch die ultimative Langeweile-Herausforderung. Kleiner Geheimtipp: Versuch mal Kaminfeuer-Videos...",
+      "responseImageUrl": "https://i.pinimg.com/originals/0e/3f/aa/0e3faa507aec42092ae7820282b153c4.gif"
+    },
+    {
+      "content": "Etwas ganz anderes. Mir scheint du hast keinerlei Ahnung von Weihnachtsfilmen",
+      "correct": true,
+      "response": "Ja ok. Gebe ich zu. In dem Fall konntest du wohl nicht verlieren. Wobei ich dann doch jetzt noch gerne einen Tipp hätte, den ich noch vor Weihnachten schauen kann. Also schnell",
+      "responseImageUrl": "https://i.giphy.com/nOwG55u1jGOiTAqKqU.webp"
+    }
+  ]
+}
