@@ -1,0 +1,24 @@
+{
+  "content": "Du hast jetzt schon 20 Türchen geöffnet. Daher ist es Zeit für eine kleine Umfrage. Was magst du an deinem Kalender am liebsten?",
+  "imageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "choices": [
+    {
+      "content": "Die Weihnachtskatzen. Ganz klar!",
+      "correct": true,
+      "response": "Ja. Eine putziger als die andere. Nächstes Jahr bekommst du vll einen Kalender mit 24 echten Katzen. Und 24 Schachteln, die am ersten noch alle rascheln und miautzen... Oder wir nehmen halt Tauben im Weihnachtslook?! \uD83D\uDE1D",
+      "responseImageUrl": "https://i.gifer.com/PxX7.gif"
+    },
+    {
+      "content": "Die Preise. Eigentlich hätte ich zwar lieber einen ganz normalen Kalender mit Schokolade von dir bekommen, aber wenigsten kann man was gewinnen. Der Hauptpreis ist ja wohl nen Auto. Oder? \uD83E\uDD14",
+      "correct": false,
+      "response": "Da zeigst du so kurz vor Weihnachten doch noch deine gierige Grinch-Seite. Natürlich sind die Katzen das beste \uD83D\uDE13",
+      "responseImageUrl": "https://i.giphy.com/Cipj5jNsyTcxG.webp"
+    },
+    {
+      "content": "Alles. Ich hatte nie einen tolleren Advents-Kalender.",
+      "correct": true,
+      "response": "Ich hoffe du hast das gewählt, weils der Wahrheit entspricht und nicht, weil du davon ausgehst, dass es die richtige Antwort ist. Aber ja. Selbstverständlich ist das die einzig richtige Antwort hier \uD83D\uDE1D",
+      "responseImageUrl": "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTd5OWI1dmw5Z3c4N2MxN3EzZXpuZG9maDkxa3lrYnN5dmx0OTFwNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/jaA1q3oVbXGYtH04kQ/giphy.webp"
+    }
+  ]
+}
