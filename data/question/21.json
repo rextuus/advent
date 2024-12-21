@@ -1,0 +1,18 @@
+{
+  "content": "Bald schon liegen die Geschenke unterm Weihnachtsbaum. Aber wie öffnet ein echter Profi diese?",
+  "imageUrl": "https://images.unsplash.com/photo-1608824405596-3d6efd6a9c4a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "choices": [
+    {
+      "content": "Geschenke sind zum Aufreißen da. Es muss anschließend wie auf einem Schlachtfeld aussehen. Je höher der Stapel aus zerfetzen Papierstücken, desto besser. Ich bin eine Geschenkeöffnungs-Maschine",
+      "correct": true,
+      "response": "Wieso überrascht mich diese Antwort jetzt nicht. Ok. Du bekommst ein Weihnachtsgeschenk von mir. Aber nur, wenn du es langsam vor meinen Augen öffnest \uD83D\uDE1D",
+      "responseImageUrl": "https://i.giphy.com/dQXedbC8JADwErUoRY.webp"
+    },
+    {
+      "content": "Auspacken ist eine chirurgische Kunst. Eigentlich sollte das erste Geschenk zu jedem Anlass ein Skalpell sein, damit man die weiteren akkurat öffnen, und das Papier ordentlich gefaltet zusammenlegen kann",
+      "correct": false,
+      "response": "Echt? Bei deinem vollem Terminkalender kannst du dir das leisten? Vll versuchst du es dieses Jahr ausnahmsweise mal mit Aufreißen. Die eingesparte Zeit kannst du dann in deinen vernachlässigten Nachbarn investieren \uD83D\uDE01",
+      "responseImageUrl": "https://media.tenor.com/6qcMzV0ZCMsAAAAM/omg-doctor.gif"
+    }
+  ]
+}
