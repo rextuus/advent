@@ -1,0 +1,24 @@
+{
+  "content": "Wer ist eigentlich dein aller liebster Nachbar? Also wenn du mal so richtig ganz intensiv drüber nachdenkst. Mit allen guten und schlechten Eigenschaften (inklusive aller eventuellen Monk-Verhaltensweisen)?",
+  "imageUrl": "https://images.unsplash.com/photo-1494475673543-6a6a27143fc8?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "choices": [
+    {
+      "content": "Tür fast direkt neben an. Weil der ne Katze hat. Und den Balkon auf die Taubenseite des Hauses hat. Leidensgenossen müssen zusammen halten",
+      "correct": false,
+      "response": "Ich hab echt keine Ahnung wie du diese Frage falsch beantworten konntest. Puh. Glaube, dass ist die Stelle an der ich eigentlich die Selbstzerstörung des ganzen Projektes hier triggern sollte... Hätte ich das mal zuerst gefragt",
+      "responseImageUrl": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExajlqczI1YnRoczJ1bDFhcHNheXJkdjIxZHR3eWRrbnhub3Z5N3p2byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WRcVVfiyEVhp9lw5Pt/giphy.webp"
+    },
+    {
+      "content": "Deichmann. Weil man da als Bewohner dieses Hauses 90% Rabatt bekommt (wusstest du noch gar nicht was!)",
+      "correct": false,
+      "response": "Im Ernst jetzt? Rabatt auf Schuh hat mich ausgestochen? Da wird es doch nicht mal Nike-Sneaker geben. Wenns wenigsten der Maloah-Bowl-Laden gewesen wäre. Der ist wenigsten überteuert",
+      "responseImageUrl": "https://i.giphy.com/11PaxXpePNUtUc.webp"
+    },
+    {
+      "content": "Tür direkt gegenüber, weil na ja... einfach nen cooler Kerl ne",
+      "correct": true,
+      "response": "Ich? Was? Wow. Wirklich? Ganz sicher? Das hätte ich jetzt ja nicht erwartet. Bei diese Konkurrenz! Mensch das freut mich jetzt richtig. Du bist auch meine absolute Lieblingsnachbarin",
+      "responseImageUrl": "https://i.makeagif.com/media/1-14-2014/dCMwEY.gif"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "content": "Was ist das größte Verbrechen, dass man in diesen Breitengraden begehen kann?",
+  "imageUrl": "https://images.unsplash.com/photo-1618620864043-896c2d11c7fc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "choices": [
+    {
+      "content": "Mit chinesischen Stäbchen japanisches Suhsi zu essen. Dann verflucht einen der Suoschi der japanische Gott des Sushi und du bekommst das nächste mal ne fette Lebensmittelvergiftung",
+      "correct": true,
+      "response": "Ja das ist korrekt. Vielen Dank, dass ich wegen dir nun auch diesen Fluch auf mir liegen habe und nie wieder Sushi essen kann. Aber lecker wars...",
+      "responseImageUrl": "https://i.makeagif.com/media/7-23-2015/ACwWQp.gif"
+    },
+    {
+      "content": "Seinen Nachbarn zu vernachlässigen. Und das nur für dem eigenen Leben wenig zuträgliche, in keinerlei Hinsicht gewinnbringende, völlig nebensächliche Aktivitäten wie dem Uni-Leben oder Arbeit",
+      "correct": true,
+      "response": "Auch das ist korrekt. Ein absolute Schweinerei. Allerdings weiß ich ja, dass du dieses Verbrechen niemals begehen würdest \uD83D\uDE01",
+      "responseImageUrl": "https://media.tenor.com/Cs8gc72VmbcAAAAM/sweeping-the-ocean-overwhelmed.gif"
+    },
+    {
+      "content": "Einfach Gegenstände in den Wohnungen fremder Leute ohne deren Erlaubnis zu verrücken, umzuplatzieren oder gar auszutauschen",
+      "correct": true,
+      "response": "Ja ich finde auch etwas schlimmeres gibt es hier in unserer zivilisierten Welt nicht. Wäre es zu viel verlangt die Todesstrafe wieder einzuführen? Ok es ist Weihnachten. Sagen wir Folter bis zur Verstümmelung \uD83D\uDE09",
+      "responseImageUrl": "https://i.makeagif.com/media/5-12-2015/heGZgY.gif"
+    },
+    {
+      "content": "Parkende Autos aus eindeutig, für jeden ersichtlich und unschwer als diese erkennbaren Ladezonen abzuschleppen. Wenn diese obendrein noch dazu nur für unwichtige Läden wie Woolworth oder Kaufland sind",
+      "correct": true,
+      "response": "Sehe ich komplett und ganz genauso. Wo kommen wir denn da hin, wenn selbst Prinzessinnen einfach so abgeschleppt werden. Wobei. Hattest du damals eigentlich deinen tagaryanischen Ausweis hinter die Scheibe gelegt? \uD83E\uDD14",
+      "responseImageUrl": "https://i.pinimg.com/originals/79/07/c3/7907c3fbc36fcbd5cfb51ccf836cbeac.gif"
+    }
+  ]
+}
