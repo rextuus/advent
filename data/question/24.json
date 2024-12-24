@@ -1,0 +1,30 @@
+{
+  "content": "Du hast deinen Kalender ja tatsächlich komplett geöffnet. Das freut mich natürlich sehr. Heute ist ja leider schon der letzte Tag. Aber auch Bescherung.\uD83D\uDE01 Ich hoffe du hast ordentlich Punkte gesammelt. Also. Was wünscht du dir also von mir?",
+  "imageUrl": "https://images.unsplash.com/photo-1514773896690-40d0fd46f143?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "choices": [
+    {
+      "content": "Noch viele weitere Serienabende. Es gibt wenig, was mir mehr Freude bereitet",
+      "correct": true,
+      "response": "Ich mag unsere Serienabende auch sehr gerne. Aber das ist ja kein wirkliches Geschenk. Hier hast du stattdessen ein fragwürdiges Video von mir, bis dir ein besserer Wunsch eingefallen ist \uD83D\uDE1B",
+      "responseImageUrl": "<iframe width=\"558\" height=\"992\" src=\"https://www.youtube.com/embed/D8yMeppMni8\" title=\"Hot Table Dance...\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+    },
+    {
+      "content": "Den Start des großen Taubenkrieges. Es muss kein Blut fließen aber Federn fliegen. ✊",
+      "correct": true,
+      "response": "Ja das müssen wir wirklich dringendst angehen. Ich werde auch die härtesten Tricks auffahren, die ich zu bieten habe. Hier ein kleiner Einblick in meine unglaublichen Kompetenzen in der Kriegskunst mit Feuer. Mach dir keine Sorgen, dass deine Wohnung abbrennt \uD83E\uDD14",
+      "responseImageUrl": "<iframe width=\"558\" height=\"992\" src=\"https://www.youtube.com/embed/D8yMeppMni8\" title=\"Hot Table Dance...\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+    },
+    {
+      "content": "Ich bin wunschlos glücklich nach diesem tollen Advent. Viel lieber würde ich dir einen Wunsch erfüllen ☺\uFE0F",
+      "correct": true,
+      "response": "Wow. Und das obwohl du so viele Daten von dir preisgeben musstest bei all den Fragen. Ich kenne jetzt dein Adventskalender-Öffnungs-Verhalten. Da werden Google, Facebook und Amazon richtig gut für Zahlen. Zum Trost hier auch eine geheime Info über mich. Ich mach gern mal dumme Sachen, wenn ich getrunken hab. So fing auch diese Projekt hier an \uD83D\uDE09",
+      "responseImageUrl": "<iframe width=\"558\" height=\"992\" src=\"https://www.youtube.com/embed/D8yMeppMni8\" title=\"Hot Table Dance...\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+    },
+    {
+      "content": "Alles davon. Oder kommt das gierig rüber? Äh ich meine: Alles davon und Weltfrieden. Plus kostenloses Essen für alle. Plus Stop der Erderwärmung. Plus kostenlose Bildung für alle (Abschaffung der Privat-Unis). Plus 4 Tage-Woche für jedermann. Plus Mindestlohn 20 Euro. Plus dem Ende von Diskriminierung und Ausgrenzung. Das meinte ich natürlich ☺\uFE0F",
+      "correct": true,
+      "response": "Eine schönere Rede könnte eine Prinzessin zu Weihnachten wohl nicht halten. Mir kommen schon die Tränen. Die Umsetzung deiner Wünsche könnte natürlich etwas Zeit in Anspruch nehmen. Vll reicht dir ja bis dahin dieses fragwürdiges Video von mir als Weihnachtsgeschenk \uD83D\uDE09",
+      "responseImageUrl": "<iframe width=\"558\" height=\"992\" src=\"https://www.youtube.com/embed/D8yMeppMni8\" title=\"Hot Table Dance...\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+    }
+  ]
+}
