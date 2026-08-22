@@ -9,20 +9,20 @@ class SlideProvider
         return [
             [
                 'id' => 'intro-welcome',
-                'title' => 'Ein Lebensjahr mit Kristin',
-                'text' => 'Willkommen zu diesem ganz besonderen Geburtstagsrückblick!',
+                'title' => 'Kristins Geburtstags-Journey',
+                'text' => 'Herzlich willkommen zu diesem kleinen Geburtstagsrückblick für Kristin. Heute feiern wir einen ganz besonderen Tag und werfen einen Blick auf die Dinge, die Kristin so besonders machen.',
                 'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787060926/Kristin/Intro_yxdrnc.jpg',
             ],
             [
                 'id' => 'intro-role',
-                'title' => 'Wer bist du eigentlich?',
-                'text' => 'Bevor es losgeht, müssen wir kurz überprüfen, mit wem wir es hier zu tun haben...',
+                'title' => 'Kurzer Sicherheitscheck',
+                'text' => 'Natürlich wollen wir Kristins größte Geheimnisse nicht jedem wildfremden verraten, der hier landet. Wer bist du überhaupt? Wähle deine Rolle und zeig, dass du zu diesem besonderen Anlass gehörst!',
                 'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787062775/Kristin/intro_3_jn0yu5.jpg', // Hier kannst du später einfach den Link für das 2. Bild austauschen!
             ],
             [
                 'id' => 'neptunbad-aussen',
                 'title' => 'Das Neptunbad',
-                'text' => 'Unser absoluter Lieblingsort für Entspannung...',
+                'text' => 'Als eine der ersten Dinge, die ich über Kristin lernen durfte, ist ihre Leidenschaft für Entspannung – wie zum Beispiel im Neptunbad.',
                 'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787051133/Kristin/Neptunbad_ebnqks.jpg',
             ],
             [
@@ -34,7 +34,7 @@ class SlideProvider
             [
                 'id' => 'autobahn-fahrt',
                 'title' => 'Unterwegs auf der A3',
-                'text' => 'Egal ob Kurztrip oder Heimweg – auf der Autobahn halten wir immer die Augen offen.',
+                'text' => 'Egal ob Kurztrip oder Heimweg – auf der Autobahn sind alle immer mit offenen Augen unterwegs. Kristin spielt nämlich zusammen mit ihrer Freundin Anika fleißig Kennzeichen-Sammeln, weshalb man als treuer Beifahrer oft direkt mit eingespannt wird.',
                 'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787055494/Kristin/Autobahn_kfmrc3.jpg',
             ],
             [
@@ -45,20 +45,20 @@ class SlideProvider
             ],
             [
                 'id' => 'rio-intro',
-                'title' => 'Unser erster Urlaub: Rio de Janeiro 🇧🇷',
-                'text' => 'Erinnerst du dich noch daran, wie wir im Restaurant auf unser Essen gewartet haben? Um die Zeit zu vertreiben, gab es nur ein Heilmittel...',
+                'title' => 'Urlaub in Rio de Janeiro',
+                'text' => 'Während wir in Rio de Janeiro lange im Restaurant auf unser Essen warten mussten, habe ich eine überraschende Seite an Kristin entdeckt: Eigentlich ist sie als sehr ungeduldiger Mensch bekannt – aber eben auch dafür, dass sie leidenschaftlich gerne spielt. Und dieses Talent hatte sie sofort als bewährtes Mittel gegen die Langeweile parat.',
                 'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787057295/Kristin/Rio_lcjmzo.jpg',
             ],
             [
                 'id' => 'rio-kniffel',
-                'title' => 'Die Kniffel-Challenge 🎲',
-                'text' => 'Das Essen lässt auf sich warten! Würfele, bis du mindestens ein Full House, Viererpasch oder Kniffel erzielst!',
+                'title' => 'Die Kniffel-Challenge',
+                'text' => 'Das Essen ließ auf sich warten und Kristin zeigte mir, wie man mit einer Partie Kniffel die Zeit vertreibt. Zeig, ob du auch so würfeln kannst!',
                 'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787057354/Kristin/Kniffel_p1n3mf.jpg',
             ],
             [
                 'id' => 'taylor-kardashian-intro',
                 'title' => 'The Era of Keeping Up with Kristin',
-                'text' => 'Egal ob unendliches Drama im Calabasas-Clan oder das perfekte Easter Egg in einem Taylor-Swift-Album – wer diesen Lifestyle versteht, versteht dich.',
+                'text' => 'Egal ob unendliches Drama im Calabasas-Clan oder das perfekte Easter Egg in einem Taylor-Swift-Album – ich habe schnell gelernt, dass man diesen Lifestyle verstehen muss, um Kristin zu verstehen.',
                 'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787354728/Kristin/Instagram_xjbzle.jpg', // Doppelter Platzhalter
             ],
             [
@@ -70,7 +70,7 @@ class SlideProvider
             [
                 'id' => 'food-intro',
                 'title' => 'Königlicher Spargel & Die Hollandaise-Frage',
-                'text' => 'Ein feines Gericht braucht die perfekte Balance. Aber bei Kristin gilt: Ist es wirklich genug Soße, wenn man den Spargel noch sieht?',
+                'text' => 'Ein feines Gericht braucht die perfekte Balance. Ich bin zwar ein kompletter Soßen-Fanatiker – das hat Kristin inzwischen auch schon herausgefunden –, aber heute gebührt das Lob ihrer Kochkunst. Egal ob Bagels, Ofengemüse oder eine selbstgemachte Pilzrahmsoße: Kristin weiß einfach, wie man richtig gut kocht.',
                 'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787397263/Kristin/Spargel_tp0fep.jpg',
             ],
             [
@@ -88,13 +88,13 @@ class SlideProvider
             [
                 'id' => 'macbook-uniklinik',
                 'title' => 'MacBook in der Uniklinik',
-                'text' => 'Du arbeitest fleißig an deinem MacBook – und der IT-Support sagt nur: "Mac? Dafür haben wir leider kein Ticket!" 💻',
+                'text' => 'In der Uniklinik ist die Welt der IT streng genormt. Kristin ist eine der wenigen, die dort mit ihrem MacBook aus der Reihe tanzt – was den Support regelmäßig zu der Antwort veranlasst: "Mac? Dafür haben wir leider kein Ticket!" Wie sie diese digitalen Herausforderungen zu Hause meistert, ist eine ganz andere Geschichte.',
                 'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787052615/Kristin/Macbook_rkqas5.jpg',
             ],
             [
                 'id' => 'it-hacking',
                 'title' => 'Home-Support',
-                'text' => 'Gut, dass du deinen eigenen Admin zu Hause hast. Aber weißt du eigentlich, woran ich hier jeden Tag wirklich arbeite?',
+                'text' => 'Wir kennen uns jetzt schon ein ganzes Jahr – aber weiß Kristin eigentlich, was ihr Freund tagtäglich am Rechner treibt? Oder wie diese "super" Geburtstags-Journey entstanden ist? Man munkelt ja fast, dass an ihr ein kleines Coding-Genie verloren gegangen ist.',
                 'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787052618/Kristin/Hacking_ugsuue.jpg',
             ],
         ];
@@ -115,11 +115,11 @@ class SlideProvider
     {
         return [
             'items' => [
-                ['city' => 'Minden', 'code' => 'MI', 'hint' => 'Deine Heimat 🏡'],
-                ['city' => 'Lübbecke', 'code' => 'LK', 'hint' => 'Direkt nebenan 📍'],
-                ['city' => 'Köln', 'code' => 'K', 'hint' => 'Unser Zuhause 🏛️'],
-                ['city' => 'Hamburg', 'code' => 'HH', 'hint' => 'Moin Moin am Hafen ⚓'],
-                ['city' => 'Villingen-Schwenningen', 'code' => 'VS', 'hint' => 'Schwarzwald-Baar 🌲'],
+                ['city' => 'Minden', 'code' => 'MI', 'hint' => 'Deine Heimat'],
+                ['city' => 'Lübbecke', 'code' => 'LK', 'hint' => 'Direkt nebenan'],
+                ['city' => 'Köln', 'code' => 'K', 'hint' => 'Unser gemeinsames Zuhause'],
+                ['city' => 'Hamburg', 'code' => 'HH', 'hint' => 'Moin Moin am Hafen'],
+                ['city' => 'Villingen-Schwenningen', 'code' => 'VS', 'hint' => 'Schwarzwald'],
             ],
         ];
     }

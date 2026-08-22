@@ -28,13 +28,13 @@
     <p class="text-[11px] text-stone-500 mb-2 font-medium">Ergänze die fehlende Variable:</p>
     <div class="grid grid-cols-3 gap-2 mb-3" id="code-buttons">
         <button onclick="selectVariable('kaffee', '$kaffee')" class="py-2.5 bg-amber-100/70 border border-amber-300/50 text-amber-900 rounded-lg font-mono text-xs font-semibold hover:bg-amber-200/60 transition">
-            ☕ $kaffee
+            $kaffee
         </button>
         <button onclick="selectVariable('kristin', '$kristin')" class="py-2.5 bg-rose-100/70 border border-rose-300/50 text-rose-900 rounded-lg font-mono text-xs font-semibold hover:bg-rose-200/60 transition">
-            ✨ $kristin
+            $kristin
         </button>
         <button onclick="selectVariable('ruhe', '$ruhe')" class="py-2.5 bg-stone-200/70 border border-stone-300/50 text-stone-800 rounded-lg font-mono text-xs font-semibold hover:bg-stone-300/60 transition">
-            🛋️ $ruhe
+            $ruhe
         </button>
     </div>
 
@@ -44,7 +44,7 @@
             disabled
             class="w-full py-3 bg-slate-800 opacity-40 text-white font-semibold rounded-xl text-xs transition-all shadow"
     >
-        ▶️ Code ausführen
+        Code ausführen
     </button>
 
     <!-- Output Bereich -->
@@ -69,7 +69,7 @@
 
         const consoleOut = document.getElementById('console-output');
         consoleOut.classList.remove('hidden');
-        consoleOut.textContent = "⚙️ Kompiliere...";
+        consoleOut.textContent = "Kompiliere...";
 
         const response = await fetch('{{ path("app_journey_run_code") }}', {
             method: 'POST',
