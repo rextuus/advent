@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ein Lebensjahr mit Kristin</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        body {
+            background-color: #f5f2eb;
+            color: #2d3748;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .stage-container {
+            position: relative;
+            width: 100vw;
+            height: 100dvh;
+        }
+
+        .bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100dvh;
+            object-fit: contain;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        .bg-image.active {
+            opacity: 1;
+        }
+
+        .content-overlay {
+            position: relative;
+            z-index: 10;
+        }
+
+        .story-section {
+            height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem 1.25rem 4rem 1.25rem;
+        }
+
+        .sketch-card {
+            background: rgba(255, 253, 248, 0.88);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(180, 160, 140, 0.3);
+            border-radius: 1.25rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        body.scroll-locked {
+            overflow: hidden !important;
+            touch-action: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Fixierter Hintergrund -->
+<div class="fixed inset-0 z-0 stage-container">
+    {% for slide in slides %}
+        <img
+                id="bg-{{ slide.id }}"
+                src="{{ slide.image }}"
+                alt="{{ slide.title }}"
+                class="bg-image {% if loop.first %}active{% endif %}"
+        >
+    {% endfor %}
+</div>
+
+<!-- Scrollbarer Inhalt -->
+<div class="content-overlay">
+
+    {% for slide in slides %}
+        <section
+                id="section-{{ slide.id }}"
+                class="story-section {% if slide.id == 'it-hacking' %}justify-center{% endif %}"
+                data-bg="bg-{{ slide.id }}"
+                {% if slide.id == 'intro-role' or slide.id == 'neptunbad-sauna' or slide.id == 'it-hacking' or slide.id == 'kennzeichen-game' or slide.id == 'rio-kniffel' or slide.id == 'taylor-kardashian-game' or slide.id == 'food-game' or slide.id == 'taste-tinder' %}data-locked="true"{% endif %}
+        >
+
+            {% if slide.id == 'intro-role' %}
+                {% include 'journey/_intro.html.twig' with {'slide': slide} %}
+            {% elseif slide.id == 'it-hacking' %}
+                {% include 'journey/_terminal.html.twig' with {'slide': slide} %}
+            {% elseif slide.id == 'neptunbad-sauna' %}
+                {% include 'journey/_sauna.html.twig' with {'slide': slide, 'saunaQuestion': saunaQuestion} %}
+            {% elseif slide.id == 'kennzeichen-game' %}
+                {% include 'journey/_kennzeichen.html.twig' with {'slide': slide, 'kennzeichenRiddle': kennzeichenRiddle} %}
+            {% elseif slide.id == 'rio-kniffel' %}
+                {% include 'journey/_rio_kniffel.html.twig' with {'slide': slide} %}
+            {% elseif slide.id == 'taylor-kardashian-game' %}
+                {% include 'journey/_taylor_kardashian_game.html.twig' with {'slide': slide} %}
+            {% elseif slide.id == 'food-game' %}
+                {% include 'journey/_food_game.html.twig' with {'slide': slide} %}
+            {% elseif slide.id == 'taste-tinder' %}
+                {% include 'journey/_taste_tinder.html.twig' with {'slide': slide} %}
+            {% else %}
+                {# Standard-Karte #}
+                <div class="sketch-card p-6 text-center shadow-lg">
+                    <h2 class="text-2xl font-serif font-bold text-amber-900 mb-2">{{ slide.title }}</h2>
+                    <p class="text-base text-stone-700 leading-relaxed">{{ slide.text }}</p>
+                </div>
+            {% endif %}
+
+        </section>
+    {% endfor %}
+
+</div>
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // DEV-MODE HYBRID: Im Dev-Modus werden Locks ignoriert
+    const IS_DEV_MODE = {{ app.environment == 'dev' ? 'true' : 'false' }};
+
+    const sections = document.querySelectorAll('.story-section[data-bg]');
+
+    sections.forEach((section) => {
+        const targetBgId = section.getAttribute('data-bg');
+        const targetBg = document.getElementById(targetBgId);
+        const isLocked = section.getAttribute('data-locked') === 'true';
+
+        ScrollTrigger.create({
+            trigger: section,
+            start: "top center",
+            end: "bottom center",
+            onEnter: () => {
+                activateImage(targetBg);
+                if (isLocked && !IS_DEV_MODE) {
+                    lockScroll(section);
+                }
+            },
+            onEnterBack: () => activateImage(targetBg)
+        });
+    });
+
+    function activateImage(targetBg) {
+        document.querySelectorAll('.bg-image').forEach(img => img.classList.remove('active'));
+        if(targetBg) targetBg.classList.add('active');
+    }
+
+    function lockScroll(section) {
+        if (section.dataset.unlocked === 'true') return;
+        document.body.classList.add('scroll-locked');
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function unlockSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.dataset.unlocked = 'true';
+            document.body.classList.remove('scroll-locked');
+        }
+    }
+</script>
+</body>
+</html>

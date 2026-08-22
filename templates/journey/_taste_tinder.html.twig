@@ -1,0 +1,217 @@
+<div class="sketch-card p-4 sm:p-5 text-center shadow-xl flex flex-col justify-between max-h-[92vh]">
+    <div>
+        <h2 class="text-xl sm:text-2xl font-serif font-bold text-amber-900 mb-1">{{ slide.title }}</h2>
+        <p class="text-xs sm:text-sm text-stone-600 mb-2 leading-relaxed" id="tinder-subtitle">
+            Wische nach rechts (Ja) oder links (Nein)!
+        </p>
+    </div>
+
+    <!-- Container für Stapelkarte -->
+    <div class="relative w-full h-[360px] sm:h-[400px] my-2 flex items-center justify-center select-none overflow-hidden rounded-2xl border border-amber-200/60 bg-amber-50/40">
+
+        <!-- Dynamische Swipe Card -->
+        <div id="tinder-card" class="absolute w-[280px] h-[340px] sm:w-[300px] sm:h-[360px] bg-white rounded-2xl p-3 shadow-lg border border-stone-200 flex flex-col justify-between cursor-grab active:cursor-grabbing transition-transform duration-150 touch-none">
+
+            <!-- Badges für Swipe Feedback -->
+            <div id="badge-like" class="absolute top-6 right-6 border-4 border-emerald-500 text-emerald-500 font-black text-xl px-3 py-1 rounded-lg uppercase transform rotate-12 opacity-0 pointer-events-none z-30">
+                MATCH 💚
+            </div>
+            <div id="badge-dislike" class="absolute top-6 left-6 border-4 border-rose-500 text-rose-500 font-black text-xl px-3 py-1 rounded-lg uppercase transform -rotate-12 opacity-0 pointer-events-none z-30">
+                NOPE ❌
+            </div>
+
+            <!-- Produkt-Bild -->
+            <div class="w-full h-64 rounded-xl overflow-hidden bg-stone-100 flex items-center justify-center">
+                <img id="tinder-img" src="" alt="Food Item" class="w-full h-full object-cover pointer-events-none" />
+            </div>
+
+            <!-- Titel -->
+            <div class="py-2">
+                <h3 id="tinder-item-title" class="font-serif font-bold text-lg text-amber-950"></h3>
+            </div>
+        </div>
+
+        <!-- End-State (wenn alle Karten abgeswipt sind) -->
+        <div id="tinder-end-state" class="hidden text-center p-4">
+            <span class="text-4xl">🥂</span>
+            <h3 class="font-serif font-bold text-lg text-amber-900 mt-2 mb-1">Kulinarisch durchgespielt!</h3>
+            <p id="tinder-final-score" class="text-xs text-stone-600 leading-relaxed mb-3"></p>
+        </div>
+    </div>
+
+    <!-- Kommentar & Controls -->
+    <div class="mt-1">
+        <!-- Live Feedback nach Swipe -->
+        <div id="tinder-comment" class="hidden p-2.5 rounded-xl text-xs sm:text-sm font-medium bg-amber-50 border border-amber-200 text-amber-900 mb-2 leading-relaxed min-h-[48px] flex items-center justify-center"></div>
+
+        <!-- Tinder Action Buttons -->
+        <div id="tinder-controls" class="flex justify-center items-center gap-6 my-1">
+            <button
+                    id="btn-dislike"
+                    class="w-14 h-14 bg-white border-2 border-rose-200 text-rose-500 rounded-full text-xl flex items-center justify-center shadow-md hover:bg-rose-50 active:scale-90 transition"
+            >
+                ❌
+            </button>
+            <button
+                    id="btn-like"
+                    class="w-14 h-14 bg-white border-2 border-emerald-200 text-emerald-500 rounded-full text-xl flex items-center justify-center shadow-md hover:bg-emerald-50 active:scale-90 transition"
+            >
+                💚
+            </button>
+        </div>
+
+        <button
+                id="tinder-next-btn"
+                disabled
+                class="hidden w-full py-3 bg-stone-300 text-stone-500 font-semibold rounded-xl text-xs sm:text-sm transition-all shadow cursor-not-allowed mt-1"
+                onclick="unlockSection('section-taste-tinder')"
+        >
+            🚀 Weiter zum nächsten Kapitel!
+        </button>
+    </div>
+</div>
+
+<script>
+    {
+        // Block-Scope verhindert Namenskonflikte mit anderen Skripten
+        const tinderItems = [
+            {
+                title: "Zitroneneistee",
+                image: "https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787401055/Kristin/Zitroneneistee_n3ayfh.jpg",
+                kristinLikes: true,
+                commentLike: "🍋 Volltreffer! Eisgekühlt mit frischer Zitrone – Kristins absolut ultimatives Sommergetränk!",
+                commentDislike: "❌ Wie bitte?! Zitroneneistee abzulehnen grenzt bei Kristin an ein persönliches Sakrileg!"
+            },
+            {
+                title: "Stracciatella-Eis",
+                image: "https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787401055/Kristin/Straciatelleis_yrt0ak.jpg",
+                kristinLikes: true,
+                commentLike: "🍨 Exakt! Feine Schokoraspeln in cremiger Sahne – da kann Kristin einfach niemals Nein sagen.",
+                commentDislike: "🍫 Falsch gedacht! Stracciatella gehört fest zu Kristins Eisdielen-Favoriten."
+            }
+        ];
+
+        let currentIndex = 0;
+        let matchesCount = 0;
+        let isAnimating = false;
+
+        const card = document.getElementById('tinder-card');
+        const imgEl = document.getElementById('tinder-img');
+        const titleEl = document.getElementById('tinder-item-title');
+        const badgeLike = document.getElementById('badge-like');
+        const badgeDislike = document.getElementById('badge-dislike');
+        const commentEl = document.getElementById('tinder-comment');
+        const controls = document.getElementById('tinder-controls');
+        const nextBtn = document.getElementById('tinder-next-btn');
+        const btnLike = document.getElementById('btn-like');
+        const btnDislike = document.getElementById('btn-dislike');
+
+        function loadItem(index) {
+            if (index >= tinderItems.length) {
+                showTinderSummary();
+                return;
+            }
+
+            const item = tinderItems[index];
+            imgEl.src = item.image;
+            titleEl.textContent = item.title;
+
+            card.style.transform = "translate(0px, 0px) rotate(0deg)";
+            card.style.transition = "transform 0.15s ease";
+            badgeLike.style.opacity = "0";
+            badgeDislike.style.opacity = "0";
+            isAnimating = false;
+        }
+
+        function swipeCard(direction) {
+            if (isAnimating || currentIndex >= tinderItems.length) return;
+            isAnimating = true;
+
+            const item = tinderItems[currentIndex];
+            const chosenLike = (direction === 'right');
+
+            if (chosenLike === item.kristinLikes) {
+                matchesCount++;
+            }
+
+            commentEl.classList.remove('hidden');
+            commentEl.textContent = chosenLike ? item.commentLike : item.commentDislike;
+
+            const xTranslate = direction === 'right' ? 400 : -400;
+            const rotateDeg = direction === 'right' ? 25 : -25;
+            card.style.transition = "transform 0.4s ease-out";
+            card.style.transform = `translate(${xTranslate}px, 50px) rotate(${rotateDeg}deg)`;
+
+            setTimeout(() => {
+                currentIndex++;
+                loadItem(currentIndex);
+            }, 350);
+        }
+
+        function showTinderSummary() {
+            card.classList.add('hidden');
+            controls.classList.add('hidden');
+            document.getElementById('tinder-end-state').classList.remove('hidden');
+
+            document.getElementById('tinder-final-score').textContent =
+                `Du hast ${matchesCount} von ${tinderItems.length} kulinarischen Vorlieben exakt wie Kristin eingeschätzt!`;
+
+            nextBtn.classList.remove('hidden');
+            nextBtn.disabled = false;
+            nextBtn.classList.remove('bg-stone-300', 'text-stone-500', 'cursor-not-allowed');
+            nextBtn.classList.add('bg-amber-800', 'hover:bg-amber-700', 'text-white');
+        }
+
+        btnLike.addEventListener('click', () => swipeCard('right'));
+        btnDislike.addEventListener('click', () => swipeCard('left'));
+
+        // Touch & Drag Handling für Swipe-Gesten
+        let startX = 0;
+        let currentX = 0;
+        let isDragging = false;
+
+        card.addEventListener('pointerdown', (e) => {
+            if (isAnimating) return;
+            isDragging = true;
+            startX = e.clientX;
+            card.style.transition = 'none';
+        });
+
+        window.addEventListener('pointermove', (e) => {
+            if (!isDragging) return;
+            currentX = e.clientX - startX;
+            const rotate = currentX * 0.08;
+            card.style.transform = `translate(${currentX}px, 0px) rotate(${rotate}deg)`;
+
+            if (currentX > 30) {
+                badgeLike.style.opacity = Math.min(currentX / 100, 1);
+                badgeDislike.style.opacity = "0";
+            } else if (currentX < -30) {
+                badgeDislike.style.opacity = Math.min(Math.abs(currentX) / 100, 1);
+                badgeLike.style.opacity = "0";
+            } else {
+                badgeLike.style.opacity = "0";
+                badgeDislike.style.opacity = "0";
+            }
+        });
+
+        window.addEventListener('pointerup', () => {
+            if (!isDragging) return;
+            isDragging = false;
+
+            if (currentX > 90) {
+                swipeCard('right');
+            } else if (currentX < -90) {
+                swipeCard('left');
+            } else {
+                card.style.transition = 'transform 0.2s ease';
+                card.style.transform = 'translate(0px, 0px) rotate(0deg)';
+                badgeLike.style.opacity = "0";
+                badgeDislike.style.opacity = "0";
+            }
+            currentX = 0;
+        });
+
+        loadItem(0);
+    }
+</script>

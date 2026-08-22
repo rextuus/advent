@@ -1,0 +1,83 @@
+<div class="sketch-card p-5 text-center shadow-xl">
+    <h2 class="text-xl font-serif font-bold text-amber-900 mb-1">{{ slide.title }}</h2>
+    <p class="text-xs text-stone-600 mb-3 leading-relaxed">{{ slide.text }}</p>
+
+    <!-- Würfel-Bereich -->
+    <div class="my-2 p-3 bg-amber-100/60 rounded-xl border border-amber-300">
+        <p class="text-xs font-semibold text-stone-700 mb-2">
+            Würfele einen Viererpasch, Full House oder Kniffel!
+        </p>
+
+        <!-- Würfel Anzeigen -->
+        <div id="dice-container" class="flex justify-center gap-2 mb-3">
+            <div class="w-9 h-9 bg-white border-2 border-stone-800 rounded-lg flex items-center justify-center font-mono font-bold text-lg text-amber-900 shadow-sm">🎲</div>
+            <div class="w-9 h-9 bg-white border-2 border-stone-800 rounded-lg flex items-center justify-center font-mono font-bold text-lg text-amber-900 shadow-sm">🎲</div>
+            <div class="w-9 h-9 bg-white border-2 border-stone-800 rounded-lg flex items-center justify-center font-mono font-bold text-lg text-amber-900 shadow-sm">🎲</div>
+            <div class="w-9 h-9 bg-white border-2 border-stone-800 rounded-lg flex items-center justify-center font-mono font-bold text-lg text-amber-900 shadow-sm">🎲</div>
+            <div class="w-9 h-9 bg-white border-2 border-stone-800 rounded-lg flex items-center justify-center font-mono font-bold text-lg text-amber-900 shadow-sm">🎲</div>
+        </div>
+
+        <button
+                id="roll-dice-btn"
+                onclick="rollKniffel()"
+                class="w-full py-2.5 bg-amber-800 hover:bg-amber-700 text-white font-semibold rounded-xl text-xs transition-all shadow"
+        >
+            🎲 Würfel bechern!
+        </button>
+
+        <!-- Versuchszähler / Kuss-Counter -->
+        <div id="attempt-counter" class="mt-3 text-xs font-medium text-amber-900 border-t border-amber-200/60 pt-2 hidden">
+            Versuche: <span id="attempt-count" class="font-bold">0</span>
+            <span id="attempt-text" class="block text-[11px] text-stone-600 italic mt-0.5">(= <span id="kiss-count">0</span> Küsse für den Spieleentwickler 😘)</span>
+        </div>
+    </div>
+
+    <div id="kniffel-result" class="hidden p-2 rounded-lg text-xs font-medium mt-2"></div>
+</div>
+
+<script>
+    let attempts = 0;
+
+    async function rollKniffel() {
+        attempts++;
+
+        // Counter anzeigen & aktualisieren
+        const counterDiv = document.getElementById('attempt-counter');
+        const attemptCountSpan = document.getElementById('attempt-count');
+        const kissCountSpan = document.getElementById('kiss-count');
+
+        counterDiv.classList.remove('hidden');
+        attemptCountSpan.textContent = attempts;
+        kissCountSpan.textContent = attempts;
+
+        const response = await fetch('{{ path("app_journey_kniffel_roll") }}', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
+        });
+
+        const data = await response.json();
+        const diceContainer = document.getElementById('dice-container');
+        const resultDiv = document.getElementById('kniffel-result');
+
+        diceContainer.innerHTML = '';
+        data.dice.forEach(val => {
+            const die = document.createElement('div');
+            die.className = 'w-9 h-9 bg-white border-2 border-stone-800 rounded-lg flex items-center justify-center font-mono font-bold text-base text-amber-900 shadow-sm animate-bounce';
+            die.textContent = val;
+            diceContainer.appendChild(die);
+        });
+
+        resultDiv.textContent = data.message;
+        resultDiv.classList.remove('hidden', 'bg-rose-100', 'text-rose-900', 'bg-emerald-100', 'text-emerald-900');
+
+        if (data.success) {
+            resultDiv.classList.add('bg-emerald-100', 'text-emerald-900');
+            document.getElementById('roll-dice-btn').classList.add('hidden');
+
+            // Scroll-Sperre aufheben
+            unlockSection('section-rio-kniffel');
+        } else {
+            resultDiv.classList.add('bg-rose-100', 'text-rose-900');
+        }
+    }
+</script>
