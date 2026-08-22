@@ -1,0 +1,8 @@
+vendor
+var
+.git
+.idea
+node_modules
+docker
+compose.yaml
+compose.override.yaml
