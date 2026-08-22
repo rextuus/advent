@@ -34,13 +34,13 @@ class JourneyController extends AbstractController
         if ($selectedTime === 'Um 21:00 Uhr') {
             return $this->json([
                 'success' => true,
-                'message' => 'Exakt! Erst der legendäre Aufguss von Theon, und danach gibt es guten Gewissens noch einen Kumpir! 🥔🔥',
+                'message' => 'Exakt! Erst der legendäre Aufguss von Theon, und danach gibt es guten Gewissens noch einen Kumpir!',
             ]);
         }
 
         return $this->json([
             'success' => false,
-            'message' => 'Bist du sicher, dass das wirklich schon der heißeste Aufguss ist? Denk nochmal an Theon... 😉',
+            'message' => 'Bist du sicher, dass das wirklich schon der heißeste Aufguss ist? Denk nochmal an Theon...',
         ]);
     }
 
@@ -64,7 +64,7 @@ class JourneyController extends AbstractController
         if ($correctCount === count($items)) {
             return $this->json([
                 'success' => true,
-                'message' => 'Absoluter Profi! Alle Kennzeichen geknackt! 🎉',
+                'message' => 'Absoluter Profi! Alle Kennzeichen geknackt!',
             ]);
         }
 
@@ -75,37 +75,71 @@ class JourneyController extends AbstractController
     }
 
     #[Route('/api/kniffel-roll', name: 'app_journey_kniffel_roll', methods: ['POST'])]
-    public function handleKniffelRoll(): JsonResponse
+    public function handleKniffelRoll(Request $request): JsonResponse
     {
+        $data = json_decode($request->getContent(), true);
+        $attempts = $data['attempts'] ?? 0;
+        $currentDice = $data['dice'] ?? [];
+        $heldDice = $data['held'] ?? [];
+
         $dice = [];
         for ($i = 0; $i < 5; $i++) {
-            $dice[] = rand(1, 6);
+            if (isset($heldDice[$i]) && $heldDice[$i]) {
+                $dice[] = $currentDice[$i] ?? rand(1, 6);
+            } else {
+                $dice[] = rand(1, 6);
+            }
         }
 
-        $counts = array_count_values($dice);
-        rsort($counts);
-
-        $isKniffel = ($counts[0] === 5);
-        $isFullHouse = ($counts[0] === 3 && isset($counts[1]) && $counts[1] === 2);
-        $isFourOfAKind = ($counts[0] >= 4);
-
-        $success = $isKniffel || $isFullHouse || $isFourOfAKind;
-
-        if ($isKniffel) {
-            $message = 'KNIFFEL! 50 Punkte! 🎲🔥 Das Essen ist da und schmeckt fantastisch!';
-        } elseif ($isFullHouse) {
-            $message = 'Full House! 25 Punkte! 🎲 Perfekte Überbrückung – da bringt der Kellner auch schon das Essen!';
-        } elseif ($isFourOfAKind) {
-            $message = 'Viererpasch! 🎲 Sehr stark gewürfelt, das Essen ist gerettet!';
-        } else {
-            $message = 'Leider noch kein Bild dabei... Gleich nochmal würfeln! 🇧🇷';
+        if ($attempts < 3) {
+            return $this->json([
+                'dice' => $dice,
+                'success' => false,
+                'message' => $this->getMessageForAttempts($attempts),
+            ]);
         }
 
+        // 3rd attempt: Calculate scores
         return $this->json([
             'dice' => $dice,
-            'success' => $success,
-            'message' => $message,
+            'success' => true,
+            'scores' => $this->calculateScores($dice),
+            'message' => 'Wähle eine Kategorie für dein Ergebnis!',
         ]);
+    }
+
+    private function getMessageForAttempts(int $attempts): string
+    {
+        if ($attempts > 2) {
+            return 'Es bleibt zäh... Kristin wird langsam ungeduldig!';
+        }
+        return 'Gleich nochmal würfeln!';
+    }
+
+    private function calculateScores(array $dice): array
+    {
+        $counts = array_count_values($dice);
+        $scores = [];
+        
+        // Upper section
+        for ($i = 1; $i <= 6; $i++) {
+            $scores["{$i}er"] = ($counts[$i] ?? 0) * $i;
+        }
+        
+        // Lower section
+        $scores['3er-pasch'] = (max($counts) >= 3) ? array_sum($dice) : 0;
+        $scores['4er-pasch'] = (max($counts) >= 4) ? array_sum($dice) : 0;
+        $scores['full-house'] = (in_array(3, $counts) && in_array(2, $counts)) ? 25 : 0;
+        
+        sort($dice);
+        $uniqueDice = array_unique($dice);
+        $straight = implode('', $uniqueDice);
+        $scores['kleine-strasse'] = (str_contains($straight, '1234') || str_contains($straight, '2345') || str_contains($straight, '3456')) ? 30 : 0;
+        $scores['grosse-strasse'] = (str_contains($straight, '12345') || str_contains($straight, '23456')) ? 40 : 0;
+        $scores['kniffel'] = (max($counts) === 5) ? 50 : 0;
+        $scores['chance'] = array_sum($dice);
+        
+        return $scores;
     }
 
     #[Route('/api/run-code', name: 'app_journey_run_code', methods: ['POST'])]
@@ -117,20 +151,20 @@ class JourneyController extends AbstractController
         if ($variable === 'kristin') {
             return $this->json([
                 'success' => true,
-                'output' => "Status: 200 OK ✨\n\nErgebnis nach Millionen Zeilen Code:\nDu bist und bleibst die beste Entscheidung meines Lebens. ❤️",
+                'output' => "Status: 200 OK\n\n// Wolf's Life Konfiguration...\nErgebnis: Kristin macht Wolfs das Leben viel viel schöner.",
             ]);
         }
 
         if ($variable === 'kaffee') {
             return $this->json([
                 'success' => false,
-                'output' => "Status: 418 I'm a teapot ☕\n\nKaffee ist zwar essenziell, bringt aber alleine noch kein Herzschmelzen. Versuch es nochmal!",
+                'output' => "Status: 418 I'm a teapot\n\nKaffee ist zwar essenziell, bringt aber alleine noch kein Herzschmelzen. Versuch es nochmal!",
             ]);
         }
 
         return $this->json([
             'success' => false,
-            'output' => "Status: 500 Internal Error 🛋️\n\nSchlafen ist schön, bringt das Programm aber zum Stillstand. Wähle lieber die wichtigere Variable!",
+            'output' => "Status: 500 Internal Error\n\nSchlafen ist schön, bringt das Programm aber zum Stillstand. Wähle lieber die wichtigere Variable!",
         ]);
     }
 }

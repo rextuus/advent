@@ -8,19 +8,20 @@
             <span class="w-2.5 h-2.5 bg-red-500 rounded-full"></span>
             <span class="w-2.5 h-2.5 bg-yellow-500 rounded-full"></span>
             <span class="w-2.5 h-2.5 bg-green-500 rounded-full"></span>
-            <span class="ml-2 text-slate-400 text-[10px]">life_backend.php</span>
+            <span class="ml-2 text-slate-400 text-[10px]">coding_challenge.php</span>
         </div>
 
         <div class="leading-relaxed">
             <span class="text-purple-400">&lt;?php</span><br><br>
-            <span class="text-slate-500">// Welcher Wert macht das System wirklich perfekt?</span><br>
-            <span class="text-blue-400">$projekt</span> = <span class="text-yellow-300">new</span> Life();<br><br>
+            <span class="text-slate-500">// Wolf's Life Konfiguration...</span><br>
+            <span class="text-blue-400">$wolf</span> = <span class="text-emerald-300">'Wolf'</span>;<br>
+            <span class="text-blue-400">$life</span> = <span class="text-yellow-300">new</span> Life(<span class="text-blue-400">$wolf</span>);<br><br>
 
-            <span class="text-blue-400">$projekt</span>-&gt;setWichtigsterFaktor(<br>
+            <span class="text-blue-400">$life</span>-&gt;optimize(<br>
             &nbsp;&nbsp;<span class="text-amber-300 font-bold" id="selected-var-display">$&lt;wähle_aus&gt;</span><br>
             );<br><br>
 
-            <span class="text-purple-400">echo</span> <span class="text-blue-400">$projekt</span>-&gt;getResult();
+            <span class="text-purple-400">echo</span> <span class="text-blue-400">$life</span>-&gt;status();
         </div>
     </div>
 

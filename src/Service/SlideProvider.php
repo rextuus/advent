@@ -80,21 +80,27 @@ class SlideProvider
                 'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787397448/Kristin/Saucen_kzhqfn.jpg',
             ],
             [
+                'id' => 'taste-tinder-intro',
+                'title' => 'Suche im Netz',
+                'text' => 'Kristin liebt Romcoms und Serien über Eishockeyspieler und deren Liebeleien. Trotzdem würde ich sie eher nicht als kitschig bezeichnen. Vermutlich hatte ich auch nur deshalb die Chance sie über einen so unromantischen Weg wie das Internet kennen zu lernen. Wie viele cute boys sie vor mir weggeswiped hat, weiß ich nicht. Aber würdest du wie sie swipen?',
+                'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787414511/Kristin/Paerchen_fzrop4.jpg',
+            ],
+            [
                 'id' => 'taste-tinder',
-                'title' => 'Kristins Food Match',
+                'title' => 'Tindern mit Kristin',
                 'text' => 'Wische nach rechts für Top, nach links für Flop! Triffst du Kristins kulinarischen Geschmack?',
-                'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787397448/Kristin/Saucen_kzhqfn.jpg',
+                'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787414606/Kristin/Tinder_cyag4f.jpg',
             ],
             [
                 'id' => 'macbook-uniklinik',
                 'title' => 'MacBook in der Uniklinik',
-                'text' => 'In der Uniklinik ist die Welt der IT streng genormt. Kristin ist eine der wenigen, die dort mit ihrem MacBook aus der Reihe tanzt – was den Support regelmäßig zu der Antwort veranlasst: "Mac? Dafür haben wir leider kein Ticket!" Wie sie diese digitalen Herausforderungen zu Hause meistert, ist eine ganz andere Geschichte.',
+                'text' => 'In der Uniklinik ist die Welt der IT streng genormt. Kristin ist eine der wenigen, die dort mit ihrem MacBook aus der Reihe tanzt – was den Support regelmäßig zu der Antwort veranlasst: "Mac? Machen wir nicht!" Denn noch scheint Kristin irgendwie technikaffin zu sein.',
                 'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787052615/Kristin/Macbook_rkqas5.jpg',
             ],
             [
                 'id' => 'it-hacking',
                 'title' => 'Home-Support',
-                'text' => 'Wir kennen uns jetzt schon ein ganzes Jahr – aber weiß Kristin eigentlich, was ihr Freund tagtäglich am Rechner treibt? Oder wie diese "super" Geburtstags-Journey entstanden ist? Man munkelt ja fast, dass an ihr ein kleines Coding-Genie verloren gegangen ist.',
+                'text' => 'Wir kennen uns jetzt schon ein ganzes Jahr – aber weiß sie eigentlich, was ihr Freund tagtäglich am Rechner treibt? Oder wie diese "super" Geburtstags-Journey ier entstanden ist? Man munkelt ja, dass an der ehemaligen PC-Schrauberin fast auch ein kleines Coding-Genie verloren gegangen ist. Kannst du coden?',
                 'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787052618/Kristin/Hacking_ugsuue.jpg',
             ],
         ];
