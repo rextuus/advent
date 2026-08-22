@@ -22,6 +22,18 @@ class JourneyController extends AbstractController
             'slides' => $this->slideProvider->getSlides(),
             'saunaQuestion' => $this->slideProvider->getSaunaQuestion(),
             'kennzeichenRiddle' => $this->slideProvider->getKennzeichenRiddle(),
+            'isTesting' => false,
+        ]);
+    }
+
+    #[Route('/testing', name: 'app_journey_testing', methods: ['GET'])]
+    public function testing(): Response
+    {
+        return $this->render('journey/index.html.twig', [
+            'slides' => $this->slideProvider->getSlides(),
+            'saunaQuestion' => $this->slideProvider->getSaunaQuestion(),
+            'kennzeichenRiddle' => $this->slideProvider->getKennzeichenRiddle(),
+            'isTesting' => true,
         ]);
     }
 
