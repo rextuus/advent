@@ -121,11 +121,13 @@ class SlideProvider
     {
         return [
             'items' => [
-                ['city' => 'Minden', 'code' => 'MI', 'hint' => 'Deine Heimat'],
-                ['city' => 'Lübbecke', 'code' => 'LK', 'hint' => 'Direkt nebenan'],
-                ['city' => 'Köln', 'code' => 'K', 'hint' => 'Unser gemeinsames Zuhause'],
-                ['city' => 'Hamburg', 'code' => 'HH', 'hint' => 'Moin Moin am Hafen'],
-                ['city' => 'Villingen-Schwenningen', 'code' => 'VS', 'hint' => 'Schwarzwald'],
+                ['city' => 'Minden', 'code' => 'MI', 'hint' => 'Nabel der Welt'],
+                ['city' => 'Lübbecke', 'code' => 'LK', 'hint' => 'Deine Heimat'],
+                ['city' => 'Köln', 'code' => 'K', 'hint' => 'Heimat vun dä Dom, em Effzeh, eehrfelder Jungs un em lecker Mädche'],
+                ['city' => 'Hamburg', 'code' => 'HH', 'hint' => 'Glaube hier wohnt Loris?!'],
+                ['city' => 'Düsseldorf', 'code' => 'D', 'hint' => 'Die eigentlich verbotene Stadt'],
+                ['city' => 'Monschau', 'code' => 'MON', 'hint' => 'Ziel von Rentnern aus aller Welt'],
+                ['city' => 'Villingen-Schwenningen', 'code' => 'VS', 'hint' => 'Schwarzwald. Kennt man doch...'],
             ],
         ];
     }
