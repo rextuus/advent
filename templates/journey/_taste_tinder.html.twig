@@ -18,9 +18,10 @@
 
     <!-- Container für Stapelkarte -->
     <div class="relative w-full h-[300px] sm:h-[400px] my-2 flex items-center justify-center select-none overflow-hidden rounded-2xl border border-stone-200/60 bg-stone-50/40 shrink-0">
+        <img id="tinder-next-img" src="" alt="Next Item" class="hidden absolute inset-0 w-full h-full object-cover blur-md z-0 pointer-events-none" />
 
         <!-- Dynamische Swipe Card -->
-        <div id="tinder-card" class="absolute w-[260px] h-[280px] sm:w-[300px] sm:h-[360px] bg-white rounded-2xl p-3 shadow-lg border border-stone-200 flex flex-col justify-between cursor-grab active:cursor-grabbing transition-all duration-150 touch-none">
+        <div id="tinder-card" class="z-10 absolute w-[260px] h-[280px] sm:w-[300px] sm:h-[360px] bg-white rounded-2xl p-3 shadow-lg border border-stone-200 flex flex-col justify-between cursor-grab active:cursor-grabbing transition-all duration-150 touch-none">
 
             <!-- Badges für Swipe Feedback -->
             <div id="badge-like" class="absolute top-6 right-6 border-4 border-emerald-600 text-emerald-600 font-black text-xl px-3 py-1 rounded-lg uppercase transform rotate-12 opacity-0 pointer-events-none z-30">
@@ -181,6 +182,7 @@
         let isAnimating = false;
 
         const card = document.getElementById('tinder-card');
+        const nextImgEl = document.getElementById('tinder-next-img');
         const imgEl = document.getElementById('tinder-img');
         const titleEl = document.getElementById('tinder-item-title');
         const badgeLike = document.getElementById('badge-like');
@@ -203,6 +205,14 @@
             const item = tinderItems[index];
             imgEl.src = item.image;
             titleEl.textContent = item.title;
+
+            if (index + 1 < tinderItems.length) {
+                nextImgEl.src = tinderItems[index + 1].image;
+                nextImgEl.classList.add('hidden');
+            } else {
+                nextImgEl.src = "";
+                nextImgEl.classList.add('hidden');
+            }
 
             card.style.transform = "translate(0px, 0px) rotate(0deg)";
             card.style.transition = "transform 0.15s ease";
@@ -229,6 +239,10 @@
 
             commentEl.classList.remove('hidden');
             commentTextEl.textContent = chosenLike ? item.commentLike : item.commentDislike;
+            
+            if (currentIndex + 1 < tinderItems.length) {
+                nextImgEl.classList.remove('hidden');
+            }
 
             const xTranslate = direction === 'right' ? 400 : -400;
             const rotateDeg = direction === 'right' ? 25 : -25;
@@ -260,6 +274,7 @@
             controls.classList.remove('hidden');
             // document.getElementById('btn-next-card').classList.add('hidden');
             commentEl.classList.add('hidden');
+            nextImgEl.classList.add('hidden');
         }
 
         function showTinderSummary() {
