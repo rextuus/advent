@@ -8,9 +8,15 @@ class SlideProvider
     {
         return [
             [
-                'id' => 'intro-welcome',
+                'id' => 'intro-welcome-1',
                 'title' => 'Happy Birthday Kristin',
-                'text' => 'Die ist ein kleines Side-Project von Wolf, einem Developer-Nerd, der das Glück hatte Kristin in ihrem bislang aktuellstem (und hoffentlich auch einem der besten) Lebensjahr kennen lernen zu dürfen. Und der es irgendwie geschafft hat, diesen äußerst liebenswerten Menschen von sich zu begeistern. Und heute startet ein weiteres Kristin Lebensjahr. Da ist Wolf natürlich schon gespannt was er in diesem wohl alles neues über sie erfahren wird. Aber vorab schaut er einmal zurück, was er im letzten so alles über sie erfahren hat. ',
+                'text' => 'Dies ist ein kleines Side-Project von Wolf, einem Developer-Nerd, der das Glück hatte, Kristin in ihrem bislang aktuellstem (und hoffentlich auch einem der besten) Lebensjahr kennen lernen zu dürfen. Und der es irgendwie geschafft hat, diesen äußerst liebenswerten Menschen von sich zu begeistern.',
+                'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787060926/Kristin/Intro_yxdrnc.jpg',
+            ],
+            [
+                'id' => 'intro-welcome-2',
+                'title' => 'Rückblick',
+                'text' => 'Heute startet ein weiteres Kristin-Lebensjahr. Da ist Wolf natürlich schon gespannt, was er in diesem wohl alles Neues über sie erfahren wird. Aber vorab schaut er einmal zurück, was er im letzten so alles über sie erfahren hat.',
                 'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787060926/Kristin/Intro_yxdrnc.jpg',
             ],
             [
