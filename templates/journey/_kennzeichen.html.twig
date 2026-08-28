@@ -1,4 +1,4 @@
-<div class="sketch-card p-5 text-center shadow-xl max-h-[85vh] flex flex-col justify-between">
+<div class="sketch-card p-3 sm:p-5 text-center shadow-xl max-h-[90vh] flex flex-col justify-between">
     <div>
         <h2 class="text-xl font-serif font-bold text-amber-900 mb-1">{{ slide.title }}</h2>
         <p class="text-xs text-stone-600 mb-3 leading-relaxed">{{ slide.text }}</p>
@@ -20,7 +20,7 @@
     </div>
 
     <!-- Kennzeichen Eingabeliste -->
-    <div id="kz-inputs-list" class="overflow-y-auto flex-1 flex flex-col gap-2 my-2 pr-1">
+    <div id="kz-inputs-list" class="overflow-y-auto flex-1 flex flex-col gap-1.5 my-1 pr-1">
         {% for item in kennzeichenRiddle.items %}
             <div class="flex items-center justify-between bg-stone-100/90 p-2 rounded-xl border border-stone-200 shrink-0">
                 <div class="text-left pr-2">
@@ -51,7 +51,7 @@
         <button
                 id="check-kz-btn"
                 onclick="checkKennzeichen()"
-                class="w-full py-2.5 bg-amber-800 hover:bg-amber-700 text-white font-semibold rounded-xl text-xs transition-all shadow mt-1"
+                class="w-full py-2 bg-amber-800 hover:bg-amber-700 text-white font-semibold rounded-xl text-xs transition-all shadow mt-1"
         >
             In die App eintragen
         </button>

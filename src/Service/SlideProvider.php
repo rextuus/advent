@@ -116,18 +116,6 @@ class SlideProvider
                 'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787927148/Kristin/Lose_kjc4ft.jpg',
             ],
             [
-                'id' => 'crossword-intro',
-                'title' => 'Kreuzworträtsel (Bonus)',
-                'text' => 'Falls dir diese Reise bis hierhin genauso viel Spaß gemacht hat wie Wolf, und du dich ab heute in einem Alter befindest, in dem man seinen Hobbies entspannt im Sessel am Kamin nachgeht, gibt\'s als kleinen Bonus hier noch ein Kreuzworträtsel!',
-                'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787927147/Kristin/Kamin_rx2bky.jpg',
-            ],
-            [
-                'id' => 'crossword-game',
-                'title' => 'Rätselspaß',
-                'text' => 'Los geht\'s – kannst du alle Begriffe finden?',
-                'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787927147/Kristin/Kamin_rx2bky.jpg',
-            ],
-            [
                 'id' => 'end-slide',
                 'title' => 'And that\'s it',
                 'text' => 'Toll, dass du den kleinen Spaß bis hierin mitgemacht hast. Wir hoffen es hat ein wenig Freude bereitet. Ansonsten kann sich gerne an den 24/7 nicht besetzten Support der WH-Company gerichtet und Beschwerde eingelegt werden. Alles Gute zum Geburtstag Kristin',
