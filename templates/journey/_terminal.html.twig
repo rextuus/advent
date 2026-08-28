@@ -63,8 +63,10 @@
 
 <script>
     let selectedVarValue = null;
+    let countdownInterval = null;
 
     function repeatTerminal() {
+        clearInterval(countdownInterval);
         selectedVarValue = null;
         document.getElementById('selected-var-display').textContent = '$<wähle_aus>';
         const btn = document.getElementById('run-code-btn');
@@ -100,12 +102,22 @@
         const data = await response.json();
 
         setTimeout(() => {
-            consoleOut.textContent = data.output;
+            consoleOut.innerHTML = data.output + '<br><span id="terminal-timer" class="font-bold mt-2 text-xs"></span>';
             if(data.success) {
                 consoleOut.className = "mt-3 p-3 bg-emerald-950/60 text-emerald-300 font-mono text-xs rounded-xl text-left whitespace-pre-line border border-emerald-700/50";
 
-                // Entsperre das Scrollen nur bei Erfolg
-                unlockSection('section-it-hacking');
+                let timeLeft = 5;
+                const timerEl = document.getElementById('terminal-timer');
+                timerEl.textContent = `Weiter in ${timeLeft}s...`;
+                countdownInterval = setInterval(() => {
+                    timeLeft--;
+                    if (timeLeft > 0) {
+                        timerEl.textContent = `Weiter in ${timeLeft}s...`;
+                    } else {
+                        clearInterval(countdownInterval);
+                        unlockSection('section-it-hacking');
+                    }
+                }, 1000);
             } else {
                 consoleOut.className = "mt-3 p-3 bg-rose-950/60 text-rose-300 font-mono text-xs rounded-xl text-left whitespace-pre-line border border-rose-700/50";
             }

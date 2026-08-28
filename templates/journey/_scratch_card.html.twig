@@ -21,9 +21,6 @@
 
         <div id="scratch-actions" class="mt-2 hidden flex-none">
             <div class="flex gap-2">
-                <button onclick="unlockSection(this)" class="flex-1 py-1 bg-black text-white rounded-lg font-semibold text-[10px] hover:bg-stone-800">
-                    Weiter zum Bonus-Rätsel!
-                </button>
                 <button onclick="jumpToSection('section-end-slide')" class="flex-1 py-1 bg-stone-300 text-black rounded-lg font-semibold text-[10px] hover:bg-stone-400">
                     Tour beenden
                 </button>
@@ -84,7 +81,7 @@
         for (let i = 3; i < imageData.data.length; i += 4) {
             if (imageData.data[i] === 0) count++;
         }
-        if (count > (canvas.width * canvas.height) * 0.3) {
+        if (count > (canvas.width * canvas.height) * 0.5) {
             canvas.classList.add('hidden');
             scratchActions.classList.remove('hidden');
             instructions.innerText = "Herzlichen Glückwunsch! Dein Gewinn wurde enthüllt!";
