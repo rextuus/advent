@@ -20,7 +20,7 @@
     </div>
 
     {% if slide.id == 'crossword-intro' %}
-        <button onclick="unlockSection(this)" class="w-full py-2 bg-black text-white rounded-lg font-semibold text-sm hover:bg-stone-800 transition-colors">
+        <button onclick="unlockSection('section-crossword-intro')" class="w-full py-2 bg-black text-white rounded-lg font-semibold text-sm hover:bg-stone-800 transition-colors">
             Rätsel starten
         </button>
     {% elseif slide.id == 'crossword-game' %}
@@ -59,7 +59,7 @@
         <!-- Action Container -->
         <div class="mt-2 flex flex-col gap-2">
             <button
-                    onclick="unlockSection(this)"
+                    onclick="unlockSection('section-crossword-game')"
                     class="w-full py-1.5 bg-black text-white rounded-lg font-semibold text-xs hover:bg-stone-800 transition-colors"
             >
                 Rätsel fertig? Weiter geht's!
@@ -68,7 +68,7 @@
                 <button onclick="repeatCrossword()" class="flex-1 py-1 bg-stone-200 text-black rounded-lg font-semibold text-[9px] hover:bg-stone-300 transition-colors">
                     Wiederholen
                 </button>
-                <button onclick="unlockSection(this)" class="flex-1 py-1 bg-stone-200 text-black rounded-lg font-semibold text-[9px] hover:bg-stone-300 transition-colors">
+                <button onclick="unlockSection('section-crossword-game', true)" class="flex-1 py-1 bg-stone-200 text-black rounded-lg font-semibold text-[9px] hover:bg-stone-300 transition-colors">
                     Überspringen
                 </button>
             </div>

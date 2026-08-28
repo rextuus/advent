@@ -46,7 +46,7 @@ class SlideProvider
             [
                 'id' => 'rio-intro',
                 'title' => 'Urlaub in Rio de Janeiro',
-                'text' => 'Rio de Janeiro – Sonne, Ipanema-Beach und... hier und da ein wenig Warten auf das Essen im Restaurant. Normalerweise ist Kristin für ihre zarte Ungeduld bekannt. In allen Lebenslagen. Doch im Urlaub hat sie eine ziemlich smarte Lösung für Wartezeiten parat: bisschen Zocken!',
+                'text' => 'Rio de Janeiro – Sonne, Ipanema-Beach und... hier und da ein wenig Warten auf das Essen im Restaurant. Kristin ist als Globe-Trotterin bekannt. Und normalerweise auch für ihre zarte Ungeduld... In allen Lebenslagen. Doch im Urlaub durfte Wolf eine ziemlich smarte Lösung für das Überbrücken der Wartezeiten von ihr kennenlernen: bisschen Zocken!',
                 'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787057295/Kristin/Rio_lcjmzo.jpg',
             ],
             [
@@ -58,7 +58,7 @@ class SlideProvider
             [
                 'id' => 'taylor-kardashian-intro',
                 'title' => 'The Era of Keeping Up with Kristin',
-                'text' => 'Ob die neusten Easter Eggs im Taylor-Swift-Universum oder der wöchentliche Drama-Report direkt aus Calabasas von den Kardashians – Krisin weiß wie man aus Insta die wichtigsten Infos für den Tag zusammenbekommt. Aber auch über die neusten Entwicklungen über den Effzeh, weiß sie meist erstaunlich gut Bescheid',
+                'text' => 'Ob die neusten Easter Eggs im Taylor-Swift-Universum oder der wöchentliche Drama-Report direkt aus Calabasas von den Kardashians – Kristin weiß wie man aus Insta die wichtigsten Infos für den Tag zusammenbekommt. Aber auch über die neusten Entwicklungen beim Effzeh, weiß sie meist erstaunlich gut und sogar schon vor Wolf Bescheid',
                 'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787354728/Kristin/Instagram_xjbzle.jpg',
             ],
             [
@@ -94,38 +94,44 @@ class SlideProvider
             [
                 'id' => 'macbook-uniklinik',
                 'title' => 'MacBook in der Uniklinik',
-                'text' => 'In der Uniklinik herrscht bekanntlich strenge Windows-Diktatur. Doch Kristin ist mit ihrem MacBook als mutige IT-Rebellin unterwegs. Jedes Mal, wenn sie beim Support anruft, heißt es stoßseufzend: "Mac? Da können wir nicht helfen!" Aber Kristin beißt sich durch – Technikaffinität hat sie definitiv im Blut.',
+                'text' => 'Apropos coole Kerle. In der Uniklinik herrscht bekanntlich strenge Windows-Diktatur. Doch Kristin ist mit ihrem MacBook als mutige IT-Rebellin unterwegs. Jedes Mal, wenn sie beim Support anruft, heißt es zähneknirschend: "Mac? Machen wir nicht!" Aber Kristin beißt sich durch – Technikaffinität hat sie definitiv im Blut.',
                 'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787052615/Kristin/Macbook_rkqas5.jpg',
             ],
             [
                 'id' => 'it-hacking',
                 'title' => 'Home-Support',
-                'text' => 'Ein ganzes Jahr kennt Wolf sie jetzt schon – aber weiß Kristin eigentlich, was dieser komische Kerl da stundenlang im dunklen Kämmerlein am Terminal tippt? Oder wie diese Geburtstags-Journey hier gebaut wurde? Für die ehemalige PC-Schrauberin sollte so ne kleine Coding-Challenge doch kein Problem sein!',
+                'text' => 'Ein ganzes Jahr kennt sie nun Wolf schon – aber weiß Kristin eigentlich, was dieser komische Kerl da stundenlang im dunklen Kämmerlein am Terminal tippt? Oder wie diese Geburtstags-Journey hier gebaut wurde? Für die ehemalige PC-Schrauberin sollte so ne kleine Coding-Challenge doch kein Problem sein!',
                 'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787052618/Kristin/Hacking_ugsuue.jpg',
             ],
             [
                 'id' => 'scratch-card-intro',
                 'title' => 'Die große Überraschung',
-                'text' => 'Das Leben ist wie eine Achterbahn – es gibt Höhen und Tiefen, spannende Wendungen und Momente, in denen man einfach nur das Glück herausfordern möchte. Nachdem du dich nun durch die Welt von Kristin geklickt hast, wartet zum Abschluss noch eine kleine Lotterie auf dich.',
-                'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787052618/Kristin/Hacking_ugsuue.jpg',
+                'text' => 'So ein Lebensjahr steckt voller Höhen und Tiefen. Bei Kristin beschränken sich die Tiefen zum Glück in der Regel auf kleine Tollpatschigkeiten im Alltag, wie das Kleckern beim Essen. Für die Höhen sorgt sie ja meist selbst mit einer professionellen und umfangreichen Urlaubsplanung. Dennoch kann ein klein bisschen extra Glück zum Start ins neue Lebensjahr ja nicht schaden',
+                'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787927148/Kristin/Geschenk_xxdiec.jpg',
             ],
             [
                 'id' => 'scratch-card-game',
                 'title' => 'Rubbellos-Glück',
-                'text' => 'Rubbel das Feld frei und schau, welcher legendäre Gewinn auf dich wartet!',
-                'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787052618/Kristin/Hacking_ugsuue.jpg',
+                'text' => 'Rubbel das Feld frei und schau, welcher legendäre, grandios wertvolle Gewinn (gesponsert von der WH-Company) auf dich wartet!',
+                'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787927148/Kristin/Lose_kjc4ft.jpg',
             ],
             [
                 'id' => 'crossword-intro',
                 'title' => 'Kreuzworträtsel (Bonus)',
-                'text' => 'Falls dir diese Reise bis hierhin genauso viel Spaß gemacht hat wie Wolf, haben wir noch einen kleinen Bonus: Ein Kreuzworträtsel! Teste dein Wissen ein letztes Mal.',
-                'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787052618/Kristin/Hacking_ugsuue.jpg',
+                'text' => 'Falls dir diese Reise bis hierhin genauso viel Spaß gemacht hat wie Wolf, und du dich ab heute in einem Alter befindest, in dem man seinen Hobbies entspannt im Sessel am Kamin nachgeht, gibt\'s als kleinen Bonus hier noch ein Kreuzworträtsel!',
+                'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787927147/Kristin/Kamin_rx2bky.jpg',
             ],
             [
                 'id' => 'crossword-game',
-                'title' => 'Die große Rätsel-Challenge',
+                'title' => 'Rätselspaß',
                 'text' => 'Los geht\'s – kannst du alle Begriffe finden?',
-                'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787052618/Kristin/Hacking_ugsuue.jpg',
+                'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787927147/Kristin/Kamin_rx2bky.jpg',
+            ],
+            [
+                'id' => 'end-slide',
+                'title' => 'And that\'s it',
+                'text' => 'Toll, dass du den kleinen Spaß bis hierin mitgemacht hast. Wir hoffen es hat ein wenig Freude bereitet. Ansonsten kann sich gerne an den 24/7 nicht besetzten Support der WH-Company gerichtet und Beschwerde eingelegt werden. Alles Gute zum Geburtstag Kristin',
+                'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787060926/Kristin/Intro_yxdrnc.jpg',
             ],
         ];
     }

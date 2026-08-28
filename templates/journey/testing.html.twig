@@ -142,6 +142,71 @@
         document.querySelectorAll('.bg-image').forEach(img => img.classList.remove('active'));
         if (targetBg) targetBg.classList.add('active');
     }
+
+    function preventScroll(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+
+    function lockScroll(section) {
+        // Empty in testing
+    }
+
+    function jumpToSection(sectionId) {
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            // Unlock all sections up to targetSection
+            const sections = document.querySelectorAll('.story-section');
+            for (let i = 0; i < sections.length; i++) {
+                sections[i].dataset.unlocked = 'true';
+                sections[i].removeAttribute('data-locked');
+                if (sections[i] === targetSection) break;
+            }
+            
+            document.body.classList.remove('scroll-locked');
+            window.removeEventListener('wheel', preventScroll);
+            window.removeEventListener('touchmove', preventScroll);
+
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    function unlockSection(sectionIdOrElementOrEvent, skipAll = false) {
+        let section;
+        if (typeof sectionIdOrElementOrEvent === 'string') {
+            section = document.getElementById(sectionIdOrElementOrEvent);
+        } else if (sectionIdOrElementOrEvent instanceof Event) {
+            section = sectionIdOrElementOrEvent.target.closest('section');
+        } else if (sectionIdOrElementOrEvent instanceof HTMLElement) {
+            section = sectionIdOrElementOrEvent.closest('section');
+        }
+        
+        if (section) {
+            section.dataset.unlocked = 'true';
+            section.removeAttribute('data-locked');
+            document.body.classList.remove('scroll-locked');
+
+            // Event-Listener wieder entfernen
+            window.removeEventListener('wheel', preventScroll);
+            window.removeEventListener('touchmove', preventScroll);
+
+            // Automatisch zur nächsten Section scrollen und alle locked slides unlocken
+            let nextSection = section.nextElementSibling;
+            
+            if (skipAll) {
+                // Unlock all subsequent locked sections
+                while (nextSection && nextSection.tagName === 'SECTION' && nextSection.dataset.locked === 'true') {
+                    nextSection.dataset.unlocked = 'true';
+                    nextSection.removeAttribute('data-locked');
+                    nextSection = nextSection.nextElementSibling;
+                }
+            }
+            
+            if (nextSection && nextSection.tagName === 'SECTION') {
+                nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    }
 </script>
 </body>
 </html>

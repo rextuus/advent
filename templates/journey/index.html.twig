@@ -171,7 +171,22 @@
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    function unlockSection(sectionIdOrElementOrEvent) {
+    function jumpToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.dataset.unlocked = 'true';
+            section.removeAttribute('data-locked');
+            document.body.classList.remove('scroll-locked');
+
+            // Event-Listener wieder entfernen
+            window.removeEventListener('wheel', preventScroll);
+            window.removeEventListener('touchmove', preventScroll);
+
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    function unlockSection(sectionIdOrElementOrEvent, skipAll = false) {
         let section;
         if (typeof sectionIdOrElementOrEvent === 'string') {
             section = document.getElementById(sectionIdOrElementOrEvent);
@@ -190,9 +205,19 @@
             window.removeEventListener('wheel', preventScroll);
             window.removeEventListener('touchmove', preventScroll);
 
-            // Automatisch zur nächsten Section scrollen
-            const nextSection = section.nextElementSibling;
-            if (nextSection) {
+            // Automatisch zur nächsten Section scrollen und alle locked slides unlocken
+            let nextSection = section.nextElementSibling;
+            
+            if (skipAll) {
+                // Unlock all subsequent locked sections
+                while (nextSection && nextSection.tagName === 'SECTION' && nextSection.dataset.locked === 'true') {
+                    nextSection.dataset.unlocked = 'true';
+                    nextSection.removeAttribute('data-locked');
+                    nextSection = nextSection.nextElementSibling;
+                }
+            }
+            
+            if (nextSection && nextSection.tagName === 'SECTION') {
                 nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
