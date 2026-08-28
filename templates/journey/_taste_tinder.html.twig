@@ -1,4 +1,14 @@
 <div class="sketch-card p-4 sm:p-5 text-center shadow-xl flex flex-col max-h-[95vh] overflow-y-auto">
+<style>
+    @keyframes feedback {
+        0% { transform: scale(1); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); }
+        50% { transform: scale(1.05); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1), 0 0 0 6px rgba(217, 119, 6, 0.6); }
+        100% { transform: scale(1); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); }
+    }
+    .animate-feedback {
+        animation: feedback 0.4s ease-in-out;
+    }
+</style>
     <div>
         <h2 class="text-xl sm:text-2xl font-serif font-bold text-amber-900 mb-1">{{ slide.title }}</h2>
         <p class="text-xs sm:text-sm text-stone-600 mb-4 leading-relaxed" id="tinder-subtitle">
@@ -10,7 +20,7 @@
     <div class="relative w-full h-[300px] sm:h-[400px] my-2 flex items-center justify-center select-none overflow-hidden rounded-2xl border border-amber-200/60 bg-amber-50/40 shrink-0">
 
         <!-- Dynamische Swipe Card -->
-        <div id="tinder-card" class="absolute w-[260px] h-[280px] sm:w-[300px] sm:h-[360px] bg-white rounded-2xl p-3 shadow-lg border border-stone-200 flex flex-col justify-between cursor-grab active:cursor-grabbing transition-transform duration-150 touch-none">
+        <div id="tinder-card" class="absolute w-[260px] h-[280px] sm:w-[300px] sm:h-[360px] bg-white rounded-2xl p-3 shadow-lg border border-stone-200 flex flex-col justify-between cursor-grab active:cursor-grabbing transition-all duration-150 touch-none">
 
             <!-- Badges für Swipe Feedback -->
             <div id="badge-like" class="absolute top-6 right-6 border-4 border-emerald-500 text-emerald-500 font-black text-xl px-3 py-1 rounded-lg uppercase transform rotate-12 opacity-0 pointer-events-none z-30">
@@ -201,9 +211,14 @@
             isAnimating = false;
         }
 
-        function swipeCard(direction) {
+        async function swipeCard(direction) {
             if (isAnimating || currentIndex >= tinderItems.length) return;
             isAnimating = true;
+
+            // Optisches Feedback: Animation
+            card.classList.add('animate-feedback');
+            await new Promise(resolve => setTimeout(resolve, 400));
+            card.classList.remove('animate-feedback');
 
             const item = tinderItems[currentIndex];
             const chosenLike = (direction === 'right');

@@ -73,7 +73,11 @@
         btn.disabled = true;
         btn.classList.add('opacity-40');
         btn.classList.remove('bg-emerald-600', 'hover:bg-emerald-500');
-        document.getElementById('console-output').classList.add('hidden');
+        const consoleOut = document.getElementById('console-output');
+        consoleOut.classList.add('hidden');
+        consoleOut.textContent = "";
+        const timerEl = document.getElementById('terminal-timer');
+        if (timerEl) timerEl.textContent = "";
     }
 
     function selectVariable(value, label) {
@@ -89,6 +93,8 @@
     async function executeCode() {
         if(!selectedVarValue) return;
 
+        clearInterval(countdownInterval);
+
         const consoleOut = document.getElementById('console-output');
         consoleOut.classList.remove('hidden');
         consoleOut.textContent = "Kompiliere...";
@@ -101,26 +107,24 @@
 
         const data = await response.json();
 
-        setTimeout(() => {
-            consoleOut.innerHTML = data.output + '<br><span id="terminal-timer" class="font-bold mt-2 text-xs"></span>';
-            if(data.success) {
-                consoleOut.className = "mt-3 p-3 bg-emerald-950/60 text-emerald-300 font-mono text-xs rounded-xl text-left whitespace-pre-line border border-emerald-700/50";
+        consoleOut.innerHTML = data.output + '<br><span id="terminal-timer" class="font-bold mt-2 text-xs"></span>';
+        if(data.success) {
+            consoleOut.className = "mt-3 p-3 bg-emerald-950/60 text-emerald-300 font-mono text-xs rounded-xl text-left whitespace-pre-line border border-emerald-700/50";
 
-                let timeLeft = 5;
-                const timerEl = document.getElementById('terminal-timer');
-                timerEl.textContent = `Weiter in ${timeLeft}s...`;
-                countdownInterval = setInterval(() => {
-                    timeLeft--;
-                    if (timeLeft > 0) {
-                        timerEl.textContent = `Weiter in ${timeLeft}s...`;
-                    } else {
-                        clearInterval(countdownInterval);
-                        unlockSection('section-it-hacking');
-                    }
-                }, 1000);
-            } else {
-                consoleOut.className = "mt-3 p-3 bg-rose-950/60 text-rose-300 font-mono text-xs rounded-xl text-left whitespace-pre-line border border-rose-700/50";
-            }
-        }, 400);
+            let timeLeft = 5;
+            const timerEl = document.getElementById('terminal-timer');
+            timerEl.textContent = `Weiter in ${timeLeft}s...`;
+            countdownInterval = setInterval(() => {
+                timeLeft--;
+                if (timeLeft > 0) {
+                    timerEl.textContent = `Weiter in ${timeLeft}s...`;
+                } else {
+                    clearInterval(countdownInterval);
+                    unlockSection(document.getElementById('section-it-hacking'));
+                }
+            }, 1000);
+        } else {
+            consoleOut.className = "mt-3 p-3 bg-rose-950/60 text-rose-300 font-mono text-xs rounded-xl text-left whitespace-pre-line border border-rose-700/50";
+        }
     }
 </script>
