@@ -3,7 +3,7 @@
         <h2 class="text-base sm:text-lg font-serif font-bold text-stone-800 mb-0.5">{{ slide.title }}</h2>
         <p class="text-[10px] sm:text-xs text-stone-600 mb-1" id="scratch-instructions">
             {% if slide.id == 'scratch-card-intro' %}
-                Klicke auf den Button, um das Rubbellos zu starten!
+                Lies dir die Einleitung durch und rubbele weiter unten das Los frei!
             {% else %}
                 Rubbel das Feld frei und entdecke deinen Gewinn!
             {% endif %}
@@ -29,10 +29,6 @@
             <button onclick="repeatScratch()" class="flex-1 py-0.5 bg-stone-200 text-black rounded-lg font-semibold text-[9px] hover:bg-stone-300">Wiederholen</button>
             <button onclick="unlockSection(this)" class="flex-1 py-0.5 bg-stone-200 text-black rounded-lg font-semibold text-[9px] hover:bg-stone-300">Überspringen</button>
         </div>
-    {% else %}
-        <button onclick="unlockSection(this)" class="w-full py-2 bg-black text-white rounded-lg font-semibold text-sm hover:bg-stone-800">
-            Rubbellos starten
-        </button>
     {% endif %}
 </div>
 

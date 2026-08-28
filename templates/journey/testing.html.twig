@@ -101,7 +101,7 @@
                 {% include 'journey/_food_game.html.twig' with {'slide': slide} %}
             {% elseif slide.id == 'taste-tinder' %}
                 {% include 'journey/_taste_tinder.html.twig' with {'slide': slide} %}
-            {% elseif slide.id == 'scratch-card-intro' or slide.id == 'scratch-card-game' %}
+            {% elseif slide.id == 'scratch-card-game' %}
                 {% include 'journey/_scratch_card.html.twig' with {'slide': slide} %}
             {% elseif slide.id == 'crossword-intro' or slide.id == 'crossword-game' %}
                 {% include 'journey/_crossword.html.twig' with {'slide': slide, 'crosswordData': crosswordData} %}
