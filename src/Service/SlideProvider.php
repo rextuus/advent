@@ -10,7 +10,7 @@ class SlideProvider
             [
                 'id' => 'intro-welcome-1',
                 'title' => 'Happy Birthday Kristin',
-                'text' => 'Dies ist ein kleines Side-Project von Wolf, einem Developer-Nerd, der das Glück hatte, Kristin in ihrem bislang aktuellstem (und hoffentlich auch einem der besten) Lebensjahr kennen lernen zu dürfen. Und der es irgendwie geschafft hat, diesen äußerst liebenswerten Menschen von sich zu begeistern.',
+                'text' => 'Dies ist ein kleines Side-Project von Wolf, einem Developer-Nerd, der das Glück hatte, Kristin in ihrem bislang aktuellstem Lebensjahr kennen gelernt haben zu dürfen. Und der es irgendwie geschafft hat, diesen äußerst liebenswerten Menschen von sich zu begeistern.',
                 'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787060926/Kristin/Intro_yxdrnc.jpg',
             ],
             [
