@@ -104,9 +104,21 @@ class SlideProvider
                 'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787052618/Kristin/Hacking_ugsuue.jpg',
             ],
             [
+                'id' => 'scratch-card-intro',
+                'title' => 'Die große Überraschung',
+                'text' => 'Das Leben ist wie eine Achterbahn – es gibt Höhen und Tiefen, spannende Wendungen und Momente, in denen man einfach nur das Glück herausfordern möchte. Nachdem du dich nun durch die Welt von Kristin geklickt hast, wartet zum Abschluss noch eine kleine Lotterie auf dich.',
+                'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787052618/Kristin/Hacking_ugsuue.jpg',
+            ],
+            [
+                'id' => 'scratch-card-game',
+                'title' => 'Rubbellos-Glück',
+                'text' => 'Rubbel das Feld frei und schau, welcher legendäre Gewinn auf dich wartet!',
+                'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787052618/Kristin/Hacking_ugsuue.jpg',
+            ],
+            [
                 'id' => 'crossword-intro',
-                'title' => 'Kreuzworträtsel',
-                'text' => 'Du denkst, du kennst Kristin in- und auswendig? Dann ist dieses Kreuzworträtsel genau die richtige Herausforderung für dich. Teste dein Wissen rund um ihr Leben, ihre Vorlieben und all die Dinge, die sie so besonders machen.',
+                'title' => 'Kreuzworträtsel (Bonus)',
+                'text' => 'Falls dir diese Reise bis hierhin genauso viel Spaß gemacht hat wie Wolf, haben wir noch einen kleinen Bonus: Ein Kreuzworträtsel! Teste dein Wissen ein letztes Mal.',
                 'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787052618/Kristin/Hacking_ugsuue.jpg',
             ],
             [

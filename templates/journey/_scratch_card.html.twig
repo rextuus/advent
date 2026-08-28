@@ -1,0 +1,104 @@
+<div class="sketch-card p-1 sm:p-2 text-center shadow-lg h-full flex flex-col justify-between relative">
+    <div class="flex-none">
+        <h2 class="text-base sm:text-lg font-serif font-bold text-stone-800 mb-0.5">{{ slide.title }}</h2>
+        <p class="text-[10px] sm:text-xs text-stone-600 mb-1" id="scratch-instructions">
+            {% if slide.id == 'scratch-card-intro' %}
+                Klicke auf den Button, um das Rubbellos zu starten!
+            {% else %}
+                Rubbel das Feld frei und entdecke deinen Gewinn!
+            {% endif %}
+        </p>
+    </div>
+
+    {% if slide.id == 'scratch-card-game' %}
+        <div id="scratch-container" class="relative w-full max-w-[280px] sm:max-w-sm aspect-[3/4] mx-auto border-4 border-stone-800 rounded-lg overflow-hidden bg-white shadow-inner flex-1 my-1">
+            <div id="prize-reveal" class="absolute inset-0 flex flex-col items-center justify-center p-1">
+                <img id="prize-image" src="" alt="Gewinn" class="max-h-60 sm:max-h-56 mb-1 rounded-lg border-1 border-black" />
+                <p id="prize-text" class="font-bold text-stone-800 text-sm sm:text-base"></p>
+            </div>
+            <canvas id="scratch-canvas" class="absolute inset-0 z-10 cursor-crosshair"></canvas>
+        </div>
+
+        <div id="scratch-actions" class="mt-1 hidden flex-none">
+            <button onclick="unlockSection(this)" class="w-full py-1 bg-black text-white rounded-lg font-semibold text-[10px] hover:bg-stone-800">
+                Weiter zum Bonus-Rätsel!
+            </button>
+        </div>
+
+        <div class="mt-1 flex gap-1 flex-none">
+            <button onclick="repeatScratch()" class="flex-1 py-0.5 bg-stone-200 text-black rounded-lg font-semibold text-[9px] hover:bg-stone-300">Wiederholen</button>
+            <button onclick="unlockSection(this)" class="flex-1 py-0.5 bg-stone-200 text-black rounded-lg font-semibold text-[9px] hover:bg-stone-300">Überspringen</button>
+        </div>
+    {% else %}
+        <button onclick="unlockSection(this)" class="w-full py-2 bg-black text-white rounded-lg font-semibold text-sm hover:bg-stone-800">
+            Rubbellos starten
+        </button>
+    {% endif %}
+</div>
+
+<script>
+    {% if slide.id == 'scratch-card-game' %}
+    const canvas = document.getElementById('scratch-canvas');
+    const ctx = canvas.getContext('2d');
+    const container = document.getElementById('scratch-container');
+    const prizeImage = document.getElementById('prize-image');
+    const prizeText = document.getElementById('prize-text');
+    const scratchActions = document.getElementById('scratch-actions');
+    
+    // Set canvas size
+    canvas.width = container.offsetWidth;
+    canvas.height = container.offsetHeight;
+
+    // Prizes
+    const prizes = [
+        { text: '1 x Joghurt mit der Ecke: Kirsche', img: 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787923320/Kristin/Kirsche_fc0ekr.jpg' }
+    ];
+    const prize = prizes[Math.floor(Math.random() * prizes.length)];
+    prizeImage.src = prize.img;
+    prizeText.innerText = prize.text;
+
+    let isDrawing = false;
+    const scratchImg = new Image();
+    scratchImg.src = 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787925590/Kristin/Lottery2_2_ffaems.jpg';
+    scratchImg.onload = function() {
+        ctx.drawImage(scratchImg, 0, 0, canvas.width, canvas.height);
+    };
+
+    function scratch(e) {
+        if (!isDrawing) return;
+        const rect = canvas.getBoundingClientRect();
+        const x = (e.clientX || e.touches[0].clientX) - rect.left;
+        const y = (e.clientY || e.touches[0].clientY) - rect.top;
+        
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.beginPath();
+        ctx.arc(x, y, 20, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Check completion
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        let count = 0;
+        for (let i = 3; i < imageData.data.length; i += 4) {
+            if (imageData.data[i] === 0) count++;
+        }
+        if (count > (canvas.width * canvas.height) * 0.4) {
+            canvas.classList.add('hidden');
+            scratchActions.classList.remove('hidden');
+        }
+    }
+
+    canvas.addEventListener('mousedown', () => isDrawing = true);
+    canvas.addEventListener('mouseup', () => isDrawing = false);
+    canvas.addEventListener('mousemove', scratch);
+    canvas.addEventListener('touchstart', (e) => { isDrawing = true; scratch(e); });
+    canvas.addEventListener('touchend', () => isDrawing = false);
+    canvas.addEventListener('touchmove', scratch);
+
+    window.repeatScratch = function() {
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.drawImage(scratchImg, 0, 0, canvas.width, canvas.height);
+        canvas.classList.remove('hidden');
+        scratchActions.classList.add('hidden');
+    }
+    {% endif %}
+</script>
