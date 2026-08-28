@@ -17,8 +17,21 @@
         <!-- Feedback-Container -->
         <div id="sauna-result" class="hidden mt-3 p-3 rounded-lg text-xs font-medium"></div>
 
-        <!-- Hochkant-Bilder bei richtiger Antwort -->
-        <div id="sauna-bonus-images" class="hidden grid-cols-2 gap-3 mt-4 pt-3 border-t border-amber-200/60">
+        <button
+                id="sauna-next-btn"
+                class="hidden w-full py-2.5 bg-amber-800 hover:bg-amber-700 text-white font-semibold rounded-lg text-sm transition-all shadow mt-4"
+                onclick="unlockSection('section-neptunbad-sauna')"
+        >
+            Weiter
+        </button>
+    </div>
+</div>
+
+<!-- Modal für Sauna-Ergebnis -->
+<div id="sauna-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+    <div class="sketch-card p-4 w-full max-w-sm max-h-[80vh] overflow-y-auto">
+        <h2 class="text-lg font-serif font-bold text-amber-900 mb-4">Ergebnis</h2>
+        <div id="sauna-modal-images" class="grid grid-cols-2 gap-3">
             <div class="overflow-hidden rounded-xl border border-amber-300 shadow-md aspect-[3/4]">
                 <img src="{{ saunaQuestion.theonImage }}" alt="Theon" class="w-full h-full object-cover">
             </div>
@@ -26,6 +39,7 @@
                 <img src="{{ saunaQuestion.kumpirImage }}" alt="Kumpir" class="w-full h-full object-cover">
             </div>
         </div>
+        <button onclick="document.getElementById('sauna-modal').classList.add('hidden')" class="w-full mt-4 py-2 bg-amber-800 text-white rounded-lg text-sm">Schließen</button>
     </div>
 </div>
 
@@ -38,7 +52,7 @@
         });
         const data = await response.json();
         const resultDiv = document.getElementById('sauna-result');
-        const bonusImages = document.getElementById('sauna-bonus-images');
+        const nextBtn = document.getElementById('sauna-next-btn');
 
         resultDiv.textContent = data.message;
         resultDiv.classList.remove('hidden', 'bg-rose-100', 'text-rose-900', 'bg-emerald-100', 'text-emerald-900');
@@ -46,11 +60,8 @@
         if (data.success) {
             document.getElementById('sauna-buttons').classList.add('hidden');
             resultDiv.classList.add('bg-emerald-100', 'text-emerald-900');
-            bonusImages.classList.remove('hidden');
-            bonusImages.classList.add('grid');
-
-            // Scroll-Sperre aufheben
-            unlockSection('section-neptunbad-sauna');
+            document.getElementById('sauna-modal').classList.remove('hidden');
+            nextBtn.classList.remove('hidden');
         } else {
             resultDiv.classList.add('bg-rose-100', 'text-rose-900');
         }

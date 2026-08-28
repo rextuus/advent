@@ -41,7 +41,10 @@
     <!-- Kommentar & Controls -->
     <div class="mt-2 shrink-0">
         <!-- Live Feedback nach Swipe -->
-        <div id="tinder-comment" class="hidden p-2 rounded-xl text-[10px] sm:text-sm font-medium bg-amber-50 border border-amber-200 text-amber-900 mb-4 leading-relaxed min-h-[48px] flex items-center justify-center"></div>
+        <div id="tinder-comment" class="hidden p-2 rounded-xl text-[10px] sm:text-sm font-medium bg-amber-50 border border-amber-200 text-amber-900 mb-4 leading-relaxed min-h-[48px] flex flex-col items-center justify-center">
+            <span id="tinder-comment-text"></span>
+            <span id="tinder-timer" class="font-bold mt-1 text-xs"></span>
+        </div>
 
         <!-- Tinder Action Buttons -->
         <div id="tinder-controls" class="flex justify-center items-center gap-6 my-2">
@@ -58,7 +61,7 @@
                 Ja
             </button>
         </div>
-
+            
         <button
                 id="tinder-next-btn"
                 disabled
@@ -81,6 +84,7 @@
 
 <script>
     window.repeatTinder = function() {
+        clearInterval(countdownInterval);
         currentIndex = 0;
         matchesCount = 0;
         isAnimating = false;
@@ -172,6 +176,9 @@
         const badgeLike = document.getElementById('badge-like');
         const badgeDislike = document.getElementById('badge-dislike');
         const commentEl = document.getElementById('tinder-comment');
+        const commentTextEl = document.getElementById('tinder-comment-text');
+        const timerEl = document.getElementById('tinder-timer');
+        let countdownInterval;
         const controls = document.getElementById('tinder-controls');
         const nextBtn = document.getElementById('tinder-next-btn');
         const btnLike = document.getElementById('btn-like');
@@ -206,17 +213,38 @@
             }
 
             commentEl.classList.remove('hidden');
-            commentEl.textContent = chosenLike ? item.commentLike : item.commentDislike;
+            commentTextEl.textContent = chosenLike ? item.commentLike : item.commentDislike;
 
             const xTranslate = direction === 'right' ? 400 : -400;
             const rotateDeg = direction === 'right' ? 25 : -25;
             card.style.transition = "transform 0.4s ease-out";
             card.style.transform = `translate(${xTranslate}px, 50px) rotate(${rotateDeg}deg)`;
 
-            setTimeout(() => {
-                currentIndex++;
-                loadItem(currentIndex);
-            }, 350);
+            // controls.classList.add('hidden');
+            // document.getElementById('btn-next-card').classList.remove('hidden');
+            
+            // Countdown-Logik
+            let timeLeft = 5;
+            timerEl.textContent = `Weiter in ${timeLeft}s...`;
+            countdownInterval = setInterval(() => {
+                timeLeft--;
+                if (timeLeft > 0) {
+                    timerEl.textContent = `Weiter in ${timeLeft}s...`;
+                } else {
+                    clearInterval(countdownInterval);
+                    timerEl.textContent = '';
+                    nextCard();
+                }
+            }, 1000);
+        }
+
+        function nextCard() {
+            clearInterval(countdownInterval);
+            currentIndex++;
+            loadItem(currentIndex);
+            controls.classList.remove('hidden');
+            // document.getElementById('btn-next-card').classList.add('hidden');
+            commentEl.classList.add('hidden');
         }
 
         function showTinderSummary() {
