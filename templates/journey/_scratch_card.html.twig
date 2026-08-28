@@ -85,7 +85,53 @@
             canvas.classList.add('hidden');
             scratchActions.classList.remove('hidden');
             instructions.innerText = "Herzlichen Glückwunsch! Dein Gewinn wurde enthüllt!";
+            createConfetti();
         }
+    }
+
+    function createConfetti() {
+        const confettiContainer = document.createElement('div');
+        confettiContainer.style.position = 'fixed';
+        confettiContainer.style.top = '0';
+        confettiContainer.style.left = '0';
+        confettiContainer.style.width = '100%';
+        confettiContainer.style.height = '100%';
+        confettiContainer.style.pointerEvents = 'none';
+        confettiContainer.style.zIndex = '9999';
+        document.body.appendChild(confettiContainer);
+
+        const colors = ['#f87171', '#fb923c', '#fbbf24', '#4ade80', '#22d3ee', '#818cf8', '#c084fc'];
+
+        for (let i = 0; i < 150; i++) {
+            const confetti = document.createElement('div');
+            confetti.style.position = 'absolute';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            const size = Math.random() * 8 + 4;
+            confetti.style.width = size + 'px';
+            confetti.style.height = size + 'px';
+            confetti.style.left = Math.random() * 100 + '%';
+            confetti.style.top = '-20px';
+            confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+            confettiContainer.appendChild(confetti);
+
+            const duration = Math.random() * 3 + 3;
+            const delay = Math.random() * 2;
+            const drift = (Math.random() - 0.5) * 200;
+            
+            confetti.animate([
+                { transform: 'translateY(0) rotate(0) translateX(0)', opacity: 1 },
+                { transform: `translateY(100vh) rotate(${Math.random() * 360}deg) translateX(${drift}px)`, opacity: 0 }
+            ], {
+                duration: duration * 1000,
+                delay: delay * 1000,
+                easing: 'cubic-bezier(.17,.67,.83,.67)',
+                fill: 'forwards'
+            });
+        }
+
+        setTimeout(() => {
+            confettiContainer.remove();
+        }, 6000);
     }
 
     canvas.addEventListener('mousedown', () => isDrawing = true);
