@@ -103,6 +103,78 @@ class SlideProvider
                 'text' => 'Ein ganzes Jahr kennt Wolf sie jetzt schon – aber weiß Kristin eigentlich, was dieser komische Kerl da stundenlang im dunklen Kämmerlein am Terminal tippt? Oder wie diese Geburtstags-Journey hier gebaut wurde? Für die ehemalige PC-Schrauberin sollte so ne kleine Coding-Challenge doch kein Problem sein!',
                 'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787052618/Kristin/Hacking_ugsuue.jpg',
             ],
+            [
+                'id' => 'crossword-intro',
+                'title' => 'Kreuzworträtsel',
+                'text' => 'Du denkst, du kennst Kristin in- und auswendig? Dann ist dieses Kreuzworträtsel genau die richtige Herausforderung für dich. Teste dein Wissen rund um ihr Leben, ihre Vorlieben und all die Dinge, die sie so besonders machen.',
+                'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787052618/Kristin/Hacking_ugsuue.jpg',
+            ],
+            [
+                'id' => 'crossword-game',
+                'title' => 'Die große Rätsel-Challenge',
+                'text' => 'Los geht\'s – kannst du alle Begriffe finden?',
+                'image' => 'https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787052618/Kristin/Hacking_ugsuue.jpg',
+            ],
+        ];
+    }
+
+    public function getCrosswordData(): array
+    {
+        return [
+            "title" => "Kreuzworträtsel",
+            "width" => 22,
+            "height" => 22,
+            "grid" => [
+                "#################.####",
+                "##############.##.####",
+                "##############.##.####",
+                "#######.#####.....####",
+                "#######.#.##.#.##.....",
+                "#######.#......#######",
+                "######....##.#########",
+                "#########......#######",
+                "#########.##.#########",
+                "####......############",
+                "###.##.#.#############",
+                "##.....#.....#########",
+                "###.##.#.#############",
+                "###.##.#.#############",
+                ".....##......#########",
+                "##########.###########",
+                "#######.....##########",
+                "#######.###.##########",
+                "#######.#.....########",
+                "#######.###.#.########",
+                "#######.#.....########",
+                "#############.########"
+            ],
+            "entries" => [
+                ["number" => 1, "direction" => "down", "row" => 1, "col" => 18, "length" => 5, "answer" => "VOGEL", "clue" => "Fliegendes Tier"],
+                ["number" => 2, "direction" => "down", "row" => 2, "col" => 15, "length" => 5, "answer" => "BLATT", "clue" => "Teil einer Pflanze"],
+                ["number" => 3, "direction" => "down", "row" => 4, "col" => 8, "length" => 4, "answer" => "HOLA", "clue" => "Spanisch für „Hallo“"],
+                ["number" => 4, "direction" => "across", "row" => 4, "col" => 14, "length" => 5, "answer" => "KATZE", "clue" => "Samtpfote"],
+                ["number" => 5, "direction" => "down", "row" => 5, "col" => 10, "length" => 6, "answer" => "VHAGAR", "clue" => "Targaryen-Drache (sehr fett)"],
+                ["number" => 6, "direction" => "down", "row" => 5, "col" => 13, "length" => 5, "answer" => "DEUTZ", "clue" => "Traktor- und Landmaschinenhersteller"],
+                ["number" => 7, "direction" => "across", "row" => 5, "col" => 18, "length" => 5, "answer" => "LILIE", "clue" => "Blume mit auffälliger Blüte"],
+                ["number" => 8, "direction" => "across", "row" => 6, "col" => 10, "length" => 6, "answer" => "HUBERT", "clue" => "Vorname von Wolf"],
+                ["number" => 9, "direction" => "across", "row" => 7, "col" => 7, "length" => 4, "answer" => "JAVA", "clue" => "Programmiersprache / Insel im Pazifik"],
+                ["number" => 10, "direction" => "across", "row" => 8, "col" => 10, "length" => 6, "answer" => "GARTEN", "clue" => "Grünfläche am Haus"],
+                ["number" => 11, "direction" => "across", "row" => 10, "col" => 5, "length" => 6, "answer" => "DÜMMER", "clue" => "Durchgehend etwa 1,50 m tiefes Gewässer in der Mitte Deutschlands"],
+                ["number" => 12, "direction" => "down", "row" => 10, "col" => 7, "length" => 5, "answer" => "MUSIK", "clue" => "Tonkunst"],
+                ["number" => 13, "direction" => "down", "row" => 10, "col" => 9, "length" => 6, "answer" => "EFFZEH", "clue" => "Abkürzung des 1. FC Köln"],
+                ["number" => 14, "direction" => "down", "row" => 11, "col" => 4, "length" => 5, "answer" => "BLUME", "clue" => "Pflanze mit Blüte"],
+                ["number" => 15, "direction" => "across", "row" => 12, "col" => 3, "length" => 5, "answer" => "FLUSS", "clue" => "Größeres fließendes Gewässer"],
+                ["number" => 16, "direction" => "across", "row" => 12, "col" => 9, "length" => 5, "answer" => "FISCH", "clue" => "Tier im Wasser"],
+                ["number" => 17, "direction" => "across", "row" => 15, "col" => 1, "length" => 5, "answer" => "REGEN", "clue" => "Wasser vom Himmel"],
+                ["number" => 18, "direction" => "across", "row" => 15, "col" => 8, "length" => 6, "answer" => "PHILIP", "clue" => "Ehemann von Queen Elizabeth II."],
+                ["number" => 19, "direction" => "down", "row" => 15, "col" => 11, "length" => 3, "answer" => "LEO", "clue" => "Verschmuster Hund"],
+                ["number" => 20, "direction" => "across", "row" => 17, "col" => 8, "length" => 5, "answer" => "NAXOS", "clue" => "Insel Griechenlands"],
+                ["number" => 20, "direction" => "down", "row" => 17, "col" => 8, "length" => 5, "answer" => "NACHT", "clue" => "Zeit ohne Tageslicht"],
+                ["number" => 21, "direction" => "down", "row" => 17, "col" => 12, "length" => 5, "answer" => "STERN", "clue" => "Leuchtet am Nachthimmel"],
+                ["number" => 22, "direction" => "across", "row" => 19, "col" => 10, "length" => 5, "answer" => "WIESE", "clue" => "Grünfläche mit Gras"],
+                ["number" => 23, "direction" => "down", "row" => 19, "col" => 14, "length" => 4, "answer" => "ESEL", "clue" => "Graues Nutztier"],
+                ["number" => 24, "direction" => "across", "row" => 21, "col" => 10, "length" => 5, "answer" => "SONNE", "clue" => "Stern unseres Sonnensystems"]
+            ]
         ];
     }
 

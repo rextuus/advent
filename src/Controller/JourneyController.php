@@ -22,6 +22,7 @@ class JourneyController extends AbstractController
             'slides' => $this->slideProvider->getSlides(),
             'saunaQuestion' => $this->slideProvider->getSaunaQuestion(),
             'kennzeichenRiddle' => $this->slideProvider->getKennzeichenRiddle(),
+            'crosswordData' => $this->slideProvider->getCrosswordData(),
         ]);
     }
 
@@ -32,6 +33,7 @@ class JourneyController extends AbstractController
             'slides' => $this->slideProvider->getSlides(),
             'saunaQuestion' => $this->slideProvider->getSaunaQuestion(),
             'kennzeichenRiddle' => $this->slideProvider->getKennzeichenRiddle(),
+            'crosswordData' => $this->slideProvider->getCrosswordData(),
         ]);
     }
 

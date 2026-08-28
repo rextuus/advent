@@ -101,6 +101,8 @@
                 {% include 'journey/_food_game.html.twig' with {'slide': slide} %}
             {% elseif slide.id == 'taste-tinder' %}
                 {% include 'journey/_taste_tinder.html.twig' with {'slide': slide} %}
+            {% elseif slide.id == 'crossword-intro' or slide.id == 'crossword-game' %}
+                {% include 'journey/_crossword.html.twig' with {'slide': slide, 'crosswordData': crosswordData} %}
             {% else %}
                 {# Standard-Karte #}
                 <div class="sketch-card p-6 text-center shadow-lg">
