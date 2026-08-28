@@ -163,7 +163,7 @@ class JourneyController extends AbstractController
         if ($variable === 'kristin') {
             return $this->json([
                 'success' => true,
-                'output' => "Status: 200 OK\n\n// Wolf's Life Konfiguration...\nErgebnis: Kristin macht Wolfs das Leben viel viel schöner.",
+                'output' => "Status: 200 OK\n\n// Wolf's Life Konfiguration...\nErgebnis: Kristin macht Wolfs Leben viel viel schöner.",
             ]);
         }
 
