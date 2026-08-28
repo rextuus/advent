@@ -19,11 +19,7 @@
         {% endif %}
     </div>
 
-    {% if slide.id == 'crossword-intro' %}
-        <button onclick="unlockSection('section-crossword-intro')" class="w-full py-2 bg-black text-white rounded-lg font-semibold text-sm hover:bg-stone-800 transition-colors">
-            Rätsel starten
-        </button>
-    {% elseif slide.id == 'crossword-game' %}
+    {% if slide.id == 'crossword-game' %}
         <div id="crossword-flip-container" class="mt-4 perspective-1000 flex-1 min-h-0 w-full">
             <div id="crossword-flip-inner" class="relative w-full h-full transition-transform duration-500 transform-style-3d">
                 

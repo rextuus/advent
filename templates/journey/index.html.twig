@@ -88,7 +88,7 @@
                 id="section-{{ slide.id }}"
                 class="story-section {% if slide.id == 'it-hacking' %}justify-center{% endif %}"
                 data-bg="bg-{{ slide.id }}"
-                {% if slide.id == 'intro-role' or slide.id == 'neptunbad-sauna' or slide.id == 'it-hacking' or slide.id == 'kennzeichen-game' or slide.id == 'rio-kniffel' or slide.id == 'taylor-kardashian-game' or slide.id == 'food-game' or slide.id == 'taste-tinder' or slide.id == 'scratch-card-game' or slide.id == 'crossword-intro' or slide.id == 'crossword-game' %}data-locked="true"{% endif %}
+                {% if slide.id == 'intro-role' or slide.id == 'neptunbad-sauna' or slide.id == 'it-hacking' or slide.id == 'kennzeichen-game' or slide.id == 'rio-kniffel' or slide.id == 'taylor-kardashian-game' or slide.id == 'food-game' or slide.id == 'taste-tinder' or slide.id == 'scratch-card-game' or slide.id == 'crossword-game' %}data-locked="true"{% endif %}
         >
 
             {% if slide.id == 'intro-role' %}
@@ -109,7 +109,7 @@
                 {% include 'journey/_taste_tinder.html.twig' with {'slide': slide} %}
                 {% elseif slide.id == 'scratch-card-game' %}
                 {% include 'journey/_scratch_card.html.twig' with {'slide': slide} %}
-            {% elseif slide.id == 'crossword-intro' or slide.id == 'crossword-game' %}
+            {% elseif slide.id == 'crossword-game' %}
                 {% include 'journey/_crossword.html.twig' with {'slide': slide, 'crosswordData': crosswordData} %}
             {% else %}
                 {# Standard-Karte #}
