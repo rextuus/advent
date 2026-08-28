@@ -1,4 +1,4 @@
-<div class="sketch-card p-1 sm:p-2 text-center shadow-lg h-full flex flex-col justify-between relative">
+<div class="sketch-card p-1 sm:p-2 text-center shadow-lg h-full flex flex-col relative overflow-y-auto">
     <div class="flex-none">
         <h2 class="text-base sm:text-lg font-serif font-bold text-stone-800 mb-0.5">{{ slide.title }}</h2>
         <p class="text-[10px] sm:text-xs text-stone-600 mb-1" id="scratch-instructions">
@@ -11,15 +11,15 @@
     </div>
 
     {% if slide.id == 'scratch-card-game' %}
-        <div id="scratch-container" class="relative w-full max-w-[280px] sm:max-w-sm aspect-[3/4] mx-auto border-4 border-stone-800 rounded-lg overflow-hidden bg-white shadow-inner flex-1 my-1">
+        <div id="scratch-container" class="relative w-full max-w-[240px] sm:max-w-sm aspect-[3/4] mx-auto border-4 border-stone-800 rounded-lg overflow-hidden bg-white shadow-inner flex-1 my-1 shrink-0">
             <div id="prize-reveal" class="absolute inset-0 flex flex-col items-center justify-center p-1">
-                <img id="prize-image" src="" alt="Gewinn" class="max-h-60 sm:max-h-56 mb-1 rounded-lg border-1 border-black" />
-                <p id="prize-text" class="font-bold text-stone-800 text-sm sm:text-base"></p>
+                <img id="prize-image" src="" alt="Gewinn" class="max-h-40 sm:max-h-56 mb-1 rounded-lg border-2 border-black" />
+                <p id="prize-text" class="font-bold text-stone-800 text-xs sm:text-base"></p>
             </div>
             <canvas id="scratch-canvas" class="absolute inset-0 z-10 cursor-crosshair"></canvas>
         </div>
 
-        <div id="scratch-actions" class="mt-1 hidden flex-none">
+        <div id="scratch-actions" class="mt-2 hidden flex-none">
             <div class="flex gap-2">
                 <button onclick="unlockSection(this)" class="flex-1 py-1 bg-black text-white rounded-lg font-semibold text-[10px] hover:bg-stone-800">
                     Weiter zum Bonus-Rätsel!
@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        <div class="mt-8 flex gap-1 flex-none">
+        <div class="mt-6 flex gap-1 flex-none">
             <button onclick="repeatScratch()" class="flex-1 py-0.5 bg-stone-200 text-black rounded-lg font-semibold text-[9px] hover:bg-stone-300">Wiederholen</button>
             <button onclick="unlockSection(this)" class="flex-1 py-0.5 bg-stone-200 text-black rounded-lg font-semibold text-[9px] hover:bg-stone-300">Überspringen</button>
         </div>
