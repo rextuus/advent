@@ -63,14 +63,37 @@
                 id="tinder-next-btn"
                 disabled
                 class="hidden w-full py-3 bg-stone-300 text-stone-500 font-semibold rounded-xl text-xs sm:text-sm transition-all shadow cursor-not-allowed mt-1"
-                onclick="unlockSection('section-taste-tinder')"
+                onclick="unlockSection(this)"
         >
             Weiter zum nächsten Kapitel!
         </button>
+
+        <div class="flex gap-2 mt-6">
+            <button onclick="repeatTinder()" class="flex-1 py-1 bg-stone-200 text-black font-semibold rounded-xl text-[9px] transition-all shadow">
+                Wiederholen
+            </button>
+            <button onclick="unlockSection(this)" class="flex-1 py-1 bg-stone-200 text-black font-semibold rounded-xl text-[9px] transition-all shadow">
+                Überspringen
+            </button>
+        </div>
     </div>
 </div>
 
 <script>
+    window.repeatTinder = function() {
+        currentIndex = 0;
+        matchesCount = 0;
+        isAnimating = false;
+        card.classList.remove('hidden');
+        controls.classList.remove('hidden');
+        document.getElementById('tinder-end-state').classList.add('hidden');
+        commentEl.classList.add('hidden');
+        nextBtn.classList.add('hidden');
+        nextBtn.disabled = true;
+        nextBtn.classList.add('bg-stone-300', 'text-stone-500', 'cursor-not-allowed');
+        nextBtn.classList.remove('bg-amber-800', 'hover:bg-amber-700', 'text-white');
+        loadItem(0);
+    };
     {
         // Block-Scope verhindert Namenskonflikte mit anderen Skripten
         const tinderItems = [

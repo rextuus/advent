@@ -59,14 +59,33 @@
                 id="sauce-next-btn"
                 disabled
                 class="hidden w-full py-3 bg-stone-300 text-stone-500 font-semibold rounded-xl text-xs sm:text-sm transition-all shadow cursor-not-allowed"
-                onclick="unlockSection('section-food-game')"
+                onclick="unlockSection(this)"
         >
             Weiter im Menü!
         </button>
+
+        <div class="flex gap-2 mt-6">
+            <button onclick="repeatSauce()" class="flex-1 py-1 bg-stone-200 text-black font-semibold rounded-xl text-[9px] transition-all shadow">
+                Wiederholen
+            </button>
+            <button onclick="unlockSection(this)" class="flex-1 py-1 bg-stone-200 text-black font-semibold rounded-xl text-[9px] transition-all shadow">
+                Überspringen
+            </button>
+        </div>
     </div>
 </div>
 
 <script>
+    window.repeatSauce = function() {
+        sauceLevel = 0;
+        isFinished = false;
+        pourBtn.classList.remove('hidden');
+        nextBtn.classList.add('hidden');
+        feedback.classList.add('hidden');
+        puddle.style.transform = `translate(-50%, 0) scale(0)`;
+        puddle.classList.add('opacity-0');
+        stream.classList.add('opacity-0');
+    };
     let pourInterval = null;
     let sauceLevel = 0; // 0 bis 100
     let isFinished = false;

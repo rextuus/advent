@@ -155,7 +155,6 @@
     function preventScroll(e) {
         e.preventDefault();
         e.stopPropagation();
-        return false;
     }
 
     function lockScroll(section) {
@@ -170,15 +169,30 @@
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    function unlockSection(sectionId) {
-        const section = document.getElementById(sectionId);
+    function unlockSection(sectionIdOrElementOrEvent) {
+        let section;
+        if (typeof sectionIdOrElementOrEvent === 'string') {
+            section = document.getElementById(sectionIdOrElementOrEvent);
+        } else if (sectionIdOrElementOrEvent instanceof Event) {
+            section = sectionIdOrElementOrEvent.target.closest('section');
+        } else if (sectionIdOrElementOrEvent instanceof HTMLElement) {
+            section = sectionIdOrElementOrEvent.closest('section');
+        }
+        
         if (section) {
             section.dataset.unlocked = 'true';
+            section.removeAttribute('data-locked');
             document.body.classList.remove('scroll-locked');
 
             // Event-Listener wieder entfernen
             window.removeEventListener('wheel', preventScroll);
             window.removeEventListener('touchmove', preventScroll);
+
+            // Automatisch zur nächsten Section scrollen
+            const nextSection = section.nextElementSibling;
+            if (nextSection) {
+                nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         }
     }
 </script>

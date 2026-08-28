@@ -56,11 +56,27 @@
             In die App eintragen
         </button>
 
+        <div class="mt-6 flex gap-2">
+            <button onclick="repeatKennzeichen()" class="flex-1 py-1 bg-stone-200 text-black font-semibold rounded-xl text-[9px] transition-all shadow">
+                Wiederholen
+            </button>
+            <button onclick="unlockSection(this)" class="flex-1 py-1 bg-stone-200 text-black font-semibold rounded-xl text-[9px] transition-all shadow">
+                Überspringen
+            </button>
+        </div>
+
         <div id="kz-result" class="hidden mt-2 p-2 rounded-lg text-xs font-medium"></div>
     </div>
 </div>
 
 <script>
+    window.repeatKennzeichen = function() {
+        {% for item in kennzeichenRiddle.items %}
+        document.getElementById('kz-input-{{ loop.index0 }}').value = '';
+        {% endfor %}
+        document.getElementById('kz-result').classList.add('hidden');
+    };
+
     async function checkKennzeichen() {
         const inputs = [];
         {% for item in kennzeichenRiddle.items %}

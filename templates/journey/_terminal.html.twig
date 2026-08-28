@@ -47,13 +47,32 @@
     >
         Code ausführen
     </button>
-
+    
     <!-- Output Bereich -->
     <div id="console-output" class="hidden mt-3 p-3 bg-slate-950 text-emerald-400 font-mono text-xs rounded-xl text-left whitespace-pre-line border border-slate-800"></div>
+
+    <div class="mt-6 flex gap-2">
+        <button onclick="repeatTerminal()" class="flex-1 py-1 bg-stone-200 text-black font-semibold rounded-lg text-[9px] transition-all shadow">
+            Wiederholen
+        </button>
+        <button onclick="unlockSection(this)" class="flex-1 py-1 bg-stone-200 text-black font-semibold rounded-lg text-[9px] transition-all shadow">
+            Überspringen
+        </button>
+    </div>
 </div>
 
 <script>
     let selectedVarValue = null;
+
+    function repeatTerminal() {
+        selectedVarValue = null;
+        document.getElementById('selected-var-display').textContent = '$<wähle_aus>';
+        const btn = document.getElementById('run-code-btn');
+        btn.disabled = true;
+        btn.classList.add('opacity-40');
+        btn.classList.remove('bg-emerald-600', 'hover:bg-emerald-500');
+        document.getElementById('console-output').classList.add('hidden');
+    }
 
     function selectVariable(value, label) {
         selectedVarValue = value;

@@ -26,14 +26,37 @@
                 id="tk-game-next-btn"
                 disabled
                 class="w-full py-2.5 bg-stone-300 text-stone-500 font-semibold rounded-xl text-xs transition-all shadow cursor-not-allowed"
-                onclick="unlockSection('section-taylor-kardashian-game')"
+                onclick="unlockSection(this)"
         >
             Beantworte alle Fragen zum Freischalten
         </button>
+
+        <div class="flex gap-2 mt-6">
+            <button onclick="repeatQuiz()" class="flex-1 py-1 bg-stone-200 text-black font-semibold rounded-xl text-[9px] transition-all shadow">
+                Wiederholen
+            </button>
+            <button onclick="unlockSection(this)" class="flex-1 py-1 bg-stone-200 text-black font-semibold rounded-xl text-[9px] transition-all shadow">
+                Überspringen
+            </button>
+        </div>
     </div>
 </div>
 
 <script>
+    window.repeatQuiz = function() {
+        currentQuestion = 0;
+        score = 0;
+        document.getElementById('quiz-container').classList.remove('hidden');
+        document.getElementById('quiz-subtitle').textContent = '{{ slide.text }}';
+        document.getElementById('tk-game-feedback').classList.add('hidden');
+        const nextBtn = document.getElementById('tk-game-next-btn');
+        nextBtn.disabled = true;
+        nextBtn.classList.add('bg-stone-300', 'text-stone-500', 'cursor-not-allowed');
+        nextBtn.classList.remove('bg-amber-800', 'hover:bg-amber-700', 'text-white');
+        nextBtn.textContent = 'Beantworte alle Fragen zum Freischalten';
+        loadQuestion();
+    };
+
     const quizData = [
         {
             question: "1. „***, there's people that are dying.“ An wen war dieser legendäre Satz von Kourtney Kardashian gerichtet?",
