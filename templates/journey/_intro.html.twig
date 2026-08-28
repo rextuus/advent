@@ -1,11 +1,11 @@
-<div class="sketch-card p-4 sm:p-5 text-center shadow-xl flex flex-col justify-between max-h-[90vh]">
+<div class="sketch-card p-4 sm:p-5 text-center shadow-xl flex flex-col max-h-[95vh] overflow-y-auto">
     <div>
-        <h2 class="text-lg sm:text-xl font-serif font-bold text-amber-900 mb-1">{{ slide.title }}</h2>
-        <p class="text-[11px] sm:text-xs text-stone-600 mb-2 leading-relaxed">{{ slide.text }}</p>
+        <h2 class="text-lg sm:text-xl font-serif font-bold text-amber-900 mb-4">{{ slide.title }}</h2>
+        <p class="text-[11px] sm:text-xs text-stone-600 mb-4 leading-relaxed">{{ slide.text }}</p>
     </div>
 
     <!-- Rollenauswahl -->
-    <div class="flex flex-col gap-1.5 my-1 text-left">
+    <div class="flex flex-col gap-1.5 my-1 text-left shrink-0">
         <p class="text-[11px] font-semibold text-stone-700 text-center mb-0.5">Durch welche glückliche Fügung kennst du Kristin?</p>
 
         <!-- Kristin -->
@@ -55,7 +55,7 @@
     </div>
 
     <!-- Feedback & Weiter Button -->
-    <div class="mt-2">
+    <div class="mt-2 shrink-0">
         <div id="intro-feedback" class="hidden p-2.5 rounded-xl text-xs font-medium bg-amber-50 border border-amber-200 text-amber-900 mb-2 leading-relaxed"></div>
 
         <button
