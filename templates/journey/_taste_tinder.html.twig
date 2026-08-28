@@ -33,7 +33,7 @@
 
         <!-- End-State (wenn alle Karten abgeswipt sind) -->
         <div id="tinder-end-state" class="hidden text-center p-4">
-            <h3 class="font-serif font-bold text-lg text-amber-900 mt-2 mb-1">Kulinarisch durchgespielt!</h3>
+            <h3 class="font-serif font-bold text-lg text-amber-900 mt-2 mb-1">Alles durchgespielt!</h3>
             <p id="tinder-final-score" class="text-xs text-stone-600 leading-relaxed mb-3"></p>
         </div>
     </div>
@@ -87,6 +87,27 @@
                 kristinLikes: true,
                 commentLike: "Exakt! Feine Schokoraspeln in cremiger Sahne – da kann Kristin einfach niemals Nein sagen.",
                 commentDislike: "Falsch gedacht! Stracciatella gehört fest zu Kristins Eisdielen-Favoriten."
+            },
+            {
+                title: "Spinnen",
+                image: "https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787603220/Kristin/Spinne_avgrkg.jpg",
+                kristinLikes: false,
+                commentLike: "Echt jetzt? Kristin und Spinnen sind leider keine Freunde.",
+                commentDislike: "Sehr gut! Spinnen sind bei Kristin absolut nicht willkommen."
+            },
+            {
+                title: "Feuerwerk",
+                image: "https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787603225/Kristin/Feuerwerk_ssouip.jpg",
+                kristinLikes: false,
+                commentLike: "Feuerwerk? Kristin ist leider gar kein Fan davon.",
+                commentDislike: "Genau! Kristin kann mit Feuerwerk wenig anfangen."
+            },
+            {
+                title: "Wolf",
+                image: "https://res.cloudinary.com/dl4y4cfvs/image/upload/v1787603231/Kristin/Wolf_ftpmlo.jpg",
+                kristinLikes: true,
+                commentLike: "Faszinierendes Tier! Kristin ist von einem Wolf absolut beeindruckt.",
+                commentDislike: "Ein Wolf ist majestätisch! Das sollte man eigentlich mögen."
             }
         ];
 
@@ -153,7 +174,7 @@
             document.getElementById('tinder-end-state').classList.remove('hidden');
 
             document.getElementById('tinder-final-score').textContent =
-                `Du hast ${matchesCount} von ${tinderItems.length} kulinarischen Vorlieben exakt wie Kristin eingeschätzt!`;
+                `Du hast ${matchesCount} von ${tinderItems.length} Vorlieben exakt wie Kristin eingeschätzt!`;
 
             nextBtn.classList.remove('hidden');
             nextBtn.disabled = false;

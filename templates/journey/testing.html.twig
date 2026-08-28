@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Ein Lebensjahr mit Kristin</title>
+    <title>Ein Lebensjahr mit Kristin (Testing)</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -59,11 +59,6 @@
             border-radius: 1.25rem;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
         }
-
-        body.scroll-locked {
-            overflow: hidden !important;
-            touch-action: none;
-        }
     </style>
 </head>
 <body>
@@ -88,7 +83,6 @@
                 id="section-{{ slide.id }}"
                 class="story-section {% if slide.id == 'it-hacking' %}justify-center{% endif %}"
                 data-bg="bg-{{ slide.id }}"
-                {% if slide.id == 'intro-role' or slide.id == 'neptunbad-sauna' or slide.id == 'it-hacking' or slide.id == 'kennzeichen-game' or slide.id == 'rio-kniffel' or slide.id == 'taylor-kardashian-game' or slide.id == 'food-game' or slide.id == 'taste-tinder' %}data-locked="true"{% endif %}
         >
 
             {% if slide.id == 'intro-role' %}
@@ -123,23 +117,18 @@
 <script>
     gsap.registerPlugin(ScrollTrigger);
 
-    // Sperre immer aktiv in der Produktion
     const sections = document.querySelectorAll('.story-section[data-bg]');
 
     sections.forEach((section) => {
         const targetBgId = section.getAttribute('data-bg');
         const targetBg = document.getElementById(targetBgId);
-        const isLocked = section.getAttribute('data-locked') === 'true';
 
         ScrollTrigger.create({
             trigger: section,
-            start: "top 30%", // Greift, wenn die Section die Mitte erreicht
+            start: "top 50%", // Greift, wenn die Section die Mitte erreicht
             end: "bottom center",
             onEnter: () => {
                 activateImage(targetBg);
-                if (isLocked && section.dataset.unlocked !== 'true') {
-                    lockScroll(section);
-                }
             },
             onEnterBack: () => activateImage(targetBg)
         });
@@ -148,36 +137,6 @@
     function activateImage(targetBg) {
         document.querySelectorAll('.bg-image').forEach(img => img.classList.remove('active'));
         if (targetBg) targetBg.classList.add('active');
-    }
-
-    function preventScroll(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        return false;
-    }
-
-    function lockScroll(section) {
-        if (section.dataset.unlocked === 'true') return;
-
-        document.body.classList.add('scroll-locked');
-
-        // Aktive Scroll-Sperre gegen Touch-Swipes und Mausrad
-        window.addEventListener('wheel', preventScroll, { passive: false });
-        window.addEventListener('touchmove', preventScroll, { passive: false });
-
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    function unlockSection(sectionId) {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            section.dataset.unlocked = 'true';
-            document.body.classList.remove('scroll-locked');
-
-            // Event-Listener wieder entfernen
-            window.removeEventListener('wheel', preventScroll);
-            window.removeEventListener('touchmove', preventScroll);
-        }
     }
 </script>
 </body>

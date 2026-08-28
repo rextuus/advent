@@ -117,13 +117,13 @@
         feedback.classList.remove('hidden');
 
         if (sauceLevel < 35) {
-            feedback.textContent = "Trockenübung! Das ist viel zu wenig Hollandaise für Kristins Ansprüche. Aber wir lassen es gelten!";
+            feedback.textContent = "Trockenübung! Das ist viel zu wenig Hollandaise. Selbst für die Ansprüche eines Normalverbrauchers. Aber wir lassen es gelten!";
             feedback.className = "p-2.5 rounded-xl text-xs font-medium bg-amber-50 border border-amber-200 text-amber-900 mb-2";
-        } else if (sauceLevel >= 35 && sauceLevel <= 85) {
-            feedback.textContent = "Perfekte Dosierung! Der Spargel schwimmt genau in der richtigen Menge goldenem Glück!";
+        } else if (sauceLevel >= 35 && sauceLevel <= 75) {
+            feedback.textContent = "Perfekte Dosierung! Der Spargel schwimmt genau in der richtigen Menge goldenem Glücks!";
             feedback.className = "p-2.5 rounded-xl text-xs font-medium bg-emerald-50 border border-emerald-200 text-emerald-900 mb-2";
         } else {
-            feedback.textContent = "Hollandaise-Tsunami! Man sieht zwar keinen Spargel mehr, aber genau SO gehört sich das eigentlich!";
+            feedback.textContent = "Hollandaise-Tsunami! Man sieht zwar keinen Spargel mehr, aber genau SO gehört sich das eigentlich! Wolf ist stolz auf dich!";
             feedback.className = "p-2.5 rounded-xl text-xs font-medium bg-amber-100 border border-amber-300 text-amber-950 mb-2";
         }
 
