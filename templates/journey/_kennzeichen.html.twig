@@ -81,25 +81,25 @@
     </div>
 
     <div class="flex gap-2 my-2">
-        <button type="button" id="kz-prev-btn" onclick="showPage(1)" class="hidden flex-1 py-1 bg-stone-200 text-black font-semibold rounded-xl text-[9px] transition-all shadow">Zurück</button>
-        <button type="button" id="kz-next-btn" onclick="showPage(2)" class="flex-1 py-1 bg-stone-200 text-black font-semibold rounded-xl text-[9px] transition-all shadow">Weiter</button>
+        <button type="button" id="kz-prev-btn" onclick="event.stopPropagation(); showPage(1)" class="hidden flex-1 py-1 bg-stone-200 text-black font-semibold rounded-xl text-[9px] transition-all shadow">Zurück</button>
+        <button type="button" id="kz-next-btn" onclick="event.stopPropagation(); showPage(2)" class="flex-1 py-1 bg-stone-200 text-black font-semibold rounded-xl text-[9px] transition-all shadow">Weiter</button>
     </div>
 
     <div>
         <button
                 type="button"
                 id="check-kz-btn"
-                onclick="checkKennzeichen()"
+                onclick="event.stopPropagation(); checkKennzeichen()"
                 class="hidden w-full py-2 bg-amber-800 hover:bg-amber-700 text-white font-semibold rounded-xl text-xs transition-all shadow mt-1"
         >
             In die App eintragen
         </button>
 
         <div class="mt-6 flex gap-2">
-            <button type="button" onclick="repeatKennzeichen()" class="flex-1 py-1 bg-stone-200 text-black font-semibold rounded-xl text-[9px] transition-all shadow">
+            <button type="button" onclick="event.stopPropagation(); repeatKennzeichen()" class="flex-1 py-1 bg-stone-200 text-black font-semibold rounded-xl text-[9px] transition-all shadow">
                 Wiederholen
             </button>
-            <button type="button" onclick="unlockSection(this)" class="flex-1 py-1 bg-stone-200 text-black font-semibold rounded-xl text-[9px] transition-all shadow">
+            <button type="button" onclick="event.stopPropagation(); unlockSection(this)" class="flex-1 py-1 bg-stone-200 text-black font-semibold rounded-xl text-[9px] transition-all shadow">
                 Überspringen
             </button>
         </div>
