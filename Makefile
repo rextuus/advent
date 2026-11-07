@@ -83,11 +83,16 @@ PROD_BACKUP_DAYS ?= 14
 
 prod-up: ## Produktion: Images bauen, sichern, Datenbank migrieren, alles starten (auch für Updates; ohne Sicherung: NO_BACKUP=ja)
 	$(PROD_DC) build
-	$(PROD_DC) up -d --wait php
+	@# --force-recreate: sonst behaelt Compose bei manchen Docker-Versionen/Cache-Konstellationen
+	@# den alten Container (mit alten PHP-Extensions) trotz neu gebautem Image
+	$(PROD_DC) up -d --wait --force-recreate php
 	@# erst sichern, dann migrieren – schlägt die Sicherung fehl, bricht make hier ab
 	@if [ "$(NO_BACKUP)" = "ja" ]; then echo "Ohne Sicherung (NO_BACKUP=ja)."; else $(MAKE) --no-print-directory prod-backup PROD_ENV=$(PROD_ENV) PROD_PROJECT=$(PROD_PROJECT) PROD_BACKUP_DIR=$(PROD_BACKUP_DIR); fi
+	@# pdo_sqlite-Sicherheitscheck: wenn die Extension trotz allem fehlt, lieber hart abbrechen
+	@# mit klarer Meldung statt eines kryptischen "could not find driver" bei der Migration
+	@$(PROD_PHP) php -m | grep -qi '^pdo_sqlite$$' || { echo "FEHLER: pdo_sqlite fehlt im php-Container trotz Rebuild. Einmalig 'docker compose -p $(PROD_PROJECT) -f compose.prod.yaml --env-file $(PROD_ENV) build --no-cache php' ausfuehren."; exit 1; }
 	$(PROD_PHP) php bin/console doctrine:migrations:migrate --no-interaction --allow-no-migration
-	$(PROD_DC) up -d --wait
+	$(PROD_DC) up -d --wait --force-recreate
 
 prod-deploy: ## Produktion: neuesten Code holen und ausrollen (git pull + prod-up)
 	git pull
