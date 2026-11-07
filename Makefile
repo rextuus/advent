@@ -9,7 +9,7 @@ PHP  = $(DC) exec -T php
 COMPOSER = $(DC) exec -T php composer
 
 .DEFAULT_GOAL := help
-.PHONY: help up down restart sh console logs install assets assets-watch db db-status migration db-dump db-restore test qa lint prod-up prod-down prod-logs prod-console prod-status prod-backup prod-import prod-restore-test
+.PHONY: help up down restart sh console logs install assets assets-watch db db-status migration db-dump db-restore test qa lint prod-up prod-deploy prod-down prod-logs prod-console prod-status prod-backup prod-import prod-restore-test
 
 help: ## Diese Hilfe
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-16s %s\n", $$1, $$2}'
@@ -88,6 +88,10 @@ prod-up: ## Produktion: Images bauen, sichern, Datenbank migrieren, alles starte
 	@if [ "$(NO_BACKUP)" = "ja" ]; then echo "Ohne Sicherung (NO_BACKUP=ja)."; else $(MAKE) --no-print-directory prod-backup PROD_ENV=$(PROD_ENV) PROD_PROJECT=$(PROD_PROJECT) PROD_BACKUP_DIR=$(PROD_BACKUP_DIR); fi
 	$(PROD_PHP) php bin/console doctrine:migrations:migrate --no-interaction --allow-no-migration
 	$(PROD_DC) up -d --wait
+
+prod-deploy: ## Produktion: neuesten Code holen und ausrollen (git pull + prod-up)
+	git pull
+	$(MAKE) --no-print-directory prod-up PROD_ENV=$(PROD_ENV) PROD_PROJECT=$(PROD_PROJECT) PROD_BACKUP_DIR=$(PROD_BACKUP_DIR) NO_BACKUP=$(NO_BACKUP)
 
 prod-down: ## Produktion: stoppen (Daten bleiben im Volume)
 	$(PROD_DC) down
