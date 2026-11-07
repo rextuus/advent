@@ -1,0 +1,30 @@
+services:
+  php:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    volumes:
+      - app_data:/var/www/html/var
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:latest
+    ports:
+      - "${HTTP_PORT:-80}:80"
+    volumes:
+      - app_data:/var/www/html/var
+      - ./docker/caddy/Caddyfile:/etc/caddy/Caddyfile
+    depends_on:
+      - php
+    networks:
+      - app-network
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  app_data:

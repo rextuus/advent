@@ -5,14 +5,15 @@ namespace App\Command;
 use App\DataFixtures\AppFixtures;
 use App\Entity\Question;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+#[AsCommand(name: 'app:update-door')]
 class UpdateDoorCommand extends Command
 {
-    protected static $defaultName = 'app:update-door';
     private $entityManager;
     private $appFixtures;
 
@@ -23,14 +24,14 @@ class UpdateDoorCommand extends Command
         $this->appFixtures = $appFixtures;
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setDescription('Update a specific door with data from a JSON file')
             ->addArgument('doorNumber', InputArgument::REQUIRED, 'The door number');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $doorNumber = $input->getArgument('doorNumber');
         
