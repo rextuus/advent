@@ -101,13 +101,17 @@ prod-console: ## Produktion: Symfony-Konsole, z. B. make prod-console CMD="debug
 prod-status: ## Produktion: Zustand auf einen Blick (Container, Datenbank, letzte Sicherung)
 	@$(PROD_DC) ps --format 'table {{.Service}}\t{{.Status}}'
 	@echo "Datenbank:"
-	@$(PROD_PHP) php bin/console dbal:run-sql "SELECT 1" >/dev/null 2>&1 && echo "  OK" || echo "  FEHLER"
+	@$(PROD_DC) exec -T php test -f var/data.db 2>/dev/null && ($(PROD_PHP) php bin/console dbal:run-sql "SELECT 1" >/dev/null 2>&1 && echo "  OK" || echo "  FEHLER") || echo "  noch keine Datenbank vorhanden"
 	@echo "Letzte Sicherung:"
 	@ls -t $(PROD_BACKUP_DIR)/*.db.gz 2>/dev/null | head -1 | sed 's/^/  /' || echo "  keine"
 
-prod-backup: ## Produktion: SQLite-Datenbank nach backups/prod/ sichern, ältere als 14 Tage löschen
+prod-backup: ## Produktion: SQLite-Datenbank nach backups/prod/ sichern, ältere als 14 Tage löschen (noch keine Datenbank? wird übersprungen)
 	@mkdir -p $(PROD_BACKUP_DIR)
-	@file=$(PROD_BACKUP_DIR)/advent-$$(date +%F-%H%M).db.gz; \
+	@if ! $(PROD_DC) exec -T php test -f var/data.db; then \
+		echo "Noch keine Datenbank (var/data.db) vorhanden – Sicherung übersprungen."; \
+		exit 0; \
+	fi; \
+	file=$(PROD_BACKUP_DIR)/advent-$$(date +%F-%H%M).db.gz; \
 	set -o pipefail; \
 	$(PROD_DC) exec -T php cat var/data.db | gzip > "$$file.part" \
 	  && mv "$$file.part" "$$file" && echo "Sicherung: $$file" \
