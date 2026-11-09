@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Advent – Deployment-Checkliste</title>
+<style>
+:root {
+  --bg: #e1e8e3; --card: #f6f8f6; --raised: #ebf0ec; --ink: #18211c; --muted: #5a6760; --line: #cfd9d2;
+  --brand: #2e6b4f; --brand-dark: #163628; --soft: #d6e7dc; --warn: #8f5514; --warn-soft: #f6ead8; --bad: #992f27;
+  --code: #10261c; --code-ink: #d6e7dc;
+  --srv: #7a3e9d; --srv-soft: #efe2f6;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1712; --card: #16211b; --raised: #1d2a23; --ink: #e3ebe5; --muted: #9fb1a6; --line: #2a3a31;
+    --brand: #6fc597; --brand-dark: #9fe0bb; --soft: #1f3a2c; --warn: #e3b26b; --warn-soft: #2e2416; --bad: #ff9a8f;
+    --code: #0a110d; --code-ink: #cfe3d6;
+    --srv: #d6a6f0; --srv-soft: #2a1934;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 860px; margin: 0 auto; padding: 24px 16px 64px; }
+header { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 12px 0 10px; border-bottom: 1px solid var(--line); }
+h1 { margin: 0; font-size: 1.5rem; letter-spacing: -0.01em; }
+.sub { margin: 2px 0 10px; color: var(--muted); font-size: 0.9rem; }
+.bar { height: 8px; border-radius: 99px; background: var(--raised); overflow: hidden; }
+.bar span { display: block; height: 100%; width: 0; background: var(--brand); transition: width .3s ease; }
+.meta { display: flex; justify-content: space-between; gap: 8px; margin-top: 6px; font-size: 0.85rem; color: var(--muted); }
+.meta button { border: 0; background: none; color: var(--muted); text-decoration: underline; cursor: pointer; font: inherit; }
+.vars { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin: 18px 0 8px;
+  padding: 14px; border-radius: 14px; background: var(--card); box-shadow: 0 0 0 1px var(--line); }
+.vars label { display: grid; gap: 4px; font-size: 0.8rem; color: var(--muted); font-weight: 600; }
+.vars input { width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 9px; background: var(--raised);
+  color: var(--ink); font: 0.9rem ui-monospace, SFMono-Regular, Menlo, monospace; }
+.vars p { grid-column: 1 / -1; margin: 0; font-size: 0.8rem; color: var(--muted); }
+.group { display: grid; gap: 8px; align-content: start; margin: 0; padding: 10px 12px 12px; border: 1px solid var(--line);
+  border-radius: 12px; border-left: 4px solid var(--brand); }
+.group.srv { border-left-color: var(--srv); }
+.group.keys { border-left-color: var(--bad); }
+.group .row { display: flex; gap: 6px; }
+.group .row input { flex: 1; }
+.group .row button, .group .opt { padding: 6px 10px; border: 1px solid var(--line); border-radius: 9px; background: var(--raised);
+  color: var(--ink); font: 600 0.75rem system-ui, sans-serif; cursor: pointer; }
+.group .opt { display: flex; align-items: center; gap: 6px; border: 0; background: none; padding: 0; color: var(--muted); font-weight: 600; }
+.group .opt input { width: auto; accent-color: var(--brand); }
+.missing { margin: 8px 0 0; font-size: 0.85rem; color: var(--bad); }
+.group legend { padding: 0 4px; }
+section { margin-top: 22px; }
+section > h2 { display: flex; align-items: baseline; gap: 10px; margin: 0 0 8px; font-size: 1.05rem; }
+section > h2 small { color: var(--muted); font-weight: 500; font-size: 0.8rem; }
+section > h2 .count { margin-left: auto; font-size: 0.8rem; color: var(--muted); font-weight: 600; }
+.step { display: grid; grid-template-columns: 28px 1fr; gap: 10px; padding: 12px 14px; margin-bottom: 8px;
+  border-radius: 14px; background: var(--card); box-shadow: 0 0 0 1px var(--line); transition: opacity .2s; }
+.step.done { opacity: .55; }
+.step.done .title { text-decoration: line-through; }
+.step input[type=checkbox] { width: 22px; height: 22px; margin: 1px 0 0; accent-color: var(--brand); cursor: pointer; }
+.title { font-weight: 650; cursor: pointer; }
+.text { margin: 3px 0 0; color: var(--muted); font-size: 0.9rem; }
+.text code, .title code { padding: 1px 5px; border-radius: 6px; background: var(--raised); font-size: 0.85em; }
+.cmd { position: relative; margin: 8px 0 0; }
+.cmd pre { margin: 0; padding: 34px 12px 10px 12px; border-radius: 10px; background: var(--code); color: var(--code-ink);
+  font: 0.82rem/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; white-space: pre-wrap; word-break: break-word; }
+.cmd .v { color: #ffd38a; }
+.cmd button { position: absolute; top: 6px; right: 6px; padding: 4px 8px; border: 0; border-radius: 7px; cursor: pointer;
+  background: rgba(255,255,255,.12); color: var(--code-ink); font: 600 0.75rem system-ui, sans-serif; }
+.cmd button.ok { background: var(--brand); color: #fff; }
+.note { margin: 8px 0 0; padding: 8px 10px; border-radius: 9px; background: var(--warn-soft); color: var(--warn); font-size: 0.85rem; }
+.where { display: inline-block; margin-left: 6px; padding: 0 7px; border-radius: 99px; background: var(--soft);
+  color: var(--brand-dark); font-size: 0.72rem; font-weight: 700; vertical-align: 2px; }
+.where.srv { background: var(--srv-soft); color: var(--srv); }
+.step:has(.where.srv) { box-shadow: inset 4px 0 0 var(--srv), 0 0 0 1px var(--line); }
+.step:has(.where.local) { box-shadow: inset 4px 0 0 var(--brand), 0 0 0 1px var(--line); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px; grid-column: 1 / -1; }
+.cmd .c { color: #8fa89a; }
+footer { margin-top: 28px; color: var(--muted); font-size: 0.8rem; }
+@media print { header { position: static; } .cmd button, .meta button { display: none; } .step { break-inside: avoid; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Advent – Deployment-Checkliste</h1>
+    <p class="sub">Schritt für Schritt von der ersten Einrichtung bis zum laufenden Betrieb. Häkchen bleiben in diesem Browser gespeichert.</p>
+    <div class="bar"><span id="bar"></span></div>
+    <div class="meta"><span id="progress">0 von 0 erledigt</span><button type="button" id="reset">alles zurücksetzen</button></div>
+  </header>
+
+  <div class="vars">
+    <fieldset class="group">
+      <legend><span class="where local">lokal</span></legend>
+      <label>Domain <input data-var="domain" placeholder="advent.example.de"></label>
+      <label>GitHub-Repo <input data-var="repo" placeholder="benutzer/advent"></label>
+    </fieldset>
+    <fieldset class="group srv">
+      <legend><span class="where srv">Server</span></legend>
+      <label>SSH-Benutzer <input data-var="srvUser" placeholder="benutzer"></label>
+      <label>IP oder Hostname (SSH) <input data-var="srvHost" placeholder="203.0.113.10"></label>
+      <label>WireGuard-IP (fest an Port 7999 gebunden) <input data-var="wgHost" placeholder="10.0.0.2"></label>
+    </fieldset>
+    <fieldset class="group keys">
+      <legend><span class="where" style="background: var(--warn-soft); color: var(--bad)">Zugänge &amp; Schlüssel</span></legend>
+      <label>APP_SECRET
+        <span class="row"><input data-var="appSecret" data-secret type="password" autocomplete="off" placeholder="zufällig, 32 Zeichen"><button type="button" id="gen-secret">erzeugen</button></span></label>
+      <label>Sentry (Fehlermeldungen, optional) <input data-var="sentryDsn" data-secret type="password" autocomplete="off" placeholder="https://…@sentry.io/…"></label>
+      <label class="opt"><input type="checkbox" id="show-secrets"> anzeigen</label>
+      <label class="opt"><input type="checkbox" id="remember-secrets"> in diesem Browser merken (sonst nur bis zum Schließen)</label>
+    </fieldset>
+    <p>Werte werden in die Befehle unten eingesetzt (gelb) und nur hier im Browser gespeichert – Schlüssel nur, wenn „merken“ an ist; Abschnitt 6 setzt alles auf einmal in <code>.env.prod.local</code>; <code>ssh</code>-Ziel setzt sich aus Benutzer und Adresse zusammen.</p>
+  </div>
+
+  <section data-section>
+    <h2>1. Vorbereitung <small>lokal, beliebig vorher</small><span class="count"></span></h2>
+    <div class="step" data-id="prep-qa"><input type="checkbox"><div>
+      <div class="title">Alles grün und gepusht <span class="where local">lokal</span></div>
+      <p class="text">Auf den Server kommt nur, was in Git ist.</p>
+      <div class="cmd"><pre>make qa
+git status          # nichts offen
+git push</pre></div></div></div>
+    <div class="step" data-id="prep-db-backup"><input type="checkbox"><div>
+      <div class="title">Lokale SQLite-Datenbank sichern <span class="where local">lokal</span></div>
+      <p class="text">Nur zur Sicherheit, bevor irgendetwas am Deployment ausprobiert wird.</p>
+      <div class="cmd"><pre>make db-dump</pre></div></div></div>
+  </section>
+
+  <section data-section>
+    <h2>2. Server einrichten <small>einmalig, vor dem ersten Deploy</small><span class="count"></span></h2>
+    <div class="step" data-id="srv-port"><input type="checkbox"><div>
+      <div class="title">Port 7999 auf {{wgHost}} frei <span class="where srv">Server</span></div>
+      <p class="text">Caddy bindet in <code>compose.prod.yaml</code> fest an <code>{{wgHost}}:7999</code> – nur über diese Adresse erreichbar, nicht über alle Interfaces.</p>
+      <div class="cmd"><pre>ssh {{sshSrv}}
+ss -ltn | grep '{{wgHost}}:7999'    # darf nichts ausgeben</pre></div></div></div>
+    <div class="step" data-id="srv-dirs"><input type="checkbox"><div>
+      <div class="title">Ordner anlegen <span class="where srv">Server</span></div>
+      <div class="cmd"><pre>ssh {{sshSrv}}
+sudo mkdir -p /opt/advent
+sudo chown "$USER": /opt/advent</pre></div></div></div>
+    <div class="step" data-id="srv-deploykey"><input type="checkbox"><div>
+      <div class="title">GitHub-Zugang: Deploy-Key <span class="where srv">Server</span></div>
+      <p class="text">Das Repo ist privat – ohne Schlüssel kommt <code>Permission denied (publickey)</code>. Ein Deploy-Key gilt nur für dieses eine Repo und nur lesend; dein persönlicher GitHub-Schlüssel bleibt auf deinem Rechner.</p>
+      <div class="cmd"><pre>ssh-keygen -t ed25519 -f ~/.ssh/advent_deploy -N "" -C "advent-server"
+cat &gt;&gt; ~/.ssh/config &lt;&lt;'EOF'
+Host github-advent
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/advent_deploy
+  IdentitiesOnly yes
+EOF
+cat ~/.ssh/advent_deploy.pub             <span class="c"># diese Zeile kopieren</span></pre></div>
+      <p class="text">Auf GitHub: Repo <code>{{repo}}</code> → <b>Settings → Deploy keys → Add deploy key</b>, Titel z. B. „Server“, die kopierte Zeile einfügen, <b>„Allow write access“ aus</b> lassen. Dann prüfen:</p>
+      <div class="cmd"><pre>ssh -T git@github-advent                <span class="c"># „Hi {{repo}}! You've successfully authenticated…“</span></pre></div></div></div>
+    <div class="step" data-id="srv-clone"><input type="checkbox"><div>
+      <div class="title">Code holen und Sicherungsordner anlegen <span class="where srv">Server</span></div>
+      <p class="text"><code>backups/</code> ist nicht im Repo (git-ignoriert) – ohne den Ordner scheitern Sicherung und Wiederherstellung. Existiert <code>/opt/advent</code> schon (z. B. von einem abgebrochenen Klon), erst leeren oder löschen – sonst meldet Git <code>destination path already exists and is not an empty directory</code>. Unbedingt vorher aus dem Ordner herausgehen (<code>cd /</code>) – sonst löscht <code>rm -rf</code> das eigene Arbeitsverzeichnis der Shell und <code>git clone</code> schlägt mit <code>Unable to read current working directory</code> fehl.</p>
+      <div class="cmd"><pre>cd /                                                       <span class="c"># erst raus, sonst löscht rm das eigene Arbeitsverzeichnis</span>
+ls -A /opt/advent 2&gt;/dev/null &amp;&amp; sudo rm -rf /opt/advent    <span class="c"># nur falls der Ordner schon existiert und leer sein soll</span>
+git clone git@github-advent:{{repo}}.git /opt/advent
+cd /opt/advent
+mkdir -p backups/prod
+chmod 700 backups</pre></div>
+      <p class="note">Klon schon einmal gescheitert? Macht nichts – <code>/opt/advent</code> ist dann noch leer, einfach erneut klonen.</p></div></div>
+    <div class="step" data-id="srv-env"><input type="checkbox"><div>
+      <div class="title"><code>.env.prod.local</code> anlegen <span class="where srv">Server</span></div>
+      <p class="text">Oben ausfüllen, dann unten in <b>Abschnitt 6</b> den Block kopieren und hier einfügen.</p>
+      <div class="cmd"><pre>cd /opt/advent
+touch .env.prod.local &amp;&amp; chmod 600 .env.prod.local</pre></div>
+      <p class="note">.env.prod.local danach zusätzlich im Passwortmanager sichern.</p></div></div>
+    <div class="step" data-id="srv-up"><input type="checkbox"><div>
+      <div class="title">Stack starten und migrieren <span class="where srv">Server</span></div>
+      <div class="cmd"><pre>make prod-up
+make prod-status</pre></div></div></div>
+    <div class="step" data-id="srv-dns"><input type="checkbox"><div>
+      <div class="title">Reverse Proxy auf {{wgHost}}:7999</div>
+      <p class="text">Caddy ist nur an die WireGuard-IP <code>{{wgHost}}</code> gebunden, nicht öffentlich erreichbar – die Domain muss über einen vorgelagerten Reverse Proxy (z. B. auf einem VPS im selben WireGuard-Netz) auf <code>{{wgHost}}:7999</code> weitergeleitet werden.</p></div></div>
+  </section>
+
+  <section data-section>
+    <h2>3. Go-Live <small>erster Start in Produktion</small><span class="count"></span></h2>
+    <div class="step" data-id="go-smoke"><input type="checkbox"><div>
+      <div class="title">Smoke-Test</div>
+      <p class="text">Startseite öffnen, ein Türchen/eine Frage durchklicken, kein Fehler im Log.</p>
+      <div class="cmd"><pre>curl -s http://{{wgHost}}:7999/</pre></div></div></div>
+    <div class="step" data-id="go-logs"><input type="checkbox"><div>
+      <div class="title">Logs kurz beobachten <span class="where srv">Server</span></div>
+      <div class="cmd"><pre>ssh {{sshSrv}}
+cd /opt/advent &amp;&amp; make prod-logs</pre></div></div></div>
+  </section>
+
+  <section data-section>
+    <h2>3b. Updates ausrollen <small>bei jedem weiteren Deploy</small><span class="count"></span></h2>
+    <div class="step" data-id="update-deploy"><input type="checkbox"><div>
+      <div class="title">Neuesten Code holen und ausrollen <span class="where srv">Server</span></div>
+      <p class="text"><code>make prod-up</code> baut nur aus dem lokalen Checkout – es holt selbst keinen neuen Code. <code>make prod-deploy</code> macht beides in einem Schritt: <code>git pull</code> und danach <code>make prod-up</code> (inkl. Sicherung und Migration).</p>
+      <div class="cmd"><pre>ssh {{sshSrv}}
+cd /opt/advent &amp;&amp; make prod-deploy</pre></div></div></div>
+  </section>
+
+  <section data-section>
+    <h2>4. Direkt danach <span class="count"></span></h2>
+    <div class="step" data-id="post-cron"><input type="checkbox"><div>
+      <div class="title">Tägliche Sicherung einrichten <span class="where srv">Server</span></div>
+      <div class="cmd"><pre>ssh {{sshSrv}}
+crontab -e
+30 3 * * * cd /opt/advent &amp;&amp; make prod-backup &gt;&gt; backups/cron.log 2&gt;&amp;1</pre></div></div></div>
+    <div class="step" data-id="post-uptime"><input type="checkbox"><div>
+      <div class="title">Uptime-Check anlegen</div>
+      <p class="text">z. B. in Uptime Kuma: <code>http://{{wgHost}}:7999/</code> (nur aus dem WireGuard-Netz erreichbar)</p></div></div>
+  </section>
+
+  <section data-section>
+    <h2>5. Nach einer Woche <small>Aufräumen</small><span class="count"></span></h2>
+    <div class="step" data-id="later-restore"><input type="checkbox"><div>
+      <div class="title">Sicherung einmal probehalber prüfen <span class="where srv">Server</span></div>
+      <div class="cmd"><pre>ssh {{sshSrv}}
+cd /opt/advent &amp;&amp; make prod-restore-test</pre></div></div></div>
+  </section>
+
+  <section data-section>
+    <h2>6. Alle Werte für .env.prod.local <small>zum Kopieren</small><span class="count"></span></h2>
+    <div class="step" data-id="env-block"><input type="checkbox"><div>
+      <div class="title">Werte setzen <span class="where srv">Server</span></div>
+      <p class="text">Setzt jede Zeile in <code>.env.prod.local</code> (alte Zeile mit demselben Namen wird ersetzt). Leere optionale Schlüssel bleiben aus. Beliebig oft ausführbar; danach <code>make prod-up</code>.</p>
+      <div class="cmd"><pre id="envblock"></pre></div>
+      <p class="missing" id="envmissing" hidden></p>
+      <p class="note">Enthält Schlüssel im Klartext – nur ins Terminal des Servers einfügen, nicht in Chats oder Dateien. Die erste Zeile hält sie aus der Shell-Historie heraus.</p></div></div>
+  </section>
+
+  <footer>Advent-Deployment · Docker-Stack: <code>php</code> + <code>caddy</code>, Datenbank: SQLite (<code>var/data.db</code>) · Befehle: <code>Makefile</code></footer>
+</main>
+
+<script>
+(() => {
+  const KEY = 'advent-deployment';
+  const load = () => { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch { return {}; } };
+  const save = (state) => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch { /* ohne Speicher: nur für diese Sitzung */ } };
+  const state = Object.assign({ done: {}, vars: {} }, load());
+
+  const escape = (text) => text.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[c]);
+  const values = () => {
+    const v = { ...state.vars, ...secrets };
+    v.domainRegex = (v.domain || '').replace(/\./g, '\\.');
+    v.sshSrv = v.srvHost ? `${v.srvUser || '<benutzer>'}@${v.srvHost}` : '';
+    return v;
+  };
+  const placeholders = { domain: 'advent.example.de', domainRegex: 'advent\\.example\\.de', wgHost: '10.0.0.2',
+    sshSrv: '<benutzer>@<server>', srvHost: '<server>', repo: '<github-benutzer>/advent' };
+
+  // Schlüssel: nur im Speicher, außer „merken“ ist an
+  const secretNames = [...document.querySelectorAll('[data-secret]')].map((i) => i.dataset.var);
+  const secrets = {};
+  const remember = document.getElementById('remember-secrets');
+  remember.checked = !!state.rememberSecrets;
+  if (!state.rememberSecrets) { secretNames.forEach((n) => { delete state.vars[n]; }); }
+
+  // Block für .env.prod.local: [Name, Wert, Pflicht?]
+  const quote = (text) => `'${text.replace(/'/g, `'\\''`)}'`;
+  // Wert für die Env-Datei (liest Docker Compose): in '…' wörtlich; enthält er selbst ', dann "…" mit \\, \" und $$
+  const envValue = (text) => (text.includes("'")
+    ? `"${text.replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/\$/g, '$$$$')}"`
+    : `'${text}'`);
+  const envLines = (v) => [
+    ['APP_ENV', 'prod', true],
+    ['APP_SECRET', v.appSecret, true],
+    ['SENTRY_DSN', v.sentryDsn, false],
+  ];
+  const renderEnv = (v) => {
+    const missing = [];
+    const lines = [
+      ' set +o history   <span class="c"># Schlüssel nicht in der Shell-Historie</span>',
+      'cd /opt/advent',
+      'setenv() { sed -i "/^$1=/d" .env.prod.local; printf \'%s=%s\\n\' "$1" "$2" &gt;&gt; .env.prod.local; }',
+    ];
+    for (const [name, value, required] of envLines(v)) {
+      if (value) {
+        lines.push(`setenv ${name} <span class="v">${escape(quote(envValue(value)))}</span>`);
+      } else if (required) {
+        missing.push(name);
+        lines.push(`setenv ${name} <span class="v">'&lt;fehlt&gt;'</span>`);
+      } else {
+        lines.push(`<span class="c"># ${name} – leer = aus</span>`);
+      }
+    }
+    lines.push('unset -f setenv; set -o history', '<span class="c"># danach: make prod-up</span>');
+    document.getElementById('envblock').innerHTML = lines.join('\n');
+    const hint = document.getElementById('envmissing');
+    hint.hidden = missing.length === 0;
+    hint.textContent = missing.length ? `Noch oben eintragen: ${missing.join(', ')}` : '';
+  };
+
+  // Befehle: Vorlage merken, {{name}} gelb einsetzen
+  const blocks = [...document.querySelectorAll('.cmd pre:not(#envblock), .text, .title')].map((el) => ({ el, template: el.innerHTML }));
+  const render = () => {
+    const v = values();
+    for (const { el, template } of blocks) {
+      el.innerHTML = template.replace(/\{\{(\w+)\}\}/g, (_, name) =>
+        `<span class="v">${escape(v[name] || placeholders[name] || name)}</span>`);
+    }
+    renderEnv(v);
+  };
+
+  const steps = [...document.querySelectorAll('.step')];
+  const update = () => {
+    let done = 0;
+    for (const step of steps) {
+      const checked = !!state.done[step.dataset.id];
+      step.querySelector('input').checked = checked;
+      step.classList.toggle('done', checked);
+      done += checked ? 1 : 0;
+    }
+    for (const section of document.querySelectorAll('[data-section]')) {
+      const own = section.querySelectorAll('.step');
+      const ownDone = [...own].filter((s) => state.done[s.dataset.id]).length;
+      section.querySelector('.count').textContent = `${ownDone}/${own.length}`;
+    }
+    document.getElementById('progress').textContent = `${done} von ${steps.length} erledigt`;
+    document.getElementById('bar').style.width = `${(done / steps.length) * 100}%`;
+  };
+
+  for (const step of steps) {
+    const box = step.querySelector('input');
+    const toggle = (checked) => { state.done[step.dataset.id] = checked; save(state); update(); };
+    box.addEventListener('change', () => toggle(box.checked));
+    step.querySelector('.title').addEventListener('click', () => toggle(!box.checked));
+  }
+
+  const setVar = (name, value) => {
+    if (secretNames.includes(name)) {
+      secrets[name] = value;
+      if (state.rememberSecrets) { state.vars[name] = value; } else { delete state.vars[name]; }
+    } else {
+      state.vars[name] = value;
+    }
+    save(state);
+    render();
+  };
+  for (const input of document.querySelectorAll('[data-var]')) {
+    input.value = state.vars[input.dataset.var] || '';
+    if (input.value && secretNames.includes(input.dataset.var)) { secrets[input.dataset.var] = input.value; }
+    input.addEventListener('input', () => setVar(input.dataset.var, input.value.trim()));
+  }
+  remember.addEventListener('change', () => {
+    state.rememberSecrets = remember.checked;
+    secretNames.forEach((n) => { if (remember.checked && secrets[n]) { state.vars[n] = secrets[n]; } else { delete state.vars[n]; } });
+    save(state);
+  });
+  document.getElementById('show-secrets').addEventListener('change', (e) => {
+    document.querySelectorAll('[data-secret]').forEach((i) => { i.type = e.target.checked ? 'text' : 'password'; });
+  });
+  document.getElementById('gen-secret').addEventListener('click', () => {
+    const bytes = crypto.getRandomValues(new Uint8Array(16));
+    const value = [...bytes].map((b) => b.toString(16).padStart(2, '0')).join('');
+    const input = document.querySelector('[data-var="appSecret"]');
+    input.value = value;
+    setVar('appSecret', value);
+  });
+
+  for (const pre of document.querySelectorAll('.cmd pre')) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = 'Kopieren';
+    button.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(pre.textContent);
+        button.textContent = 'Kopiert ✓';
+        button.classList.add('ok');
+      } catch {
+        button.textContent = 'Markieren';
+        const range = document.createRange(); range.selectNodeContents(pre);
+        getSelection().removeAllRanges(); getSelection().addRange(range);
+      }
+      setTimeout(() => { button.textContent = 'Kopieren'; button.classList.remove('ok'); }, 1500);
+    });
+    pre.parentElement.append(button);
+  }
+
+  document.getElementById('reset').addEventListener('click', () => {
+    if (confirm('Alle Häkchen und Werte löschen?')) { state.done = {}; state.vars = {}; secretNames.forEach((n) => { delete secrets[n]; }); save(state);
+      document.querySelectorAll('[data-var]').forEach((i) => { i.value = ''; }); render(); update(); }
+  });
+
+  render();
+  update();
+})();
+</script>
+</body>
+</html>

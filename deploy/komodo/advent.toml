@@ -1,0 +1,120 @@
+# Advent – Komodo-Ressourcen (Resource Sync). Feldnamen geprüft gegen den Quellcode von Komodo v2.3.4
+# (client/core/rs/src/entities/stack.rs, procedure.rs, toml.rs, api/execute/stack.rs).
+#
+# Einbinden: Komodo → Syncs → New Resource Sync, Quelle = dieses Repo, Resource Path = deploy/komodo/advent.toml.
+# Hier stehen keine Secrets. Die Doppelklammer-Verweise im Environment sind Komodo-Secrets (Settings → Variables,
+# Häkchen „Secret“); die Liste steht in .env.prod.dist und docs/deployment.md. Nicht geheime Werte stehen direkt hier.
+# Achtung: Komodo ersetzt einen unbekannten Verweis nicht und meldet auch keinen Fehler. Deshalb prüft
+# pre-deploy.sh die geschriebene .env.prod.local und bricht ab, wenn noch einer darin steht.
+
+[[stack]]
+name = "advent"
+description = "Advent – Kresh-Journey/Adventskalender (compose.prod.yaml)"
+tags = ["advent"]
+# Ein Sync legt den Stack nur an bzw. gleicht ihn an. Deployt wird bewusst von Hand („Deploy“).
+deploy = false
+
+[stack.config]
+# Name des Servers in Komodo (Servers-Liste), nicht der Hostname.
+server = "abyss"
+
+# Quelle: privates GitHub-Repo. git_account = Benutzername eines unter Settings → Providers
+# für github.com hinterlegten Accounts mit Token.
+git_provider = "github.com"
+git_https = true
+git_account = "rextuus"
+repo = "rextuus/advent"
+branch = "main"
+# Leer = neuester Commit von branch. Für einen Rollback hier einen Commit-Hash eintragen und deployen.
+commit = ""
+# Nicht neu klonen; Daten liegen ohnehin außerhalb (Volume advent_prod_mysql_data, BACKUP_DIR).
+reclone = false
+
+# Ergibt: docker compose -p advent -f compose.prod.yaml --env-file .env.prod.local …
+# project_name MUSS „advent“ bleiben (pre-deploy.sh prüft das zusammen mit VOLUME_PREFIX).
+file_paths = ["compose.prod.yaml"]
+project_name = "advent"
+env_file_path = ".env.prod.local"
+
+# Wird bei jedem Deploy nach .env.prod.local geschrieben (KEY=wert, Rechte 600).
+# Keine Kommentare mit Doppelklammern in diesen Block schreiben: sie landen in der Env-Datei und lassen den
+# Pre-Deploy abbrechen.
+environment = """
+# Öffentliche Adresse; TLS macht der Caddy auf dem VPS
+DEFAULT_URI = https://kresh.wh-company.com
+
+# Secrets (beim ersten Deploy neu erzeugt mit make prod-secrets, danach nie mehr ändern)
+APP_SECRET = [[ADVENT_APP_SECRET]]
+MYSQL_PASSWORD = [[ADVENT_MYSQL_PASSWORD]]
+MYSQL_ROOT_PASSWORD = [[ADVENT_MYSQL_ROOT_PASSWORD]]
+# Optional: Fehlermeldungen an Sentry. Ohne Sentry die Zeile löschen statt eine leere Variable anzulegen.
+SENTRY_DSN = [[ADVENT_SENTRY_DSN]]
+
+# Datenbank (nicht ändern, sonst passt es nicht mehr zum bestehenden Volume)
+MYSQL_DATABASE = app
+MYSQL_USER = app
+
+# Eingang: Caddy auf dem VPS (10.0.0.1) → WireGuard → abyss 10.0.0.2:7999
+HTTP_BIND = 10.0.0.2
+HTTP_PORT = 7999
+REVERSE_PROXY_IPS = 10.0.0.1
+
+# Sicherungen (Host-Pfad, einmalig anlegen) und wie viele Dumps je Anlass bleiben
+BACKUP_DIR = /srv/advent/backups
+BACKUP_KEEP = 14
+"""
+
+# Images für app/migrate/web werden auf dem Server gebaut (docker compose build vor up).
+run_build = true
+# Kein „compose pull“ vor jedem Deploy: mysql ist auf eine feste Version gepinnt, und up holt
+# fehlende Images selbst. Selbst gebaute Dienste haben pull_policy: build.
+auto_pull = false
+destroy_before_deploy = false
+
+# Ergibt: docker compose … up -d --wait --wait-timeout 300
+# Der Deploy gilt erst als erfolgreich, wenn alle Dienste „healthy“ sind und migrate erfolgreich war.
+extra_args = ["--wait", "--wait-timeout", "300"]
+
+# migrate läuft bei jedem Deploy einmal und beendet sich, backup läuft nur auf Abruf. Ohne diese Liste würde
+# Komodo den Stack wegen der beendeten Container als „Unhealthy“ anzeigen.
+ignore_services = ["migrate", "backup"]
+
+# Vor dem Bauen: Datenbank sichern (läuft im Periphery-Container im Stack-Ordner; Exit ≠ 0 bricht ab).
+pre_deploy.path = "."
+pre_deploy.command = "sh deploy/komodo/pre-deploy.sh"
+
+# Nach erfolgreichem up: Zustand ins Deploy-Log, alte Advent-Images aufräumen.
+post_deploy.path = "."
+post_deploy.command = "sh deploy/komodo/post-deploy.sh"
+
+# Kein automatisches Deploy bei Push oder neuen Images – deployt wird bewusst.
+webhook_enabled = false
+poll_for_updates = false
+auto_update = false
+send_alerts = true
+
+# ---------------------------------------------------------------------------------------------------------
+# Tägliche Datenbanksicherung: führt `docker compose run --rm --no-TTY --no-deps backup daily` im Stack aus
+# (advent-db-<zeit>-daily.sql.gz in /srv/advent/backups, 14 bleiben liegen).
+# 03:45: wedora sichert um 03:30, abyss startet um 04:30 für Updates neu.
+# no_deps: Ändert ein noch nicht deployter Commit den Dienst database, würde `compose run` ihn sonst nebenbei
+# neu erstellen. Läuft der Stack nicht, scheitert der Dump absichtlich, und Komodo alarmiert (failure_alert).
+
+[[procedure]]
+name = "advent-backup"
+description = "Advent: täglicher Datenbank-Dump nach /srv/advent/backups (Rotation: BACKUP_KEEP)"
+tags = ["advent"]
+
+[procedure.config]
+schedule_format = "English"
+schedule = "Every day at 03:45"
+schedule_timezone = "Europe/Berlin"
+schedule_enabled = true
+schedule_alert = false
+failure_alert = true
+
+[[procedure.config.stage]]
+name = "Datenbank sichern"
+executions = [
+  { execution.type = "RunStackService", execution.params = { stack = "advent", service = "backup", command = ["daily"], no_tty = true, no_deps = true } },
+]
