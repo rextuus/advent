@@ -10,3 +10,5 @@ when@prod:
     framework:
         router:
             strict_requirements: null
+            # Öffentliche Adresse für Links aus der Konsole (compose.prod.yaml setzt DEFAULT_URI)
+            default_uri: '%env(DEFAULT_URI)%'

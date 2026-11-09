@@ -3,9 +3,21 @@ var
 .git
 .idea
 node_modules
-docker
 compose.yaml
 compose.override.yaml
+compose.prod.yaml
+# lokale Dev-Werte (APP_ENV=dev, Dev-Secret) nie ins Image; das Prod-Image legt seine eigene .env an
+.env
 .env.local
 .env.local.php
 .env.*.local
+.env.prod.dist
+# werden im Image gebaut (docker/prod/Dockerfile)
+public/build
+public/bundles
+# Daten, Sicherungen, Doku und Deploy-Skripte gehören nicht ins Image
+*.db
+*.db.bak
+backups
+docs
+deploy

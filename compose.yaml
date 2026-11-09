@@ -22,17 +22,23 @@ services:
       - app-network
 
 ###> doctrine/doctrine-bundle ###
+  # Gleiche Version wie in Produktion (compose.prod.yaml). App: DATABASE_URL in .env, siehe docs/deployment.md.
   database:
-    image: postgres:${POSTGRES_VERSION:-16}-alpine
+    image: mysql:8.4.11
     environment:
-      POSTGRES_DB: ${POSTGRES_DB:-app}
-      # You should definitely change the password in production
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-!ChangeMe!}
-      POSTGRES_USER: ${POSTGRES_USER:-app}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-app}
+      MYSQL_USER: ${MYSQL_USER:-app}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-app}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
+    command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci"]
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -u root -p\"$$MYSQL_ROOT_PASSWORD\" --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 30s
     volumes:
-      - database_data:/var/lib/postgresql/data:rw
-      # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
-      # - ./docker/db/data:/var/lib/postgresql/data:rw
+      - mysql_data:/var/lib/mysql:rw
     networks:
       - app-network
 ###< doctrine/doctrine-bundle ###
@@ -43,5 +49,6 @@ networks:
 
 volumes:
 ###> doctrine/doctrine-bundle ###
-  database_data:
+  # Dev-Daten (Volume advent_mysql_data). Die Produktion nutzt eigene Namen (advent_prod_mysql_data).
+  mysql_data:
 ###< doctrine/doctrine-bundle ###

@@ -9,7 +9,7 @@ PHP  = $(DC) exec -T php
 COMPOSER = $(DC) exec -T php composer
 
 .DEFAULT_GOAL := help
-.PHONY: help up down restart sh console logs install assets assets-watch db db-status migration db-dump db-restore test qa lint prod-up prod-deploy prod-down prod-logs prod-console prod-status prod-backup prod-import prod-restore-test
+.PHONY: help up down restart sh console logs install assets assets-watch db db-status migration db-dump db-restore test qa lint prod-secrets prod-show-secrets prod-up prod-down prod-logs prod-console prod-status prod-backup
 
 help: ## Diese Hilfe
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-16s %s\n", $$1, $$2}'
@@ -51,17 +51,17 @@ db-status: ## Stand der Migrationen
 migration: ## Neue Migration aus Entity-Änderungen erzeugen (danach prüfen und anpassen!)
 	$(PHP) php bin/console doctrine:migrations:diff --no-interaction
 
-db-dump: ## SQLite-Datenbank nach backups/local/<datum>.db sichern
+db-dump: ## Lokale MySQL-Datenbank nach backups/local/<datum>.sql.gz sichern
 	@mkdir -p backups/local
-	@cp var/data.db backups/local/$$(date +%F_%H%M).db
-	@ls -t backups/local/ | head -1
+	@set -o pipefail; file=backups/local/$$(date +%F_%H%M).sql.gz; \
+	$(DC) exec -T database sh -c 'MYSQL_PWD="$$MYSQL_ROOT_PASSWORD" mysqldump -u root --single-transaction --databases "$$MYSQL_DATABASE"' | gzip > "$$file" \
+	  && echo "$$file" || ( rm -f "$$file"; echo "Sicherung FEHLGESCHLAGEN"; exit 1 )
 
 db-restore: ## Letzte lokale Sicherung zurückspielen (Standard: neueste in backups/local/, sonst DUMP=…) – ERSETZT die lokale Datenbank
-	@file=$(or $(DUMP),$(shell ls -t backups/local/*.db 2>/dev/null | head -1)); \
+	@file=$(or $(DUMP),$(shell ls -t backups/local/*.sql.gz 2>/dev/null | head -1)); \
 	test -n "$$file" && test -f "$$file" || ( echo "Keine Sicherung gefunden (DUMP=$$file)." && exit 1 ); \
 	echo "Spiele $$file ein …"; \
-	cp var/data.db var/data.db.bak; \
-	cp "$$file" var/data.db
+	gunzip -c "$$file" | $(DC) exec -T database sh -c 'MYSQL_PWD="$$MYSQL_ROOT_PASSWORD" mysql -u root'
 
 test: ## PHPUnit ausführen
 	$(PHP) vendor/bin/phpunit
@@ -74,29 +74,31 @@ lint: ## Container, Twig und YAML prüfen
 	$(PHP) php bin/console lint:yaml config
 
 # ---------- Produktion ----------
+# Standardweg ist Komodo (deploy/komodo/advent.toml, docs/deployment.md). Diese Ziele sind der manuelle Notweg
+# und erzeugen beim ersten Einrichten die Secrets.
 PROD_ENV         ?= .env.prod.local
 PROD_PROJECT     ?= advent
 PROD_DC           = docker compose -p $(PROD_PROJECT) -f compose.prod.yaml --env-file $(PROD_ENV)
-PROD_PHP          = $(PROD_DC) exec -T php
-PROD_BACKUP_DIR  ?= backups/prod
-PROD_BACKUP_DAYS ?= 14
+PROD_PHP          = $(PROD_DC) exec -T app php
 
-prod-up: ## Produktion: Images bauen, sichern, Datenbank migrieren, alles starten (auch für Updates; ohne Sicherung: NO_BACKUP=ja)
-	$(PROD_DC) build
-	@# --force-recreate: sonst behaelt Compose bei manchen Docker-Versionen/Cache-Konstellationen
-	@# den alten Container (mit alten PHP-Extensions) trotz neu gebautem Image
-	$(PROD_DC) up -d --wait --force-recreate php
-	@# erst sichern, dann migrieren – schlägt die Sicherung fehl, bricht make hier ab
-	@if [ "$(NO_BACKUP)" = "ja" ]; then echo "Ohne Sicherung (NO_BACKUP=ja)."; else $(MAKE) --no-print-directory prod-backup PROD_ENV=$(PROD_ENV) PROD_PROJECT=$(PROD_PROJECT) PROD_BACKUP_DIR=$(PROD_BACKUP_DIR); fi
-	@# pdo_sqlite-Sicherheitscheck: wenn die Extension trotz allem fehlt, lieber hart abbrechen
-	@# mit klarer Meldung statt eines kryptischen "could not find driver" bei der Migration
-	@$(PROD_PHP) php -m | grep -qi '^pdo_sqlite$$' || { echo "FEHLER: pdo_sqlite fehlt im php-Container trotz Rebuild. Einmalig 'docker compose -p $(PROD_PROJECT) -f compose.prod.yaml --env-file $(PROD_ENV) build --no-cache php' ausfuehren."; exit 1; }
-	$(PROD_PHP) php bin/console doctrine:migrations:migrate --no-interaction --allow-no-migration
-	$(PROD_DC) up -d --wait --force-recreate
+prod-secrets: ## Produktion: .env.prod.local aus .env.prod.dist mit Zufallswerten anlegen (überschreibt nichts)
+	@test ! -e $(PROD_ENV) || ( echo "$(PROD_ENV) gibt es schon – nichts verändert." && exit 1 )
+	@umask 077 && sed -e "s/^APP_SECRET=.*/APP_SECRET=$$(openssl rand -hex 32)/" \
+	    -e "s/^MYSQL_PASSWORD=.*/MYSQL_PASSWORD=$$(openssl rand -hex 24)/" \
+	    -e "s/^MYSQL_ROOT_PASSWORD=.*/MYSQL_ROOT_PASSWORD=$$(openssl rand -hex 24)/" \
+	    .env.prod.dist > $(PROD_ENV)
+	@chmod 600 $(PROD_ENV)
+	@echo "$(PROD_ENV) erzeugt (Rechte 600). Die drei Secrets jetzt in Komodo anlegen (ADVENT_APP_SECRET,"
+	@echo "ADVENT_MYSQL_PASSWORD, ADVENT_MYSQL_ROOT_PASSWORD) und im Passwortmanager ablegen: make prod-show-secrets"
 
-prod-deploy: ## Produktion: neuesten Code holen und ausrollen (git pull + prod-up)
-	git pull
-	$(MAKE) --no-print-directory prod-up PROD_ENV=$(PROD_ENV) PROD_PROJECT=$(PROD_PROJECT) PROD_BACKUP_DIR=$(PROD_BACKUP_DIR) NO_BACKUP=$(NO_BACKUP)
+prod-show-secrets: ## Produktion: Secrets aus .env.prod.local mit den Namen der Komodo-Variablen anzeigen
+	@test -r $(PROD_ENV) || ( echo "$(PROD_ENV) fehlt oder ist nicht lesbar (erst make prod-secrets)." && exit 1 )
+	@grep -E '^(APP_SECRET|MYSQL_PASSWORD|MYSQL_ROOT_PASSWORD|SENTRY_DSN)=.' $(PROD_ENV) | sed 's/^/ADVENT_/' | sed 's/=/  →  /'
+
+# Dasselbe wie ein Deploy in Komodo (deploy/komodo/advent.toml): sichern, bauen, migrieren (Dienst migrate), starten.
+prod-up: ## Produktion: Datenbank sichern, Images bauen, migrieren, alles starten (manueller Weg neben Komodo)
+	COMPOSE_PROJECT=$(PROD_PROJECT) ENV_FILE=$(PROD_ENV) sh deploy/komodo/pre-deploy.sh
+	$(PROD_DC) up -d --build --wait --wait-timeout 300
 
 prod-down: ## Produktion: stoppen (Daten bleiben im Volume)
 	$(PROD_DC) down
@@ -105,42 +107,14 @@ prod-logs: ## Produktion: Logs verfolgen
 	$(PROD_DC) logs -f --tail=100
 
 prod-console: ## Produktion: Symfony-Konsole, z. B. make prod-console CMD="debug:router"
-	$(PROD_DC) exec php php bin/console $(CMD)
+	$(PROD_DC) exec app php bin/console $(CMD)
 
-prod-status: ## Produktion: Zustand auf einen Blick (Container, Datenbank, letzte Sicherung)
+prod-status: ## Produktion: Zustand auf einen Blick (Container, /healthz, letzte Sicherung)
 	@$(PROD_DC) ps --format 'table {{.Service}}\t{{.Status}}'
-	@echo "Datenbank:"
-	@$(PROD_DC) exec -T php test -f var/data.db 2>/dev/null && ($(PROD_PHP) php bin/console dbal:run-sql "SELECT 1" >/dev/null 2>&1 && echo "  OK" || echo "  FEHLER") || echo "  noch keine Datenbank vorhanden"
-	@echo "Letzte Sicherung:"
-	@ls -t $(PROD_BACKUP_DIR)/*.db.gz 2>/dev/null | head -1 | sed 's/^/  /' || echo "  keine"
+	@echo; echo "Webserver (das, was der Reverse-Proxy auf dem VPS erreicht):"
+	@$(PROD_DC) exec -T web wget -q -O- http://127.0.0.1/healthz 2>/dev/null | sed 's/^/  /' || echo "  FEHLER"
+	@echo; echo "Letzte Sicherung:"
+	@dir=$$(sed -n 's/^BACKUP_DIR=//p' $(PROD_ENV)); ls -t "$${dir:-/srv/advent/backups}"/advent-db-*.sql.gz 2>/dev/null | head -1 | sed 's/^/  /' || echo "  keine (oder kein Lesezugriff – sudo)"
 
-prod-backup: ## Produktion: SQLite-Datenbank nach backups/prod/ sichern, ältere als 14 Tage löschen (noch keine Datenbank? wird übersprungen)
-	@mkdir -p $(PROD_BACKUP_DIR)
-	@if ! $(PROD_DC) exec -T php test -f var/data.db; then \
-		echo "Noch keine Datenbank (var/data.db) vorhanden – Sicherung übersprungen."; \
-		exit 0; \
-	fi; \
-	file=$(PROD_BACKUP_DIR)/advent-$$(date +%F-%H%M).db.gz; \
-	set -o pipefail; \
-	$(PROD_DC) exec -T php cat var/data.db | gzip > "$$file.part" \
-	  && mv "$$file.part" "$$file" && echo "Sicherung: $$file" \
-	  || ( rm -f "$$file.part"; echo "Sicherung FEHLGESCHLAGEN"; exit 1 )
-	@find $(PROD_BACKUP_DIR) -name 'advent-*.db.gz' -mtime +$(PROD_BACKUP_DAYS) -delete
-
-prod-import: ## Produktion, einmalig beim Umzug: lokale Sicherung einspielen – ERSETZT die Datenbank (DUMP=… CONFIRM=ja)
-	@test "$(CONFIRM)" = "ja" || ( echo "Löscht die Produktionsdatenbank! Aufruf: make prod-import DUMP=backups/local/xyz.db CONFIRM=ja" && exit 1 )
-	@test -f "$(DUMP)" || ( echo "Kein Dump gefunden (DUMP=$(DUMP))." && exit 1 )
-	@# was bisher drin war, vorher sichern (auch eine leere Datenbank – kostet nichts)
-	@$(MAKE) --no-print-directory prod-backup PROD_ENV=$(PROD_ENV) PROD_PROJECT=$(PROD_PROJECT) PROD_BACKUP_DIR=$(PROD_BACKUP_DIR)
-	@case "$(DUMP)" in *.gz) gunzip -c "$(DUMP)";; *) cat "$(DUMP)";; esac | $(PROD_DC) exec -T php sh -c 'cat > var/data.db'
-	$(PROD_PHP) php bin/console doctrine:migrations:sync-metadata-storage --no-interaction
-	$(PROD_PHP) php bin/console doctrine:migrations:migrate --no-interaction --allow-no-migration
-	@$(MAKE) --no-print-directory prod-status PROD_ENV=$(PROD_ENV) PROD_PROJECT=$(PROD_PROJECT) PROD_BACKUP_DIR=$(PROD_BACKUP_DIR)
-
-prod-restore-test: ## Produktion: neueste Sicherung lokal entpacken und prüfen, ob sie lesbar ist
-	@latest=$$(ls -t $(PROD_BACKUP_DIR)/*.db.gz 2>/dev/null | head -1); test -n "$$latest" || ( echo "Keine Sicherung in $(PROD_BACKUP_DIR)." && exit 1 ); \
-	echo "Prüfe $$latest …"; \
-	tmp=$$(mktemp); \
-	gunzip -c "$$latest" > "$$tmp"; \
-	sqlite3 "$$tmp" "PRAGMA integrity_check;" && echo "Wiederherstellung funktioniert."; \
-	rm -f "$$tmp"
+prod-backup: ## Produktion: Datenbank-Dump nach BACKUP_DIR (Anlass „manuell“, Rotation wie Komodo)
+	$(PROD_DC) run --rm --no-TTY --no-deps backup manuell

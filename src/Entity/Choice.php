@@ -26,7 +26,7 @@ class Choice
     #[ORM\Column(nullable: false)]
     private bool $isCorrect = false;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 1000, nullable: true)]
     private ?string $responseImageUrl = null;
 
     public function getId(): ?int

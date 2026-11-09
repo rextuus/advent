@@ -3,5 +3,6 @@ services:
 ###> doctrine/doctrine-bundle ###
   database:
     ports:
-      - "5432"
+      # nur lokal erreichbar (zufälliger Port, siehe docker compose port database 3306)
+      - "127.0.0.1::3306"
 ###< doctrine/doctrine-bundle ###

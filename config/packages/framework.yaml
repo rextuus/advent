@@ -16,6 +16,13 @@ framework:
     php_errors:
         log: true
 
+when@prod:
+    framework:
+        # Anfragen kommen nur vom Caddy im Stack (Docker-Netz). Er übernimmt X-Forwarded-* seinerseits nur vom
+        # VPS-Caddy (REVERSE_PROXY_IPS) – so stimmen Gast-IP und „kam per HTTPS“ (sichere Cookies).
+        trusted_proxies: '%env(TRUSTED_PROXIES)%'
+        trusted_headers: ['x-forwarded-for', 'x-forwarded-proto', 'x-forwarded-host', 'x-forwarded-port']
+
 when@test:
     framework:
         test: true

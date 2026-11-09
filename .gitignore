@@ -48,3 +48,7 @@ Thumbs.db
 /build/_sources
 /build/_static
 /public/build/
+# Produktion: Secrets und lokale Sicherungen nie ins Repo
+/.env.prod.local
+/.env.*.local
+/backups/
