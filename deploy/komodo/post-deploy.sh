@@ -13,7 +13,7 @@ dc() { docker compose -p "$project" -f compose.prod.yaml --env-file "$env_file" 
 dc ps --format 'table {{.Service}}\t{{.Status}}'
 echo
 echo "Webserver: $(dc exec -T web wget -q -O- http://127.0.0.1/healthz 2>/dev/null || echo FEHLER)"
-echo "Migrationen: $(dc logs --no-log-prefix migrate 2>/dev/null | grep -iE 'migrat|nothing' | tail -2 | tr '\n' ' ')"
+echo "Migrationen: $(dc logs --no-log-prefix migrate 2>/dev/null | grep -E '\[(OK|WARNING|ERROR)\]' | tail -1 | sed 's/^ *//')"
 
 # Nur namenlose („dangling“) Images, die Compose für dieses Projekt gebaut hat.
 docker image prune -f --filter "label=com.docker.compose.project=${project}" | tail -1

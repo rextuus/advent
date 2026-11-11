@@ -110,7 +110,7 @@ services:
 
   # Datenbank-Dump nach BACKUP_DIR (Standard /srv/advent/backups auf dem Host), mit Rotation (deploy/komodo/db-backup.sh).
   # Startet nie von selbst (Profil), nur per `docker compose run --rm backup <anlass>`: vor jedem Deploy
-  # (pre-deploy.sh, Anlass pre-deploy), täglich über die Komodo-Procedure advent-backup (Anlass daily), oder von Hand.
+  # (pre-deploy.sh, Anlass pre-deploy), täglich 01:30 über die Komodo-Procedure advent-backup (Anlass daily), oder von Hand.
   backup:
     image: mysql:8.4.11
     profiles: ["backup"]
@@ -135,8 +135,9 @@ services:
         condition: service_healthy
 
 # Feste Namen, damit die Daten nicht am Projektnamen hängen. Niemals umbenennen.
-# Bewusst NICHT advent_database_data: so heißt das Volume der Entwicklungsumgebung (compose.yaml, Projekt „advent“
-# = Ordnername). VOLUME_PREFIX nur für Probeläufe setzen (z. B. adventprobe).
+# Eigener Name mit „_prod_“: Die Entwicklungsumgebung (compose.yaml, Projekt „advent“ = Ordnername) heißt
+# advent_mysql_data, der alte manuelle Stack auf abyss advent_app_data (SQLite) – keine Überschneidung.
+# VOLUME_PREFIX nur für Probeläufe setzen (z. B. adventprobe).
 volumes:
   database_data:
     name: ${VOLUME_PREFIX:-advent}_prod_mysql_data

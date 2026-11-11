@@ -1,0 +1,851 @@
+{
+  "source": {
+    "sha256": "919d363dd25885089e294c88061118c341b244065d2e9817749f182afc9aa3a9"
+  },
+  "tables": {
+    "question": [
+      {
+        "id": 25,
+        "content": "Zu aller erst die wichtigste Frage: Wie machst du deine Adventskalendertürchen für gewöhnlich auf? 🎉",
+        "door_number": 1,
+        "opened": "2024-12-04 09:31:57",
+        "triggered_choice": 1,
+        "image_url": "https://images.unsplash.com/photo-1606805421441-82687fd40af9?q=80&w=1923&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "id": 26,
+        "content": "Sag mal. Was ist eigentlich die optimale Ram-Größe für ein nagelneues Macbook? 🤔",
+        "door_number": 2,
+        "opened": "2024-12-04 09:31:34",
+        "triggered_choice": 2,
+        "image_url": "https://images.unsplash.com/photo-1605784401368-5af1d9d6c4dc?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "id": 27,
+        "content": "Für den Weihnachtsmann sind Milch 🥛 und Kekse 🍪 einfach das",
+        "door_number": 3,
+        "opened": "2024-12-04 09:32:20",
+        "triggered_choice": 0,
+        "image_url": "https://images.unsplash.com/photo-1607690424395-6660d838d818?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "id": 28,
+        "content": "Wo finden Expertinnen für gewöhnlich die besten Weihnachtsdekoartikel?",
+        "door_number": 4,
+        "opened": "2024-12-04 09:33:05",
+        "triggered_choice": 1,
+        "image_url": "https://images.unsplash.com/photo-1512728657599-58bfaaa75696?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "id": 29,
+        "content": "Du hast jetzt schon eine Menge tolle Weihnachtskatzen gesammelt. 🥹 Aber welche sind dir überhaupt die liebsten?",
+        "door_number": 5,
+        "opened": "2024-12-06 07:54:54",
+        "triggered_choice": 0,
+        "image_url": "https://plus.unsplash.com/premium_photo-1707353402061-c31b6ba8562e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Q2F0JTIwZ3JvdXB8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "id": 30,
+        "content": "Weshalb bekommst du dieses Jahr leider nichts vom Nikolaus? 😧",
+        "door_number": 6,
+        "opened": "2024-12-06 07:55:41",
+        "triggered_choice": 1,
+        "image_url": "https://res.cloudinary.com/dl4y4cfvs/image/upload/v1733436131/Advent/istockphoto-1289358130-2048x2048-transformed_yjdby6.webp"
+      },
+      {
+        "id": 31,
+        "content": "Carry, Miranda, Charlotte oder Samantha?",
+        "door_number": 7,
+        "opened": "2024-12-07 09:09:52",
+        "triggered_choice": 3,
+        "image_url": "https://filmtvgeek.wordpress.com/wp-content/uploads/2017/12/1454627416-sex-and-the-city.jpg?w=640"
+      },
+      {
+        "id": 32,
+        "content": "Was ist hier zu sehen?",
+        "door_number": 8,
+        "opened": "2024-12-09 11:24:40",
+        "triggered_choice": 1,
+        "image_url": "https://media.foodspring.com/magazine/public/uploads/2020/11/GettyImages-1155443994.jpg"
+      },
+      {
+        "id": 33,
+        "content": "Einmal ohne zu googeln! Wie heißt diese zweit hübscheste aller Targaryen-Prinzessinen?",
+        "door_number": 9,
+        "opened": "2024-12-09 11:25:16",
+        "triggered_choice": 1,
+        "image_url": "https://cdn.mos.cms.futurecdn.net/CZ3GAQe7ou5ykZZfMdBr55-1200-80.jpg"
+      },
+      {
+        "id": 34,
+        "content": "Es wird gemunkelt du seist ne echte Pro-Gamerin. Wie viele Spieler treten in einem Fortnite Battle Royale Spiel gegeneinander an?",
+        "door_number": 10,
+        "opened": "2024-12-13 19:38:34",
+        "triggered_choice": 1,
+        "image_url": "https://images.unsplash.com/photo-1544652478-6653e09f18a2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "id": 35,
+        "content": "Ich weiß dir steht ein reichhaltiges Repertoire an dunklen Künsten aller Art zur Verfügung. Aber auf welches bist du eigentlich am meisten stolz?",
+        "door_number": 11,
+        "opened": "2024-12-13 19:39:23",
+        "triggered_choice": 1,
+        "image_url": "https://images.unsplash.com/photo-1508931133503-b1944a4ecdd5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "id": 36,
+        "content": "Wie repariert man fachgerecht einen defekten Lichtschalter?",
+        "door_number": 12,
+        "opened": "2024-12-13 19:40:07",
+        "triggered_choice": 1,
+        "image_url": "https://images.unsplash.com/photo-1493402702251-a6e5320337f7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "id": 37,
+        "content": "So. Partytime. Deine Prüfungphase ist geschafft. Yeah 🥳. Aaaaber auch die Hälfte der Adventszeit ist schon rum. 😥 Du hast nur noch 12 weitere Türchen. Dieses inklusive. Das macht dich vermutlich schwerst traurig. 😛 Was ist bis Weihnachten noch zu tun?",
+        "door_number": 13,
+        "opened": "2024-12-13 19:41:19",
+        "triggered_choice": 1,
+        "image_url": "https://res.cloudinary.com/dl4y4cfvs/image/upload/v1734043979/Advent/premium_photo-1681830125136-e9a330b93d9d-transformed_qhygqs.avif"
+      },
+      {
+        "id": 38,
+        "content": "Als Jana noch ein kleines Mädchen war und an den Weihnachtsmann geglaubt hat, was waren da ihre liebsten Geschenke unterm Weihnachtsbaum?",
+        "door_number": 14,
+        "opened": "2024-12-20 10:10:11",
+        "triggered_choice": 2,
+        "image_url": "https://images.unsplash.com/photo-1514062551560-e9a0219dc7c1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "id": 39,
+        "content": "Um noch mal auf deine legendären dunklen Künste zurückzukommen. Irgendwo müssen die ja ihren Anfang gefunden haben. Wo hat der sprechende Hut dich damals wohl einquartiert?",
+        "door_number": 15,
+        "opened": "2024-12-20 10:11:32",
+        "triggered_choice": 3,
+        "image_url": "https://images.unsplash.com/photo-1672165635139-1b9dad67701e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8SG9nd2FydHN8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "id": 40,
+        "content": "Und? Wie viele Tage sind es noch bis Weihnachten?",
+        "door_number": 16,
+        "opened": "2024-12-20 10:12:58",
+        "triggered_choice": 0,
+        "image_url": "https://images.unsplash.com/photo-1518133835878-5a93cc3f89e5?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "id": 41,
+        "content": "Ohne dich wüsste ich wohl niemals, was ein Bipfel ist! 😊 Als wahre Bipfelkönigin solltest du dich aber mit Hybridgemüse im Allgemeinen auskennen. Was hiervon existiert wirklich?",
+        "door_number": 17,
+        "opened": "2024-12-20 10:14:54",
+        "triggered_choice": 4,
+        "image_url": "https://images.unsplash.com/photo-1488459716781-31db52582fe9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "id": 42,
+        "content": "Ich vermute mal, dass du als Prinzessin in gewissen Kreisen verkehrst. Beispielsweise in dem der Disney-Prinzessinnen. Aber wer dort ist deine BFF?",
+        "door_number": 18,
+        "opened": "2024-12-20 10:15:57",
+        "triggered_choice": 1,
+        "image_url": "https://images.unsplash.com/photo-1524008279394-3aed4643b30b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "id": 43,
+        "content": "Als großer Weihnachtsfan bist du ja sicher auch Fan von Weihnachtsfilmen. Welcher wäre wohl deine Empfehlung?",
+        "door_number": 19,
+        "opened": "2024-12-20 10:16:48",
+        "triggered_choice": 0,
+        "image_url": "https://images.unsplash.com/photo-1620177088258-c84147ee601f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fENpbmVtYSUyMHBvcGNvcm58ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "id": 44,
+        "content": "Du hast jetzt schon 20 Türchen geöffnet. Daher ist es Zeit für eine kleine Umfrage. Was magst du an deinem Kalender am liebsten?",
+        "door_number": 20,
+        "opened": "2024-12-20 10:17:29",
+        "triggered_choice": 2,
+        "image_url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "id": 45,
+        "content": "Bald schon liegen die Geschenke unterm Weihnachtsbaum. Aber wie öffnet ein echter Profi diese?",
+        "door_number": 21,
+        "opened": "2024-12-23 08:18:14",
+        "triggered_choice": 1,
+        "image_url": "https://images.unsplash.com/photo-1608824405596-3d6efd6a9c4a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "id": 46,
+        "content": "Wer ist eigentlich dein aller liebster Nachbar? Also wenn du mal so richtig ganz intensiv drüber nachdenkst. Mit allen guten und schlechten Eigenschaften (inklusive aller eventuellen Monk-Verhaltensweisen)?",
+        "door_number": 22,
+        "opened": "2024-12-23 08:19:11",
+        "triggered_choice": 2,
+        "image_url": "https://images.unsplash.com/photo-1494475673543-6a6a27143fc8?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "id": 47,
+        "content": "Was ist das größte Verbrechen, dass man in diesen Breitengraden begehen kann?",
+        "door_number": 23,
+        "opened": "2024-12-23 08:20:34",
+        "triggered_choice": 1,
+        "image_url": "https://images.unsplash.com/photo-1618620864043-896c2d11c7fc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "id": 48,
+        "content": "Du hast deinen Kalender ja tatsächlich komplett geöffnet. Das freut mich natürlich sehr. Heute ist ja leider schon der letzte Tag. Aber auch Bescherung.😁 Ich hoffe du hast ordentlich Punkte gesammelt. Also. Was wünscht du dir also von mir?",
+        "door_number": 24,
+        "opened": null,
+        "triggered_choice": null,
+        "image_url": "https://images.unsplash.com/photo-1514773896690-40d0fd46f143?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      }
+    ],
+    "choice": [
+      {
+        "id": 75,
+        "question_id": 25,
+        "content": "🤓 Wie eine kleine Streberin natürlich: Täglich",
+        "response": "Brav. Genau so soll es sein. Perform noch 23 Tage so weiter und du gewinnst nen richtig tolles Geschenk. Sicherlich. Ganz bestimmt. Vielleicht. Eventuell. Mit ganz viel Glück...",
+        "is_correct": 1,
+        "response_image_url": "https://i.giphy.com/2LbfRQVHs34V1Ru8Pt.webp"
+      },
+      {
+        "id": 76,
+        "question_id": 25,
+        "content": "👸🏼 Wie eine verwöhnte Targaryen Prinzessin: Alle auf einmal und schon vor Weihnachten",
+        "response": "Was anderes hätte ich auch nicht erwartet. Aber nen Punkt gibt das nicht",
+        "is_correct": 0,
+        "response_image_url": "https://media.tenor.com/HLG_5SKeOosAAAAM/game-of-thrones-eww.gif"
+      },
+      {
+        "id": 77,
+        "question_id": 25,
+        "content": "😟 Wie eine gestresste Studentin: Alle auf einmal und erst an Weihnachten",
+        "response": "Das kann ich verstehen. Aber bei so einem tollen Adventskalender wie diesem hier, ist das trotzdem die falsche Antwort.",
+        "is_correct": 0,
+        "response_image_url": "https://media.tenor.com/_X1yMPLz4SYAAAAM/baby-facepalm.gif"
+      },
+      {
+        "id": 78,
+        "question_id": 26,
+        "content": "Mindestens 32GB. Je mehr Ram desto schwerer. Dann kann man das Teil auch gut als Briefbeschwerer verwenden",
+        "response": "Schön wie effizient du denkst. Aber wer kriegt heute noch Briefe?",
+        "is_correct": 0,
+        "response_image_url": "https://i.gifer.com/fr7.gif"
+      },
+      {
+        "id": 79,
+        "question_id": 26,
+        "content": "8GB reichen völlig. Ich brauche das Gerät eigentlich eh nur als Deko-Artikel zur Aufwertung meiner Wohnung",
+        "response": "Da bluten Informatikerherz und Sad-Mac. Einfach nein!",
+        "is_correct": 0,
+        "response_image_url": "https://64.media.tumblr.com/tumblr_lsnh7szpzC1qhcd6po1_400.gif"
+      },
+      {
+        "id": 80,
+        "question_id": 26,
+        "content": "Ganz klar 18GB! Macht ja auch Sinn. Es weiß doch jeder: Niemals irgendeine Potenz von 2 wählen. Sonst geht die Erde unter. Und dann wäre man ja nichts besonderes mehr",
+        "response": "Verdammt! Das ist sowas von richtig. Vielleicht bist doch eher du diejenige mit Bachelor in Informatik 💻",
+        "is_correct": 1,
+        "response_image_url": "https://i.pinimg.com/originals/1f/1d/b2/1f1db2ae0cd6c73e59fdc7433f6d540c.gif"
+      },
+      {
+        "id": 149,
+        "question_id": 27,
+        "content": "🟡 Gelbe vom Ei",
+        "response": "Korrekt. So wie für jeden vernünftigen Menschen auf dieser Welt. Schön, dass du sogar extra richtig antwortest. Kleiner Punktegierschlund. Ich hoffe doch neben mir zu wohnen ist für dich das Weiße vom Ei 😏",
+        "is_correct": 1,
+        "response_image_url": "https://gifdb.com/images/high/uma-thurman-satisfied-delicious-reaction-seferdfm2d6g8o58.gif"
+      },
+      {
+        "id": 150,
+        "question_id": 27,
+        "content": "🤍 Weiße vom Ei",
+        "response": "Also ich weiß ja nicht. In gewisser Weise ist nen alter Mann der sich von Kindern Milch und Kekse hinstellen lässt schon eindeutig pervers. Da hast du Recht. Aber Eiweiß? Na gut. Weil du das garstige Zeugs übernehmen würdest, will ich mal nicht so sein... Perverseline!!! (oder wie auch immer die weibliche Form lautet)",
+        "is_correct": 1,
+        "response_image_url": "https://media.tenor.com/m3KPEHsXkkoAAAAM/michael-scott-michael.gif"
+      },
+      {
+        "id": 151,
+        "question_id": 29,
+        "content": "🐈🐈‍⬛🐈 Bunte. Ich kann mich einfach für keine Farbe entscheiden",
+        "response": "Eigentlich hätte ich ja gedacht du stehst eher auf Kater. Dreifarbig können allerdings nur Katzen sein, da die Fellfarbe übers X-Chromosom vererbt wird und Kater davon nur eines haben. Für weniger Klugschiss-Infos aus dem Bereich Biologie merke: Niemals neben studierte Biologen ziehen ☝️",
+        "is_correct": 1,
+        "response_image_url": "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWQxdWVwb2g3dXNuMXg2ZnoweTlicHJ0Zm55N3o1OXd6N2hoaDYycyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fR4qvR4edi3CkgqyOM/giphy.webp"
+      },
+      {
+        "id": 152,
+        "question_id": 29,
+        "content": "🐈‍⬛ Schwarze. Du weißt doch. Dunkle Künste und so",
+        "response": "Ergibt völlig Sinn. Ergibt ja auch einen tollen Kontrast zu deinem targaryanischem Erscheinungsbild. Und sind für gewöhnlich auch die dicksten und gemütlichsten Miezen. Weiße Katzen hingegen werden ja ganz leicht schmutzig, wenn man die Wohnung nicht ordentlich saugt... 😝",
+        "is_correct": 1,
+        "response_image_url": "https://media.tenor.com/nHnyaEGd6C0AAAAM/wizard-cat-cat-wizard.gif"
+      },
+      {
+        "id": 153,
+        "question_id": 29,
+        "content": "🐈 🤍 Weiße. Alles andere ist mit zu unedel. Hallo. Prinzessin und so. Ich brauche einen standesgemäßen Stubentiger",
+        "response": "Ja ja. Da hat jemand als Kind eindeutig zu oft die Alpina-Weiß Werbung gesehen und träumt jetzt davon, dass die Katze dir dann auch die Wände streicht. Aber ich teile deinen Traum. Lass ne weiße holen 😆",
+        "is_correct": 1,
+        "response_image_url": "<iframe width=\"1039\" height=\"779\" src=\"https://www.youtube.com/embed/OC-LKpI2k3A?mute=1\" title=\"Alpinaweiß Werbung Katze 1995\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+      },
+      {
+        "id": 154,
+        "question_id": 29,
+        "content": "🐅 Getigerte. Die sind einfach süß und können mich beschützen. Sind ja logischerweise viel stärker auch als nicht Tiger",
+        "response": "Immer eine gute Wahl. Da musst vll noch eine Reise nach Afrika unternehmen zur Besorgung. Vermutlich der einzige Kontinent auf dem du Globetrotterin noch nicht warst oder?",
+        "is_correct": 1,
+        "response_image_url": "https://i.pinimg.com/originals/59/c4/5f/59c45fc179237453df26621221d15096.gif"
+      },
+      {
+        "id": 155,
+        "question_id": 28,
+        "content": "https://www.weihnachtsdekoration.de",
+        "response": "Also ganz ehrlich. Selbst ich als komplett ahnungsloser, durch die Läden irrender Anfänger weiß, dass sowas nicht online geht. Auf so nen Onlineshop fallen doch nur Renter rein, die ihn wiederum gar nicht bedienen können",
+        "is_correct": 0,
+        "response_image_url": "https://media.tenor.com/yT9FeNzcd-YAAAAM/hello-old-people.gif"
+      },
+      {
+        "id": 156,
+        "question_id": 28,
+        "content": "Tedi. Oder wenns geht noch zwielichtiger direkt vom Laster in ner dunklen Gasse. Das gute Zeug versteckt sich nun mal da wo mans nicht erwartet",
+        "response": "Ja ist einfach ein wohlig-mohliges Gefühl in diesem Laden. Und man bekommt so viel gratis. Tripper, Mikro-Plastik, Platzangst. Aber eben auch Schnäppchen. 😝",
+        "is_correct": 1,
+        "response_image_url": "https://media.tenor.com/S2kChR376qkAAAAM/99cents-macklemore.gif"
+      },
+      {
+        "id": 157,
+        "question_id": 28,
+        "content": "Auf dem Weihnachtsmarkt. Dort wird noch mit Liebe und Sorgfalt gearbeitet",
+        "response": "Prinzipiell hört sich das nicht verkehrt an. Aber teuer. Und so viel ich bis jetzt weiß, wählst du in 99% der Fälle ja die teuerste Variante. Laptop, Uni, Abschleppdienst, Grundstromversorger... Da scheint mir dir Antwort nicht verkehrt",
+        "is_correct": 1,
+        "response_image_url": "https://debeste.de/upload/9ce077dd4454cd5b2a9ea8b9374b2f451738.gif"
+      },
+      {
+        "id": 158,
+        "question_id": 30,
+        "content": "Weil ich arme, hart arbeitende Studentin trotzdem keine Schuhe besitze, die ich rausstellen könnte. 😓",
+        "response": "Nein ne. Du bist eher die Taschenfanatikerin. Ich weiß. Davon hast du aber umso mehr. Wäre natürlich viel praktischer, dürfte man die raus stellen. Da geht ja viel mehr rein. Du bist und bleibst gefuchst",
+        "is_correct": 1,
+        "response_image_url": "https://i.giphy.com/RLJk7R3mvmawWdjmCq.webp"
+      },
+      {
+        "id": 159,
+        "question_id": 30,
+        "content": "Weil ich nicht artig war. Ich habe jemanden schwer vernachlässigt 🫢",
+        "response": "Puh. Das klingt aber auch fies von dir. Derjenige tut mir aber auch wirklich sehr sehr leid. Aber da ich davon ausgehe, dass du der Person durch dein schlechtes Gewissen höchstpersönlich was zum Nikolaustag besorgt hast, bekommst du nun immerhin einen super wertvollen Kalenderpunkt 😉",
+        "is_correct": 1,
+        "response_image_url": "https://i.giphy.com/3ohc1ffY03hnhRUyUU.webp"
+      },
+      {
+        "id": 160,
+        "question_id": 30,
+        "content": "Weil der gute alte Nikolaus meine neue Adresse leider noch nicht kennt. Aber ich hab ihm die gaaaanz sicher mitgeteilt. Das ist ein wirrer alter Mann. 😠 Denkt immer noch ich wohne zu Hause. So wie meine alte Uni. Die hat auch keinen Plan. Daher ist das unfair. Ich habe auf jeden Fall etwas verdient. 🙏",
+        "response": "Ja stimmt. Verdient hast du was. Aber ich glaube eher von Knecht-Ruprecht. Deine Unartigkeits-Liste ist laaang. Mehrfache Nachbars-Vernachlässigung, Falsch Parken, Verpassen von Abgabefristen für Bewerbungen... Aber nach den Ruteschlägen hast dann auch du noch einen Punkt verdient 😄",
+        "is_correct": 1,
+        "response_image_url": "https://media.tenor.com/7bHAf8IZbxUAAAAM/kallemann-smestad.gif"
+      },
+      {
+        "id": 165,
+        "question_id": 31,
+        "content": "Carry",
+        "response": "Du hättest wohl auch gerne nen Bus auf dem du drauf bist was. Eines Tages miete ich die Hauswand bei uns gegenüber und lasse dich da verewigen. Wenn der Kalenderverkauf mal richtig läuft.. Aber ich persönlich hätte dich ja für den Charlotte-Typ gehalten!",
+        "is_correct": 1,
+        "response_image_url": "https://64.media.tumblr.com/dd318aca52052be71c6bebfbe689821e/tumblr_n5y5dysqSi1t517axo3_500.gif"
+      },
+      {
+        "id": 166,
+        "question_id": 31,
+        "content": "Miranda",
+        "response": "Oh ha. Interessant. Miranda zieht ja irgendwann in die Bronx. Das wäre bei uns ja Köln-Chorweiler. War schön dich kennengelernt zu haben... Aber ich persönlich hätte dich ja für den Charlotte-Typ gehalten!",
+        "is_correct": 1,
+        "response_image_url": "https://i.makeagif.com/media/7-01-2020/-8Xqe-.gif"
+      },
+      {
+        "id": 167,
+        "question_id": 31,
+        "content": "Charlotte",
+        "response": "Wow. Genauso hätte ich dich auch eingeschätzt. Wäre mir das nicht zu kompliziert zu programmieren gewesen, hättest du jetzt 2 Punkte bekommen",
+        "is_correct": 1,
+        "response_image_url": "https://i.pinimg.com/originals/30/1f/3b/301f3b440fdc395a915670d680c88a5d.gif"
+      },
+      {
+        "id": 168,
+        "question_id": 31,
+        "content": "Samantha",
+        "response": "Ah ja. Da kommt wieder mal die Targaryen-Prinzessin durch. Allen Männern im Reich den Kopf verdrehen und sich jeden Abend nen anderen nehmen, aber niemals binden um ja nicht Teile vom Reich zu verlieren. Und alle halb so hübschen anderen Mädels verbannen. Aber ich persönlich hätte dich ja für den Charlotte-Typ gehalten!",
+        "is_correct": 1,
+        "response_image_url": "https://i.pinimg.com/originals/27/7d/4d/277d4d4bf0056078c9d526db98784dea.gif"
+      },
+      {
+        "id": 169,
+        "question_id": 32,
+        "content": "Ganz klar! Ein Schwarm Meerrettichs. Erkennt man doch an der typischen Flossenform und der Farbgebung. War allerdings ein fieser Naturfotograf. Die armen kleinen Dinger einfach so trocken zu legen nur für ein Foto. Grausame Welt",
+        "response": "Es ist immer wieder schön von dir neue Dinge über die Welt zu lernen. Wir verbringen viel zu wenig Zeit zusammen. Ich könnte so viel gebildeter sein und weniger Wissenslücken haben. Wenn du dann öfters vorbei schaust besorg ich mir auch nen Aquarium mit lauter Meerrettichen. Versprochen. Du darfst ihnen auch Namen geben. 😄 ",
+        "is_correct": 1,
+        "response_image_url": "https://i.gifer.com/UezA.gif"
+      },
+      {
+        "id": 170,
+        "question_id": 32,
+        "content": "Meerrettich bzw. Kren. Eine Pflanzenart aus der Gattung Armoracia innerhalb der Familie der Kreuzblütengewächse. Die Wurzel der Meerrettichpflanze wird als Gemüse, Gewürz oder in der Pflanzenheilkunde verwendet. Was ist denn das für ne blöde Frage. Das weiß doch wirklich jeder...",
+        "response": "Igitt. Was für ein ekliges Strebermädchen du doch bist. Wohl an der FOM gegnüber Bio studiert oder woher weiß man sowas. 😝 Aber richtig ist wohl richtig",
+        "is_correct": 1,
+        "response_image_url": "https://i.giphy.com/26xBFg4zXVwzdI9lS.webp"
+      },
+      {
+        "id": 177,
+        "question_id": 33,
+        "content": "Rheneira",
+        "response": "Ja ist nämlich gar nicht so einfach was. Da kann man ganz leicht mal alles verspielen was man hat. 😝 Aber als Trost. Du bist meine mit Abstand liebste Targaryen-Prinzessin von allen",
+        "is_correct": 0,
+        "response_image_url": "https://i.giphy.com/3ohzdUi5U8LBb4GD4s.webp"
+      },
+      {
+        "id": 178,
+        "question_id": 33,
+        "content": "Rhaenyra",
+        "response": "War ja klar, dass du auch noch die Schreibweise kennst. Irgendwie ziemlich blöd von mir, die da gleich zweimal zu unterschätzen. Aber das weißt du sicher auch nur, weil du so artig deine Powerpoint-Zusammenfassung vorbereitest und den Namen da oft schreiben musstet...",
+        "is_correct": 1,
+        "response_image_url": "https://i.makeagif.com/media/4-05-2021/gloY3U.gif"
+      },
+      {
+        "id": 179,
+        "question_id": 33,
+        "content": "Rhemyra",
+        "response": "Ja ist nämlich gar nicht so einfach was. Da kann man ganz leicht mal alles verspielen was man hat. 😝 Aber als Trost. Du bist meine mit Abstand liebste Targaryen-Prinzessin von allen",
+        "is_correct": 0,
+        "response_image_url": "https://i.giphy.com/3ohzdUi5U8LBb4GD4s.webp"
+      },
+      {
+        "id": 180,
+        "question_id": 34,
+        "content": "50. Es heißt ja Royal. 👑 Quasi exklusiv. Da sind 50 ja eigentlich schon zu viel. Ich zum Beispiel verkehre ja auch nur in ganz exklusiven Serien-Clubs mit maximal zwei Mitgliedern",
+        "response": "Als ob du das nicht wusstest. Oh je. Du arme. Du warst doch nur zu stolz um zuzugeben, dass du das selbstverständlich weißt. Ne. Aber toll, dass ich mit dir in dem royalen Serien-Club sein darf. Dafür drücke ich beide Augen zu 😉😉",
+        "is_correct": 1,
+        "response_image_url": "https://i0.wp.com/media0.giphy.com/media/l2QZXpPQJnW3IvbyM/giphy.gif"
+      },
+      {
+        "id": 181,
+        "question_id": 34,
+        "content": "100. Das ist die einfachste Frage des ganzen Kalenders bis jetzt. Hättest du mal gefragt welcher Skin ist für seine Tanz-Emote 'Floss' bekannt ist oder welche Waffe in Fortnite als 'OP' gebannt wurde. Aber das. Pfff 😎",
+        "response": "Ja ja. Das war viel zu einfach. Ich hoffe für so einen geschenkten Punkt bekomme ich bei der nächstbesten Gelegenheit deine Floss-Künste persönlich vorgeführt. 😉",
+        "is_correct": 1,
+        "response_image_url": "https://media.tenor.com/7l8KHQQpY2MAAAAM/asian-dance.gif"
+      },
+      {
+        "id": 182,
+        "question_id": 34,
+        "content": "1000?! Woher soll ich das wissen. Pro-Gamerin. Tss. Von sowas hab ich doch keine Ahnung. Aber ja. Ich bin Pro. Das stimmt. 😁",
+        "response": "Ah ja. Dann hast du ja genauso viel Ahnung wie ich. Und bist eine kleine Flunkerin. Wenn diese Geheimnis deiner Fortnite-Vergangenheit gar nicht wahr ist, musst du mir jetzt ein neues über dich verraten. Ansonsten wird der Kalender offline geschaltet 😝 ",
+        "is_correct": 0,
+        "response_image_url": "https://i.giphy.com/q1cbmBkEFJRyuwIEMR.webp"
+      },
+      {
+        "id": 183,
+        "question_id": 35,
+        "content": "Deine Kunst jede Fernbedienung in einem Haushalt in den tiefsten und dunklen Ecken der Couch verschwinden zu lassen. Gut das hast du mir noch nicht gezeigt. Aber das ist vermutlich auch aus dem Fortgeschritten-Kurs aus den USA 🎓. Und so wie ich dich kenne, führst du diese Kunst sicherlich schon bald vor!",
+        "response": "Dafür machst du deine weiten Fortbildungsreisen auf einen anderen Kontinent? Ich fürchte da bist du auf nen richtig billigen Wodoo-Shop reingefallen. Meine Fernbedienung bekommst du nicht mehr in die Hand. Außer ich hab auch eine dran 😠",
+        "is_correct": 0,
+        "response_image_url": "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXl2ajN5bWhweGh1bm9kdzkzZW95bXhoeTIzdXA1c294eXh2bWVmZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o6UB6gjXvxYuuNpDi/giphy.webp"
+      },
+      {
+        "id": 184,
+        "question_id": 35,
+        "content": "Dein glückliches Händchen bei der Taubenzucht. ✌️ Niemand außer dir kommt schließlich ungeschoren vor dem Gesundheitsamt damit davon, drei komplette Taubenfamilien unter nur einer einzigen Balkonliege unterzubringen. Da sind selbst Heckmanns neidisch, was die Quadratmeter pro Mieter Effizienz dabei angeht...",
+        "response": "Ok. Ich weiß. Jede Targaryen-Prinzessin hat so ihre Eigenheiten. Die einen heiraten ihre 4-jährigen Cousins. Die anderen sind jähzornig und vernichten spontan ganze Städte. Aber Tauben als Ersatz für Drachen zu nutzen? Vll gehen wir da doch besser mal zu nem Arzt mit 😷",
+        "is_correct": 1,
+        "response_image_url": "https://cdn3.whatculture.com/images/2015/10/GJdztP3I.gif"
+      },
+      {
+        "id": 185,
+        "question_id": 35,
+        "content": "Die Macht es Regnen zu lassen, sobald Regel Nr. 1 nicht weiter befolgt wird.⛈️ Also ohne dich ins Phantasialand zu fahren...",
+        "response": "In der Tat. Das hat mich auch massiv beeindruckt. Wie du einfach so dafür sorgst, dass es unentwegt durchregnet. Sag mal kannst du das eigentlich auch mit Schnee? Für weiße Weihnachten? Oder muss man dafür dann das Gegenteil machen und MIT dir ins Phantasialand fahren. Das wärs mir sogar wert 🙂",
+        "is_correct": 1,
+        "response_image_url": "https://media.tenor.com/OV0Nzmi20lIAAAAM/ren%C3%A9e-slater.gif"
+      },
+      {
+        "id": 186,
+        "question_id": 36,
+        "content": "Man repariert ihn nicht. Man dreht die Birne einfach jedes mal raus bzw. rein wenn man den Raum betritt oder verlässt. Hab ich im Survival-Kurs gelernt",
+        "response": "Ich hab ja keine Ahnung wie du das solange aushalten konntest, aber ich vermute eigentlich hast du das Ganze selber manipuliert, um ne Mietminderung bei den Heckmanns rauszuholen. Und ich hab die dir dann versaut. Sorry dafür 😝 Aber starker Survival-Skill",
+        "is_correct": 0,
+        "response_image_url": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGxvNnVpdHVxYmZlNDlqbzBsODNmdG5jMjNyenprbHFlaHE3cHIxOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gtb3ZkXrLtdfxQFQmY/giphy.webp"
+      },
+      {
+        "id": 187,
+        "question_id": 36,
+        "content": "Man ersetzt das ganze durch einen fancy funktionierenden Lichtschalter 🔳. Und stellst fest, dass man in einer Bruchbude wohnt, die keinen Nachtlicht-Schalter-Support bietet",
+        "response": "Ach komm. Du hattest dich doch eigentlich schon lange dran gewöhnt. Ich wette du drehst die Glühbirne auch heute noch manchmal einfach so raus. Um der guten alten Zeiten Willen. Nimmst du jetzt eigentlich immer extra die richtigen Antworten, weil du die Punkte willst? 😝",
+        "is_correct": 1,
+        "response_image_url": "https://media.tenor.com/--2HzNuTPZIAAAAM/lamp-light.gif"
+      },
+      {
+        "id": 188,
+        "question_id": 36,
+        "content": "Man zündet einfach jedes Mal Kerzen an beim reingehen. 🕯️ Wenn man die dann beim rausgehen vergisst ist auch egal. Schließlich sind die Rauchmelder in dem Haus hier äußerst zuverlässig gewartet. Es kann also nichts passieren",
+        "response": "Achsoooo. Ne ganz romantische bist du. Schön Kerzenschein beim Kaac... äh Baden in der Dusche. 😄 Verstehe. Einfach die Pure Entspannung. Kann ich nachvollziehen",
+        "is_correct": 1,
+        "response_image_url": "https://i.giphy.com/2mtdqnG4bAgE.webp"
+      },
+      {
+        "id": 189,
+        "question_id": 37,
+        "content": "Gar nichts. Ich habe alle Geschenke schon vorbildlich besorgt, verpackt und ins Auto geladen. Meine eigene, natürlich ganz bescheiden kurze Wunschliste ist auch schon lange raus ans Christkind. 🤩",
+        "response": "Sagte das Mädchen, das man wegen seiner Prüfungsphase schon Monate nicht mehr sah. Ich glaube das kann nicht stimmen. Und bestimmt sind noch gar nicht alle Weihnachtsgeschenke besorgt. Oder ist meins auch schon fertig und verbirgt sich nur wenige Meter von mir entfernt? 🤔",
+        "is_correct": 0,
+        "response_image_url": "https://media.tenor.com/Jl5Ohcu5OncAAAAM/christmas-funny.gif"
+      },
+      {
+        "id": 190,
+        "question_id": 37,
+        "content": "Alles. Es ist noch kein Geschenk fertig. Wie denn auch?! Hallo. Ich habe natürlich vorbildlich für meine Prüfungen gelernt. 24/7. Nichts anderes. Alles nur damit ich meinen grandiosen 1er Schnitt halte, bald fertig mit dem Studium bin, viel Geld verdiene und uns neue prächtige Klingelschilder besorgen kann 😎",
+        "response": "Oh nein. Das ist ja schrecklich. Vor allem, weil dann ja auch MEIN Geschenk noch gar nicht vorbereitet ist. Ich gehe davon aus, dass das oberste Priorität ab heute hat. Aber natürlich wusste ich, dass noch nichts eingepackt ist. Hier war schließlich niemand, der Geschenkband haben wollte... 😄",
+        "is_correct": 1,
+        "response_image_url": "https://i.giphy.com/5q3NyUvgt1w9unrLJ9.webp"
+      },
+      {
+        "id": 191,
+        "question_id": 38,
+        "content": "Puppen 🪆, Puppenhäuser und all der Krams mit dem Mädels so spielen. Ist doch klar. Wie hätte ich sonst jemals eine Prinzessin werden sollen. Außerdem wurde schon damals der Grundstein für meine legendäre Handtaschensammlung gelegt",
+        "response": "Ja süß. Genauso hab ichs mir vorgestellt. Weißt du noch, wann du deine erste Tasche bekommen hast? Apropos ich hab noch immer keine in Aktion gesehen. Glaube du hast die eigentlich nur als Wertanlage und führst die armen Dinger niemals wirklich aus 😓",
+        "is_correct": 1,
+        "response_image_url": "https://media.tenor.com/DBDWT37gbuwAAAAM/give-me-that-the-pet-collective.gif"
+      },
+      {
+        "id": 192,
+        "question_id": 38,
+        "content": "Bücher. 📖 Was denkst du weshalb ich heute so schlau und unglaublich gebildet bin. Und mir ein Studium bis fast fertig nicht gereicht hat",
+        "response": "Wie schlau du doch eigentlich bist vergesse ich immer wieder. Und diese Auffassungsgabe. Du musstest dich nur EIN einziges mal selbst Ausperren, um zu verinnerlichen immer deinen Schlüssel abzuziehen. Einfach beeindruckend 😝",
+        "is_correct": 1,
+        "response_image_url": "https://64.media.tumblr.com/f33d632fd7d6f9d8543eee97a1c686de/tumblr_mm9k5nlFO01qbyxr0o1_400.gif"
+      },
+      {
+        "id": 193,
+        "question_id": 38,
+        "content": "Irgendetwas, das man zusammen bauen kann. 🧱 Lego oder Bastelsets. Ich liebe daher ja auch heute noch Frimmelsarbeiten wie Lichtschalter wieder zusammenzusetzen",
+        "response": "Ah ja. Daher auch der selbst zusammengebaute PC was. Vielleicht solltest du Heckmanns fragen ob du als Nebenjob die neue Hausmeisterin sein kannst...",
+        "is_correct": 1,
+        "response_image_url": "https://media.tenor.com/2BSfFHueP9UAAAAM/blocks-wrecked.gif"
+      },
+      {
+        "id": 194,
+        "question_id": 39,
+        "content": "Griffindor natürlich. Hauptcharaktare, schöne Menschen mit prinzessinnenhafter Aura und generell alle Leute die cool sind, kommen dort hin. Außerdem steh ich auf Jungs mit Brille. Die solls dort geben...",
+        "response": "Ey cool. Gryffindor wäre ich auch gewesen. Hat zumindest die Pottermore-Seite behauptet. Aber leider habe ich im Gegensatz zu dir ja keinerlei magische Fähigkeiten. Vielleicht kannst du mir mal privat Unterricht geben",
+        "is_correct": 1,
+        "response_image_url": "https://media.tenor.com/Md4vTDifyRgAAAAM/sexy-teacher.gif"
+      },
+      {
+        "id": 195,
+        "question_id": 39,
+        "content": "Ravenclaw logischerweise. Wie oft muss ich dir eigentlich noch erklären, dass ich sowohl schlau als auch eine kleine Streberin bin. Ich hatte natürlich nur Bestnoten. Weshalb kann ich es wohl Regnen lassen, wenn ich will. Meinst du das könnte jemand, der in diesen anderen komischen Häusern über Jahre dahingestümpert hat",
+        "response": "Okay okay. War ja nur ne Frage. Bitte lasse es jetzt nicht drei Tage lang regnen. Ich dachte vielleicht warst du ja nicht schon immer ne Streberin. Hast sicherlich auch nen 1er Abitur dann",
+        "is_correct": 1,
+        "response_image_url": "https://64.media.tumblr.com/f33d632fd7d6f9d8543eee97a1c686de/tumblr_mm9k5nlFO01qbyxr0o1_400.gif"
+      },
+      {
+        "id": 196,
+        "question_id": 39,
+        "content": "Hufflepuff was sonst. Da wird am wenigstens von einem erwartet und man kann ganz leicht Klassenbeste werden. Außerdem gibt es dort nur Looser und Nebencharaktere und man gehört als Targaryen-Prinzessin automatisch zu den aller coolsten dort",
+        "response": "Du hast aber auch wirklich ein Herz für alles und jeden. Selbst mit den Looser-Kindern aus Hufflepuff gibst du dich ab. Deswegen hast du auch die Tauben bei dir aufgenommen ne. Aber ich fürchte ich kann mich mit Hufflepuffs echt nicht sehen lassen. Da müsstest du dich demnächst bitte verkleiden, wenn wir zusammen unterwegs sind",
+        "is_correct": 1,
+        "response_image_url": "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDd5ZmtyN3RweWVodTV6anpmZHAxa3l5bWljaXl4MmF2Z2Q2d3czbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eORd68QP7HiDjYn4cI/giphy.webp"
+      },
+      {
+        "id": 197,
+        "question_id": 39,
+        "content": "Slytherin ohne jeden Zweifel. Ich bin ja Meisterin der dunklen Künste. Nicht der Guten. Wenn du gerne Konfettiregen und Luftballonzaubetrickts sehen willst, musst du wohl leider woanders hinziehen. Belgisches Veedel oder wo die ganzen Hipster wohnen",
+        "response": "Überrascht mich gar nicht. Daher spürt man auch immer diesen kalte Windhauch, der dich immer umgibt oder. Also nächsten Sommer darfst du dich gerne permanent in meiner Wohnung aufhalten. Als Klimaanlage. Stundensatz handeln wir noch aus",
+        "is_correct": 1,
+        "response_image_url": "https://i.imgur.com/gprXPPb.gif"
+      },
+      {
+        "id": 198,
+        "question_id": 39,
+        "content": "Bitte was? Ich hab keine Ahnung wovon du redest. Sprechender Hut. Griffinwas? Noch nie gehört. Ich hab mir alles was ich kann natürlich selber beigebracht",
+        "response": "Also zocken wir wohl nicht Hogwarts Legacy, wenn du die PS5 geliehen bekommst. Hm. Dann musst du deine Tricks ja aus den aller zwielichtigsten Ecken haben. Vielleicht auch Tedi?",
+        "is_correct": 1,
+        "response_image_url": "https://gifdb.com/images/high/sorting-hat-dirty-ujk0r3cbhc1d6bpk.gif"
+      },
+      {
+        "id": 199,
+        "question_id": 40,
+        "content": "7. Es gibt ja auch nur noch 8 Türchen zum öffnen. Außerdem ist Zählen eine meiner Stärken aus dem BWL-Studium...",
+        "response": "Eigentlich bin ich mir selber gar nicht so sicher. Aber als vorbildliche Christin müsstest du das ja eigentlich wissen. Oder bist du etwa Heidin. Oder Amish oder Satanistin? 😨",
+        "is_correct": 0,
+        "response_image_url": "https://i.giphy.com/s15VdDCJxpOg1BKwSG.webp"
+      },
+      {
+        "id": 200,
+        "question_id": 40,
+        "content": "8. Wird die richtige Antwort sein. Weil du einer von diesen Klugscheißern bist, die Heilig Abend nicht als Weihnachten zählen. Jaja verstehe. Ganz toll. Aber hab ich durchschaut. Damit trickst du mich nicht aus 😎",
+        "response": "Ich weiß doch auch nicht, weshalb ich immer wieder versuche eine Universal-Meisterin wie dich zu überlisten oder in irgendwas zu schlagen. Scheinbar verliere ich einfach gerne. Zumindest gegen dich 🤔",
+        "is_correct": 1,
+        "response_image_url": "https://i.giphy.com/UTm86phGUMMQE.webp"
+      },
+      {
+        "id": 201,
+        "question_id": 41,
+        "content": "Pluot: Eine Mischung aus Pflaume (Plum) und Aprikose (Apricot). Diese Kreuzung ist besonders saftig und süß. - Klar, weil normale Pflaumen und Aprikosen ja nicht schon süß genug sind. Da musste jemand unbedingt eine 'Frucht für Fortgeschrittene' (also dich) basteln.",
+        "response": "In der Tat. Klar kennst du diese Fortgeschrittenen-Frucht. In deiner Heimat bist du vermutlich nicht nur Bipfelkönigin, sondern auch noch Pluot-Kaiserin.",
+        "is_correct": 1,
+        "response_image_url": "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzNqM2E4ZnhoanlwZDYwZTBwNWJ4Y2xkd2N0cXgwczV1Yjl3bG1nNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8QLPf1tvp9tqdDVLTY/giphy.webp"
+      },
+      {
+        "id": 202,
+        "question_id": 41,
+        "content": "Tangelo: Eine Kreuzung aus Mandarine und Grapefruit oder Pomelo, die eine süß-säuerliche Note hat. - Wo kommt da das 'Tang' im Namen her? Der Mensch, der das gekreuzt hat, hätte sich erst mal selbst mit etwas, das mehr Verstand hat, kreuzen sollen...",
+        "response": "Ja, das gibt's. Ich finde, das klingt auch interessant. Jetzt zu Weihnachten?! Bist du eigentlich eine von diesen Mandarinen-Esserinnen, die die im Hörsaal schälen, sodass alles danach duftet?",
+        "is_correct": 1,
+        "response_image_url": "https://media.tenor.com/ocePnQMKjdkAAAAM/smells-bad-philip-blake.gif"
+      },
+      {
+        "id": 203,
+        "question_id": 41,
+        "content": "Broccolini: Eine Kreuzung aus Brokkoli und chinesischem Kohl (Kai-Lan), die zarter ist als klassischer Brokkoli. - Das ist so 'ne richtige Öko-Erfindung. Ziel war hier wohl die maximale Geschmackserlebnis-Minimierung. Ich glaub, die Welt wäre 'ne bessere, wenn das nicht erfunden worden wäre...",
+        "response": "Ja, das hätte ich auch genommen. Das hört sich schon so an, als müsste es das geben. Ist ja nicht mal 'n kreativer Name. Du weißt aber schon, dass wir das zusammen probieren, was du hier gewählt hast 😝.",
+        "is_correct": 1,
+        "response_image_url": "https://i.giphy.com/yWTrzwWVS9x1zHPIwT.webp"
+      },
+      {
+        "id": 204,
+        "question_id": 41,
+        "content": "Lemato: Eine Kreuzung aus Zitrone und Tomate, entwickelt für besondere Geschmacksnoten. - Ja, wer kennt's nicht. Ketchup ist immer viel zu süß. Rühre ich auch immer noch extra Zitronensaft rein. Du etwa nicht?",
+        "response": "Da verstehe ich echt nicht, woher die Nachfrage nach diesem Produkt kommt. Vermutlich hast du die Entwicklung selbst beauftragt, nur um bei der nächsten Lemato-Königinnen-Wahl noch einen Titel mehr gewinnen zu können...",
+        "is_correct": 1,
+        "response_image_url": "https://media.tenor.com/AXC0MPgn7sQAAAAM/king-xavier-woods-crown.gif"
+      },
+      {
+        "id": 205,
+        "question_id": 41,
+        "content": "Pomato: Eine Kreuzung aus Tomate (oberirdisch) und Kartoffel (unterirdisch), indem beide Pflanzen aufeinander veredelt werden. - Also edel ist für mich meine Nachbarin targaryenischer Abstammung. Aber doch nicht 'ne olle Kartoffel, die vermutlich auch noch matschig ist. Und weshalb kreuzt hier eigentlich jeder alles immer nur mit Tomaten?",
+        "response": "Pomatos gibt's, aber die sind ja viel unspektakulärer als Bipfel. Die probieren wir nicht. Du hättest eine der tollen fancy Früchte wählen sollen – die hätte ich uns besorgt.",
+        "is_correct": 1,
+        "response_image_url": "https://media.tenor.com/LqLCZZWX6mcAAAAM/bird-bad-decisions.gif"
+      },
+      {
+        "id": 206,
+        "question_id": 42,
+        "content": "Jasmin. Ich meine, sie hat einen fliegenden Teppich?! – Uber kann einpacken. 😄 Außerdem ist ihr Haustiger Raja der beste Bodyguard, den man sich wünschen kann. Und ich liebe Katzen!",
+        "response": "Ja ja. Du weißt genau worauf man bei der Wahl der besten Prinzessinnen-Freundin und deren tierischem Begleiter achten muss. Genau sowie bei der Wahl des liebsten Nachbars. Sowas von richtig ",
+        "is_correct": 1,
+        "response_image_url": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3BmeWw1ZnducnVwM2pua2w3NjgxMmVqMmZoYnN2eDU5cGJnMXczNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ct5iIcON4LziDHCfof/giphy.webp/8QLPf1tvp9tqdDVLTY/giphy.webp"
+      },
+      {
+        "id": 207,
+        "question_id": 42,
+        "content": "Ariel. Die besorgt mir immer frische Meerettiche. Außerdem kann man sie einfach im Wasser sitzen lassen, wenn sie einem auf den Nerv geht, weil sie dir an Land nicht folgen kann 😁",
+        "response": "Hm interessant. Bei Arielle fallen mir ja so viele weitere Fragen ein. Weshalb ist sie die einzige mit rotem Haar aus der Familie? Wie wurde sie geboren? Wie wurde sie überhaupt gezeugt? Kannst du mal für mich fragen bitte?! 😝",
+        "is_correct": 1,
+        "response_image_url": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2czYXY2YXQybG5yMDB3aG5ld3duaGZmdXhjYTh6andyNnZ0bDR2bCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l2YWrLigTAxzfY2Fq/giphy.webp"
+      },
+      {
+        "id": 208,
+        "question_id": 42,
+        "content": "Elsa. Sie friert für mich Leute ein, die mir auf die Nerven gehen. Also pass auf 🫵. Außerdem hat sie immer genug Eis dabei. Neverending Mädels-Cocktail-Abende 🤩",
+        "response": "War ja klar. Blond. Targaryanisches wunderschönes Aussehen. Ständig ist ihr kalt und sie wird vermutlich unter mehreren Decken schlafen. Klar, dass ihr perfekt zusammen passt 😄 Wehe ihr lästert über mich...",
+        "is_correct": 1,
+        "response_image_url": "https://media.tenor.com/8fEMO2YzQQkAAAAM/best-friend-love-you.gif"
+      },
+      {
+        "id": 209,
+        "question_id": 42,
+        "content": "Disney-Prinzessinnen sind Bitches! Ich war nur im Disneyland um Mickey zu sehen, mir Freizeitpark-Essen einzuverleiben und um sagen zu können, dort gewesen zu sein. Mit denen gebe ich mich doch nicht ab",
+        "response": "Also das erschüttert mich zu tiefst. Ich weiß gar nicht was ich sagen soll, so schockiert bin ich. Meine liebste Disney-Prinzessin ist übrigens Sally (aus Cars). 😄 Die werd ich vor dir warnen!!!",
+        "is_correct": 0,
+        "response_image_url": "https://media.tenor.com/7p-Jnh69pqsAAAAM/alarm-german.gif"
+      },
+      {
+        "id": 210,
+        "question_id": 43,
+        "content": "Drei Haselnüsse für Aschenbrödel - Da laufen diese tollen Prinzen-Dudes im Schnee in Leggings rum und es ist ein Märchen",
+        "response": "Ich find die Musik irgendwie echt toll davon. Ansonsten kann ich dir als super Fakt noch liefern, dass es genau zwei Pferde sind, die für den Dreh benutzt wurden. Ich habe noch nie einen Unterschied zwischen ihnen gesehen. Aber meine Mum erzählt einem das jedes Mal",
+        "is_correct": 1,
+        "response_image_url": "https://www.icegif.com/wp-content/uploads/2021/10/icegif-838.gif"
+      },
+      {
+        "id": 211,
+        "question_id": 43,
+        "content": "Tatsächlich Liebe - Toll wie viele Geschichten man da auf einmal bekommt, wenn man sich wie ich so schwer entscheiden kann",
+        "response": "Ich mag ja am liebsten die Geschichte mit dem Prime Minister. Alle anderen habe ich aber auch: Tatsächlich vergessen. Haha. Ganz schlechtes Wortspiel unter deinem Niveau",
+        "is_correct": 1,
+        "response_image_url": "https://i.giphy.com/xUySTwzunzpNMFHteM.webp/l2YWrLigTAxzfY2Fq/giphy.webp"
+      },
+      {
+        "id": 212,
+        "question_id": 43,
+        "content": "Sissy - Alle drei Teile am Stück. Als Prinzessin muss man immer das große Ziel Kaiserin vor Augen haben",
+        "response": "Ja. Du suchst wohl auch die ultimative Langeweile-Herausforderung. Kleiner Geheimtipp: Versuch mal Kaminfeuer-Videos...",
+        "is_correct": 1,
+        "response_image_url": "https://i.pinimg.com/originals/0e/3f/aa/0e3faa507aec42092ae7820282b153c4.gif"
+      },
+      {
+        "id": 213,
+        "question_id": 43,
+        "content": "Etwas ganz anderes. Mir scheint du hast keinerlei Ahnung von Weihnachtsfilmen",
+        "response": "Ja ok. Gebe ich zu. In dem Fall konntest du wohl nicht verlieren. Wobei ich dann doch jetzt noch gerne einen Tipp hätte, den ich noch vor Weihnachten schauen kann. Also schnell",
+        "is_correct": 1,
+        "response_image_url": "https://i.giphy.com/nOwG55u1jGOiTAqKqU.webp"
+      },
+      {
+        "id": 214,
+        "question_id": 44,
+        "content": "Die Weihnachtskatzen. Ganz klar!",
+        "response": "Ja. Eine putziger als die andere. Nächstes Jahr bekommst du vll einen Kalender mit 24 echten Katzen. Und 24 Schachteln, die am ersten Tag noch alle rascheln und miautzen... Oder wir nehmen halt Tauben im Weihnachtslook?! 😝",
+        "is_correct": 1,
+        "response_image_url": "https://i.gifer.com/PxX7.gif"
+      },
+      {
+        "id": 215,
+        "question_id": 44,
+        "content": "Die Preise. Eigentlich hätte ich zwar lieber einen ganz normalen Kalender mit Schokolade von dir bekommen, aber wenigsten kann man was gewinnen. Der Hauptpreis ist ja wohl nen Auto. Oder? 🤔",
+        "response": "Da zeigst du so kurz vor Weihnachten doch noch deine gierige Grinch-Seite. Natürlich sind die Katzen das beste 😓",
+        "is_correct": 0,
+        "response_image_url": "https://i.giphy.com/Cipj5jNsyTcxG.webp"
+      },
+      {
+        "id": 216,
+        "question_id": 44,
+        "content": "Alles. Ich hatte nie einen tolleren Advents-Kalender.",
+        "response": "Ich hoffe du hast das gewählt, weils der Wahrheit entspricht und nicht, weil du davon ausgehst, dass es die richtige Antwort ist. Aber ja. Selbstverständlich ist das die einzig richtige Antwort hier 😝",
+        "is_correct": 1,
+        "response_image_url": "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTd5OWI1dmw5Z3c4N2MxN3EzZXpuZG9maDkxa3lrYnN5dmx0OTFwNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/jaA1q3oVbXGYtH04kQ/giphy.webp"
+      },
+      {
+        "id": 217,
+        "question_id": 45,
+        "content": "Geschenke sind zum Aufreißen da. Es muss anschließend wie auf einem Schlachtfeld aussehen. Je höher der Stapel aus zerfetzen Papierstücken, desto besser. Ich bin eine Geschenkeöffnungs-Maschine",
+        "response": "Wieso überrascht mich diese Antwort jetzt nicht. Ok. Du bekommst ein Weihnachtsgeschenk von mir. Aber nur, wenn du es langsam vor meinen Augen öffnest 😝",
+        "is_correct": 1,
+        "response_image_url": "https://i.giphy.com/dQXedbC8JADwErUoRY.webp"
+      },
+      {
+        "id": 218,
+        "question_id": 45,
+        "content": "Auspacken ist eine chirurgische Kunst. Eigentlich sollte das erste Geschenk zu jedem Anlass ein Skalpell sein, damit man die weiteren akkurat öffnen, und das Papier ordentlich gefaltet zusammenlegen kann",
+        "response": "Echt? Bei deinem vollem Terminkalender kannst du dir das leisten? Vll versuchst du es dieses Jahr ausnahmsweise mal mit Aufreißen. Die eingesparte Zeit kannst du dann in deinen vernachlässigten Nachbarn investieren 😁",
+        "is_correct": 0,
+        "response_image_url": "https://media.tenor.com/6qcMzV0ZCMsAAAAM/omg-doctor.gif"
+      },
+      {
+        "id": 219,
+        "question_id": 46,
+        "content": "Tür fast direkt neben an. Weil der ne Katze hat. Und den Balkon auf die Taubenseite des Hauses hat. Leidensgenossen müssen zusammen halten",
+        "response": "Ich hab echt keine Ahnung wie du diese Frage falsch beantworten konntest. Puh. Glaube, dass ist die Stelle an der ich eigentlich die Selbstzerstörung des ganzen Projektes hier triggern sollte... Hätte ich das mal zuerst gefragt",
+        "is_correct": 0,
+        "response_image_url": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExajlqczI1YnRoczJ1bDFhcHNheXJkdjIxZHR3eWRrbnhub3Z5N3p2byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WRcVVfiyEVhp9lw5Pt/giphy.webp"
+      },
+      {
+        "id": 220,
+        "question_id": 46,
+        "content": "Deichmann. Weil man da als Bewohner dieses Hauses 90% Rabatt bekommt (wusstest du noch gar nicht was!)",
+        "response": "Im Ernst jetzt? Rabatt auf Schuh hat mich ausgestochen? Da wird es doch nicht mal Nike-Sneaker geben. Wenns wenigsten der Maloah-Bowl-Laden gewesen wäre. Der ist wenigsten überteuert",
+        "is_correct": 0,
+        "response_image_url": "https://i.giphy.com/11PaxXpePNUtUc.webp"
+      },
+      {
+        "id": 221,
+        "question_id": 46,
+        "content": "Tür direkt gegenüber, weil na ja... einfach nen cooler Kerl ne",
+        "response": "Ich? Was? Wow. Wirklich? Ganz sicher? Das hätte ich jetzt ja nicht erwartet. Bei diese Konkurrenz! Mensch das freut mich jetzt richtig. Du bist auch meine absolute Lieblingsnachbarin",
+        "is_correct": 1,
+        "response_image_url": "https://i.makeagif.com/media/1-14-2014/dCMwEY.gif"
+      },
+      {
+        "id": 222,
+        "question_id": 47,
+        "content": "Mit chinesischen Stäbchen japanisches Suhsi zu essen. Dann verflucht einen der Suoschi der japanische Gott des Sushi und du bekommst das nächste mal ne fette Lebensmittelvergiftung",
+        "response": "Ja das ist korrekt. Vielen Dank, dass ich wegen dir nun auch diesen Fluch auf mir liegen habe und nie wieder Sushi essen kann. Aber lecker wars...",
+        "is_correct": 1,
+        "response_image_url": "https://i.makeagif.com/media/7-23-2015/ACwWQp.gif"
+      },
+      {
+        "id": 223,
+        "question_id": 47,
+        "content": "Seinen Nachbarn zu vernachlässigen. Und das nur für dem eigenen Leben wenig zuträgliche, in keinerlei Hinsicht gewinnbringende, völlig nebensächliche Aktivitäten wie dem Uni-Leben oder Arbeit",
+        "response": "Auch das ist korrekt. Ein absolute Schweinerei. Allerdings weiß ich ja, dass du dieses Verbrechen niemals begehen würdest 😁",
+        "is_correct": 1,
+        "response_image_url": "https://media.tenor.com/Cs8gc72VmbcAAAAM/sweeping-the-ocean-overwhelmed.gif"
+      },
+      {
+        "id": 224,
+        "question_id": 47,
+        "content": "Einfach Gegenstände in den Wohnungen fremder Leute ohne deren Erlaubnis zu verrücken, umzuplatzieren oder gar auszutauschen",
+        "response": "Ja ich finde auch etwas schlimmeres gibt es hier in unserer zivilisierten Welt nicht. Wäre es zu viel verlangt die Todesstrafe wieder einzuführen? Ok es ist Weihnachten. Sagen wir Folter bis zur Verstümmelung 😉",
+        "is_correct": 1,
+        "response_image_url": "https://i.makeagif.com/media/5-12-2015/heGZgY.gif"
+      },
+      {
+        "id": 225,
+        "question_id": 47,
+        "content": "Parkende Autos aus eindeutig, für jeden ersichtlich und unschwer als diese erkennbaren Ladezonen abzuschleppen. Wenn diese obendrein noch dazu nur für unwichtige Läden wie Woolworth oder Kaufland sind",
+        "response": "Sehe ich komplett und ganz genauso. Wo kommen wir denn da hin, wenn selbst Prinzessinnen einfach so abgeschleppt werden. Wobei. Hattest du damals eigentlich deinen tagaryanischen Ausweis hinter die Scheibe gelegt? 🤔",
+        "is_correct": 1,
+        "response_image_url": "https://i.pinimg.com/originals/79/07/c3/7907c3fbc36fcbd5cfb51ccf836cbeac.gif"
+      },
+      {
+        "id": 226,
+        "question_id": 48,
+        "content": "Noch viele weitere Serienabende. Es gibt wenig, was mir mehr Freude bereitet",
+        "response": "Ich mag unsere Serienabende auch sehr gerne. Aber das ist ja kein wirkliches Geschenk. Hier hast du stattdessen ein fragwürdiges Video von mir, bis dir ein besserer Wunsch eingefallen ist 😛",
+        "is_correct": 1,
+        "response_image_url": "<iframe width=\"558\" height=\"992\" src=\"https://www.youtube.com/embed/D8yMeppMni8\" title=\"Hot Table Dance...\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+      },
+      {
+        "id": 227,
+        "question_id": 48,
+        "content": "Den Start des großen Taubenkrieges. Es muss kein Blut fließen aber Federn fliegen. ✊",
+        "response": "Ja das müssen wir wirklich dringendst angehen. Ich werde auch die härtesten Tricks auffahren, die ich zu bieten habe. Hier ein kleiner Einblick in meine unglaublichen Kompetenzen in der Kriegskunst mit Feuer. Mach dir keine Sorgen, dass deine Wohnung abbrennt 🤔",
+        "is_correct": 1,
+        "response_image_url": "<iframe width=\"558\" height=\"992\" src=\"https://www.youtube.com/embed/D8yMeppMni8\" title=\"Hot Table Dance...\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+      },
+      {
+        "id": 228,
+        "question_id": 48,
+        "content": "Ich bin wunschlos glücklich nach diesem tollen Advent. Viel lieber würde ich dir einen Wunsch erfüllen ☺️",
+        "response": "Wow. Und das obwohl du so viele Daten von dir preisgeben musstest bei all den Fragen. Ich kenne jetzt dein Adventskalender-Öffnungs-Verhalten. Da werden Google, Facebook und Amazon richtig gut für Zahlen. Zum Trost hier auch eine geheime Info über mich. Ich mach gern mal dumme Sachen, wenn ich getrunken hab. So fing auch diese Projekt hier an 😉",
+        "is_correct": 1,
+        "response_image_url": "<iframe width=\"558\" height=\"992\" src=\"https://www.youtube.com/embed/D8yMeppMni8\" title=\"Hot Table Dance...\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+      },
+      {
+        "id": 229,
+        "question_id": 48,
+        "content": "Alles davon. Oder kommt das gierig rüber? Äh ich meine: Alles davon und Weltfrieden. Plus kostenloses Essen für alle. Plus Stop der Erderwärmung. Plus kostenlose Bildung für alle (Abschaffung der Privat-Unis). Plus 4 Tage-Woche für jedermann. Plus Mindestlohn 20 Euro. Plus dem Ende von Diskriminierung und Ausgrenzung. Das meinte ich natürlich ☺️",
+        "response": "Eine schönere Rede könnte eine Prinzessin zu Weihnachten wohl nicht halten. Mir kommen schon die Tränen. Die Umsetzung deiner Wünsche könnte natürlich etwas Zeit in Anspruch nehmen. Vll reicht dir ja bis dahin dieses fragwürdiges Video von mir als Weihnachtsgeschenk 😉",
+        "is_correct": 1,
+        "response_image_url": "<iframe width=\"558\" height=\"992\" src=\"https://www.youtube.com/embed/D8yMeppMni8\" title=\"Hot Table Dance...\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+      }
+    ],
+    "win_stage": [
+      {
+        "id": 6,
+        "point_border": 0,
+        "point_text": "0 Punkte",
+        "win_text": "Das Kleingeld von meiner Fensterbank🫰"
+      },
+      {
+        "id": 7,
+        "point_border": 1,
+        "point_text": "1-4 Punkte",
+        "win_text": "Du darfst dir eine Woche meine PS5 ausleihen🎮"
+      },
+      {
+        "id": 8,
+        "point_border": 5,
+        "point_text": "5-12 Punkte",
+        "win_text": "Ein eigener Tesa-Abroller🤩"
+      },
+      {
+        "id": 9,
+        "point_border": 13,
+        "point_text": "13-18 Punkte",
+        "win_text": "Sushi-Ninja Sushi🍣. Frittieres sogar"
+      },
+      {
+        "id": 10,
+        "point_border": 19,
+        "point_text": "19-24 Punkte",
+        "win_text": "Du darfst dir vom Entwickler wünnschen was immer du willst🌠"
+      }
+    ]
+  }
+}

@@ -1,5 +1,6 @@
 # Advent – Komodo-Ressourcen (Resource Sync). Feldnamen geprüft gegen den Quellcode von Komodo v2.3.4
-# (client/core/rs/src/entities/stack.rs, procedure.rs, toml.rs, api/execute/stack.rs).
+# (client/core/rs/src/entities/stack.rs, procedure.rs, toml.rs, api/execute/stack.rs) und erneut am 11.11.2026
+# (links, up-Aufruf in bin/periphery/src/api/compose.rs).
 #
 # Einbinden: Komodo → Syncs → New Resource Sync, Quelle = dieses Repo, Resource Path = deploy/komodo/advent.toml.
 # Hier stehen keine Secrets. Die Doppelklammer-Verweise im Environment sind Komodo-Secrets (Settings → Variables,
@@ -9,14 +10,21 @@
 
 [[stack]]
 name = "advent"
-description = "Advent – Kresh-Journey/Adventskalender (compose.prod.yaml)"
-tags = ["advent"]
+description = "Kresh-Journey / Adventskalender (compose.prod.yaml)"
+tags = ["advent", "projekt"]
 # Ein Sync legt den Stack nur an bzw. gleicht ihn an. Deployt wird bewusst von Hand („Deploy“).
 deploy = false
 
 [stack.config]
 # Name des Servers in Komodo (Servers-Liste), nicht der Hostname.
 server = "abyss"
+# Quick-Links im Kopf des Stacks (Feld StackConfig.links, Liste vollständiger URLs)
+links = [
+  "https://kresh.wh-company.com",
+  "https://kresh.wh-company.com/admin",
+  "https://github.com/rextuus/advent",
+  "http://localhost:9121/projekte/#advent",
+]
 
 # Quelle: privates GitHub-Repo. git_account = Benutzername eines unter Settings → Providers
 # für github.com hinterlegten Accounts mit Token.
@@ -28,6 +36,8 @@ branch = "main"
 # Leer = neuester Commit von branch. Für einen Rollback hier einen Commit-Hash eintragen und deployen.
 commit = ""
 # Nicht neu klonen; Daten liegen ohnehin außerhalb (Volume advent_prod_mysql_data, BACKUP_DIR).
+# Achtung: Komodo ruft `up -d` OHNE --remove-orphans auf. Dienste, die es im neuen compose.prod.yaml nicht mehr
+# gibt (z. B. php/caddy des alten manuellen Stacks), laufen weiter – beim Umzug den alten Stack vorher stoppen.
 reclone = false
 
 # Ergibt: docker compose -p advent -f compose.prod.yaml --env-file .env.prod.local …
@@ -96,18 +106,19 @@ send_alerts = true
 # ---------------------------------------------------------------------------------------------------------
 # Tägliche Datenbanksicherung: führt `docker compose run --rm --no-TTY --no-deps backup daily` im Stack aus
 # (advent-db-<zeit>-daily.sql.gz in /srv/advent/backups, 14 bleiben liegen).
-# 03:45: wedora sichert um 03:30, abyss startet um 04:30 für Updates neu.
+# 01:30: freier Platz laut homelab/inventory.yaml (Komodo 01:00, oralcare 02:30, debes 03:00, wedora 03:30),
+# vor dem automatischen Neustart von abyss um 04:30 und vor der Offsite-Sicherung um 05:15.
 # no_deps: Ändert ein noch nicht deployter Commit den Dienst database, würde `compose run` ihn sonst nebenbei
 # neu erstellen. Läuft der Stack nicht, scheitert der Dump absichtlich, und Komodo alarmiert (failure_alert).
 
 [[procedure]]
 name = "advent-backup"
 description = "Advent: täglicher Datenbank-Dump nach /srv/advent/backups (Rotation: BACKUP_KEEP)"
-tags = ["advent"]
+tags = ["advent", "projekt"]
 
 [procedure.config]
 schedule_format = "English"
-schedule = "Every day at 03:45"
+schedule = "Every day at 01:30"
 schedule_timezone = "Europe/Berlin"
 schedule_enabled = true
 schedule_alert = false
