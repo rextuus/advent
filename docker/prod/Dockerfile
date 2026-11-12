@@ -28,7 +28,7 @@ COPY composer.json composer.lock symfony.lock ./
 RUN composer install --no-interaction --no-progress --no-scripts --no-autoloader
 
 # Frontend (Webpack Encore). package.json verweist per file: auf Assets in vendor/symfony/ux-*.
-FROM node:22.23.5-alpine AS assets
+FROM node:26.13.0-alpine AS assets
 WORKDIR /srv/app
 COPY package.json package-lock.json .npmrc ./
 COPY --from=vendor /srv/app/vendor/symfony/ux-autocomplete/assets vendor/symfony/ux-autocomplete/assets
