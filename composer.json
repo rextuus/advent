@@ -23,7 +23,7 @@
         "symfony/security-bundle": "8.1.*",
         "symfony/twig-bundle": "8.1.*",
         "symfony/ux-autocomplete": "^2.22",
-        "symfony/ux-live-component": "^2.21",
+        "symfony/ux-live-component": "^3.7",
         "symfony/webpack-encore-bundle": "^2.2",
         "symfony/yaml": "8.1.*",
         "symfonycasts/verify-email-bundle": "^1.17"
