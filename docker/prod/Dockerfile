@@ -53,6 +53,6 @@ RUN printf '%s\n' 'APP_ENV=prod' 'SENTRY_DSN=' 'USER_PASSWORD=' 'DEFAULT_URI=htt
  && chown -R www-data:www-data var public/bundles
 USER www-data
 
-FROM caddy:2.11.7-alpine AS web
+FROM caddy:2.11.9-alpine AS web
 COPY docker/prod/Caddyfile /etc/caddy/Caddyfile
 COPY --from=prod /srv/app/public /srv/app/public
