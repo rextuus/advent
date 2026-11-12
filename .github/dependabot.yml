@@ -1,0 +1,49 @@
+# Wöchentliche Update-PRs (montags 06:00 Berlin). Sicherheitslücken kommen unabhängig davon sofort
+# über die Dependabot Security Updates (GitHub: Settings → Code security).
+version: 2
+
+updates:
+  # PHP-Pakete (composer.json/composer.lock)
+  - package-ecosystem: "composer"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Europe/Berlin"
+    groups:
+      composer-patch:
+        update-types: ["patch"]
+
+  # Frontend (package.json/package-lock.json, Webpack Encore)
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Europe/Berlin"
+    groups:
+      npm-minor-patch:
+        update-types: ["minor", "patch"]
+
+  # Basis-Images in den Dockerfiles (nur FROM-Zeilen). Nicht gruppiert: ein PR je Image.
+  - package-ecosystem: "docker"
+    directories:
+      - "/docker/prod"
+      - "/docker/php"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Europe/Berlin"
+
+  # Images in compose.yaml, compose.override.yaml und compose.prod.yaml. Nicht gruppiert.
+  - package-ecosystem: "docker-compose"
+    directories:
+      - "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Europe/Berlin"
