@@ -28,7 +28,7 @@ COPY composer.json composer.lock symfony.lock ./
 RUN composer install --no-interaction --no-progress --no-scripts --no-autoloader
 
 # Frontend (Webpack Encore). package.json verweist per file: auf Assets in vendor/symfony/ux-*.
-FROM node:22.23.4-alpine AS assets
+FROM node:22.23.5-alpine AS assets
 WORKDIR /srv/app
 COPY package.json package-lock.json .npmrc ./
 COPY --from=vendor /srv/app/vendor/symfony/ux-autocomplete/assets vendor/symfony/ux-autocomplete/assets
@@ -53,6 +53,6 @@ RUN printf '%s\n' 'APP_ENV=prod' 'SENTRY_DSN=' 'USER_PASSWORD=' 'DEFAULT_URI=htt
  && chown -R www-data:www-data var public/bundles
 USER www-data
 
-FROM caddy:2.11.7-alpine AS web
+FROM caddy:2.11.9-alpine AS web
 COPY docker/prod/Caddyfile /etc/caddy/Caddyfile
 COPY --from=prod /srv/app/public /srv/app/public

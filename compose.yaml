@@ -24,7 +24,7 @@ services:
 ###> doctrine/doctrine-bundle ###
   # Gleiche Version wie in Produktion (compose.prod.yaml). App: DATABASE_URL in .env, siehe docs/deployment.md.
   database:
-    image: mysql:8.4.11
+    image: mysql:8.4.13
     environment:
       MYSQL_DATABASE: ${MYSQL_DATABASE:-app}
       MYSQL_USER: ${MYSQL_USER:-app}
