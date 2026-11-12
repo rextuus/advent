@@ -22,7 +22,7 @@
         "symfony/runtime": "8.1.*",
         "symfony/security-bundle": "8.1.*",
         "symfony/twig-bundle": "8.1.*",
-        "symfony/ux-autocomplete": "^2.22",
+        "symfony/ux-autocomplete": "^3.7",
         "symfony/ux-live-component": "^2.21",
         "symfony/webpack-encore-bundle": "^2.2",
         "symfony/yaml": "8.1.*",
