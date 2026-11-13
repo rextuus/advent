@@ -9,9 +9,11 @@
 </li>
 <li data-title="Rätsel als Türsteher" data-icon="lock" data-badges="9 Spiele|Scroll-Sperre|Nochmal-Knopf">
 <p>An neun Stellen hält die Geschichte an, und weiter geht's erst nach dem Spiel. Wer festhängt, versucht es nochmal oder überspringt (bei den meisten Spielen).</p>
+<img src="bilder/showcase/hollandaise.webp" alt="Mini-Spiel am Handy: Soße wird per gedrücktem Button über Spargel gegossen, darunter Wiederholen und Überspringen">
 </li>
 <li data-title="Wischen, Gießen, Rubbeln" data-icon="sparkle" data-badges="Swipe-Karten|Button halten|Rubbellos">
 <p>Top-oder-Flop-Karten wischen wie in einer Dating-App, Soße durch Gedrückthalten genau dosieren und ein Rubbellos freirubbeln, dazu Konfetti.</p>
+<img src="bilder/showcase/rubbellos.webp" alt="Rubbellos am Handy, halb freigerubbelt, der Gewinn schimmert durch">
 </li>
 <li data-title="Kniffel am Tisch" data-icon="star" data-badges="5 Würfel|3 Würfe|Kniffel-Punkte">
 <p>Würfel halten, neu werfen, und nach dem dritten Wurf die beste Kategorie wählen, vom Einer bis zum Kniffel.</p>
