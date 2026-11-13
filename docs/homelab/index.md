@@ -1,5 +1,31 @@
 # Advent – Kresh-Journey
 
+<div class="hl-showcase" data-device="phone" data-url="kresh.wh-company.com" markdown="0">
+<p class="hl-showcase__claim">Ein Geschenk zum <em>Durchscrollen</em> – mit <em>Rätseln</em> statt Geschenkpapier.</p>
+<p class="hl-showcase__lead">Eine persönliche Geburtstagsgeschichte für genau eine Beschenkte: 20 bildschirmfüllende Kapitel über ein gemeinsames Jahr. Neun davon geben den Weg erst frei, wenn das Mini-Spiel gelöst ist.</p>
+<ol>
+<li data-title="Geschichte zum Scrollen" data-icon="image" data-badges="20 Kapitel|Vollbild-Fotos|ohne Konto">
+<p>Kapitel für Kapitel durch ein gemeinsames Jahr scrollen. Hinter jedem liegt ein großes Foto, das beim Weiterscrollen sanft überblendet.</p>
+</li>
+<li data-title="Rätsel als Türsteher" data-icon="lock" data-badges="9 Spiele|Scroll-Sperre|Nochmal-Knopf">
+<p>An neun Stellen hält die Geschichte an, und weiter geht's erst nach dem Spiel. Wer festhängt, versucht es nochmal oder überspringt (bei den meisten Spielen).</p>
+</li>
+<li data-title="Wischen, Gießen, Rubbeln" data-icon="sparkle" data-badges="Swipe-Karten|Button halten|Rubbellos">
+<p>Top-oder-Flop-Karten wischen wie in einer Dating-App, Soße durch Gedrückthalten genau dosieren und ein Rubbellos freirubbeln, dazu Konfetti.</p>
+</li>
+<li data-title="Kniffel am Tisch" data-icon="star" data-badges="5 Würfel|3 Würfe|Kniffel-Punkte">
+<p>Würfel halten, neu werfen, und nach dem dritten Wurf die beste Kategorie wählen, vom Einer bis zum Kniffel.</p>
+</li>
+<li data-title="Quiz &amp; Kennzeichen" data-icon="search" data-badges="10 Fragen|7 Kennzeichen|Punktestand">
+<p>Ein Pop-Kultur-Quiz und eine Kennzeichen-Jagd quer durch Deutschland. Wie gut kennt man die Beschenkte wirklich?</p>
+</li>
+<li data-title="Persönlicher Einlass" data-icon="users" data-badges="5 Rollen|eigene Antwort">
+<p>Zu Beginn fragt die Seite, wer da schaut. Familie, Freunde und Kollegen bekommen jeweils ihre eigene Begrüßung.</p>
+</li>
+</ol>
+<ul class="hl-showcase__tags"><li>Terminal-Rätsel</li><li>Sauna-Timing</li><li>Hollandaise-Gießen</li><li>Taste-Match</li><li>Konfetti</li><li>Milchglas-Karten</li><li>Fotos überblenden</li><li>Fürs Handy gebaut</li><li>Fortschritt bleibt im Browser</li><li>Neuladen = Neustart</li><li>Adventskalender (ruht)</li><li>24 Quiz-Türchen</li></ul>
+</div>
+
 Eine kleine Symfony-App mit zwei Gesichtern: Auf der Startseite läuft die **Kresh-Journey**, eine scrollbare
 Geschichte mit eingebauten Mini-Spielen (ein persönliches Geschenk). Daneben steckt im selben Code der
 **Adventskalender** von 2024 mit 24 Quiz-Türchen und Admin-Oberfläche. Er **ruht** zurzeit und ist nicht erreichbar.
@@ -27,9 +53,8 @@ Geschichte mit eingebauten Mini-Spielen (ein persönliches Geschenk). Daneben st
 
     ---
 
-    **Journey:** 20 Folien zum Durchscrollen. 9 davon sind gesperrt, bis das Spiel gelöst ist (Terminal, Sauna,
-    Kennzeichen, Kniffel, Quiz, Rubbellos …). **Kalender (ruht):** ein Türchen pro Dezembertag, Quizfrage,
-    Punkte und Gewinnstufen.
+    **Journey:** siehe Showcase oben. **Kalender (ruht):** ein Türchen pro Dezembertag, Quizfrage, Punkte und
+    Gewinnstufen.
 
 -   :material-shield-lock-outline:{ .lg } **Wer was darf**
 
