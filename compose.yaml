@@ -10,7 +10,7 @@ services:
       - app-network
 
   caddy:
-    image: caddy:latest
+    image: caddy:2.11.4
     ports:
       - "7999:80"
     volumes:
