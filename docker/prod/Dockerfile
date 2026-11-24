@@ -2,7 +2,7 @@
 # Advent – Produktions-Images (compose.prod.yaml). Die lokale Entwicklung nutzt weiter docker/php/Dockerfile.
 #   prod: PHP-FPM mit Code, Abhängigkeiten und gebauten Assets (Dienste app, migrate)
 #   web:  Caddy mit den öffentlichen Dateien aus prod (Dienst web)
-FROM php:8.5.12-fpm-alpine AS base
+FROM php:8.5.13-fpm-alpine AS base
 
 RUN apk add --no-cache icu-libs icu-data-full libzip fcgi \
  && apk add --no-cache --virtual .build-deps $PHPIZE_DEPS icu-dev libzip-dev linux-headers \
